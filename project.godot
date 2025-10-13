@@ -11,5 +11,11 @@ config_version=5
 [application]
 
 config/name="gymnasiearbete"
+run/main_scene="uid://bcxpmvoc2yiq5"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
