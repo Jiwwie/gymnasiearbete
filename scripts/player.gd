@@ -6,16 +6,18 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
-		velocity.x += speed*delta
+		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= speed*delta
+		velocity.x -= 1
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= speed*delta
+		velocity.y -= 1
 	if Input.is_action_pressed("move_down"):
-		velocity.y += speed*delta
+		velocity.y += 1
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+	
+	position += velocity*delta
 		
-	move_and_slide()
