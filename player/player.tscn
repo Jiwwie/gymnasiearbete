@@ -18,3 +18,7 @@ texture = ExtResource("1_oul6g")
 shape = SubResource("CapsuleShape2D_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 1.0
