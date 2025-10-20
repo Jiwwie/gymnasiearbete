@@ -4,21 +4,21 @@
 [ext_resource type="Script" uid="uid://dl43mg3clqtaf" path="res://scripts/player/player.gd" id="1_rkbax"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
-radius = 32.0
-height = 130.0
+radius = 11.0
+height = 62.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.484375, 1)
+scale = Vector2(0.171875, 0.484375)
 texture = ExtResource("1_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 1.0

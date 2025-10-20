@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=4 format=3 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://player/player.tscn" id="1_kanab"]
-[ext_resource type="PackedScene" uid="uid://duob02vrawt77" path="res://assets/tilemaps/placeholder.tscn" id="2_dmh1u"]
+[ext_resource type="PackedScene" uid="uid://duob02vrawt77" path="res://assets/tilemaps/scenes/placeholder.tscn" id="2_dmh1u"]
+[ext_resource type="PackedScene" uid="uid://c85b3u8odlyty" path="res://scenes/environment/exits/exit_house.tscn" id="3_m20q4"]
 
 [node name="House" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_kanab")]
-position = Vector2(61, 340)
+position = Vector2(106, 270)
 
 [node name="Placeholder" parent="." instance=ExtResource("2_dmh1u")]
 position = Vector2(67, 211)
+
+[node name="Exit" parent="." instance=ExtResource("3_m20q4")]
+position = Vector2(258, 435)
