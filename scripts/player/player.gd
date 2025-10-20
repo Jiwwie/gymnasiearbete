@@ -2,22 +2,21 @@ extends CharacterBody2D
 
 var speed = 200
 
-func _ready() -> void:
-	pass
-
-func _process(delta: float) -> void:
-	velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-		
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+func _physics_process(delta: float) -> void:
+	var input_vector = Vector2.ZERO
 	
-	position += velocity*delta
-		
+	if Input.is_action_pressed("move_right"):
+		input_vector.x += 1
+	if Input.is_action_pressed("move_left"):
+		input_vector.x -= 1
+	if Input.is_action_pressed("move_up"):
+		input_vector.y -= 1
+	if Input.is_action_pressed("move_down"):
+		input_vector.y += 1
+
+	if input_vector.length() > 0:
+		input_vector = input_vector.normalized()
+
+	velocity = input_vector * speed
+
+	move_and_slide()
