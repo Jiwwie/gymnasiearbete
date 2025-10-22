@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=3 format=3 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://player/player.tscn" id="1_4fdg3"]
+[ext_resource type="Texture2D" uid="uid://c8uhm1iakcsvh" path="res://assets/tilemaps/textures/concept_map.png" id="1_aoxwi"]
 
 [node name="Outside" type="Node2D"]
 
+[node name="ConceptMap" type="Sprite2D" parent="."]
+position = Vector2(345, 255)
+texture = ExtResource("1_aoxwi")
+
 [node name="Player" parent="." instance=ExtResource("1_4fdg3")]
-position = Vector2(73, 103)
+position = Vector2(126, 99)
