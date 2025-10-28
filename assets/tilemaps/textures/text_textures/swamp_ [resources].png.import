@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dusq3864csbwv"
-path="res://.godot/imported/swamp_ [fountain].png-ab345d5158b85334bb565efb9c9c05d4.ctex"
+uid="uid://ye6vynr01a66"
+path="res://.godot/imported/swamp_ [resources].png-e4844d35b1e2c24b37035dcf544ece21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/textures/swamp_/swamp_ [fountain].png"
-dest_files=["res://.godot/imported/swamp_ [fountain].png-ab345d5158b85334bb565efb9c9c05d4.ctex"]
+source_file="res://assets/tilemaps/textures/text_textures/swamp_ [resources].png"
+dest_files=["res://.godot/imported/swamp_ [resources].png-e4844d35b1e2c24b37035dcf544ece21.ctex"]
 
 [params]
 

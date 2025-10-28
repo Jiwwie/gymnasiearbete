@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chayggd65kruj"
-path="res://.godot/imported/puddle_.png-65055f66fe8b057bb0c8595c81339caa.ctex"
+uid="uid://btyk1ux16rvi6"
+path="res://.godot/imported/swamp_ [bridgeAnimatedTiles].png-2ecba186c269f0f8570f3397e8e1ffd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/textures/swamp_/puddle_.png"
-dest_files=["res://.godot/imported/puddle_.png-65055f66fe8b057bb0c8595c81339caa.ctex"]
+source_file="res://assets/tilemaps/textures/text_textures/swamp_ [bridgeAnimatedTiles].png"
+dest_files=["res://.godot/imported/swamp_ [bridgeAnimatedTiles].png-2ecba186c269f0f8570f3397e8e1ffd8.ctex"]
 
 [params]
 

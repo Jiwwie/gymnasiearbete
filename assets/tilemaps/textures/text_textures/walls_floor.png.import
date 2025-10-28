@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo4mw4rwnxu5o"
-path="res://.godot/imported/swamp_ [fencesAndWalls].png-e7625c7db128e35eb085f03127487819.ctex"
+uid="uid://bjyyj6ddb0rjy"
+path="res://.godot/imported/walls_floor.png-b9d1dfa49ffe6d9e8f554832b4b7d898.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/textures/swamp_/swamp_ [fencesAndWalls].png"
-dest_files=["res://.godot/imported/swamp_ [fencesAndWalls].png-e7625c7db128e35eb085f03127487819.ctex"]
+source_file="res://assets/tilemaps/textures/text_textures/walls_floor.png"
+dest_files=["res://.godot/imported/walls_floor.png-b9d1dfa49ffe6d9e8f554832b4b7d898.ctex"]
 
 [params]
 
