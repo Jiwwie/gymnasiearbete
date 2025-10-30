@@ -24,4 +24,4 @@ scale = Vector2(2, 2)
 tile_set = ExtResource("1_8rb7l")
 
 [node name="Player" parent="." instance=ExtResource("1_kanab")]
-position = Vector2(-129, 49)
+position = Vector2(-31, 3)
