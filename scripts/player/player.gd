@@ -23,6 +23,7 @@ func _process(_delta: float) -> void:
 		velocity.y += 1
 		last_direction = "down"
 		$AnimatedSprite2D.animation = "walk_forward"
+		$AnimatedSprite2D.flip_h = false
 
 	if velocity.length() == 0:
 		if last_direction == "up":
