@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
 		last_direction = "down"
-		$AnimatedSprite2D.animation = "walk_forward"
+		$AnimatedSprite2D.animation = "walk_down"
 		$AnimatedSprite2D.flip_h = false
 
 	if velocity.length() == 0:
