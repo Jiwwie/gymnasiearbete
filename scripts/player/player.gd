@@ -19,6 +19,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 		last_direction = "up"
+		$AnimatedSprite2D.animation = "walk_up"
+		$AnimatedSprite2D.flip_h = false
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
 		last_direction = "down"
@@ -27,7 +29,7 @@ func _process(_delta: float) -> void:
 
 	if velocity.length() == 0:
 		if last_direction == "up":
-			$AnimatedSprite2D.animation = "idle"
+			$AnimatedSprite2D.animation = "idle_up"
 		elif last_direction == "left":
 			$AnimatedSprite2D.animation = "idle_side"
 		elif last_direction == "right":
