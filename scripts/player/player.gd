@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var speed = 200
 var last_direction = "down"
+var temp = 0
 
 func _process(_delta: float) -> void:
 	velocity = Vector2.ZERO

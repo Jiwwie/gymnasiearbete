@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=4 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="TileSet" uid="uid://7ql7iu0b4ees" path="res://assets/tilemaps/tilesets/maptest1.tres" id="1_8rb7l"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://player/player.tscn" id="1_kanab"]
+[ext_resource type="PackedScene" uid="uid://b07prql4kwvxn" path="res://scenes/environment/exits/exit_home.tscn" id="3_m20q4"]
 
 [node name="House" type="Node2D"]
 
@@ -24,4 +25,10 @@ scale = Vector2(2, 2)
 tile_set = ExtResource("1_8rb7l")
 
 [node name="Player" parent="." instance=ExtResource("1_kanab")]
-position = Vector2(-31, 3)
+position = Vector2(-31, 4)
+
+[node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
+position = Vector2(271, 347)
+
+[node name="ExitHome" parent="." instance=ExtResource("3_m20q4")]
+position = Vector2(271, 396)

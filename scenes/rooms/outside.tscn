@@ -38,3 +38,6 @@ tile_set = ExtResource("1_aoxwi")
 
 [node name="Player" parent="." instance=ExtResource("1_4fdg3")]
 position = Vector2(126, 99)
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(-235, 348)
