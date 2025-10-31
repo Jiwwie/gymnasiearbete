@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=11 format=3 uid="uid://7ql7iu0b4ees"]
 
-[ext_resource type="Texture2D" uid="uid://sfce2icbhfi2" path="res://assets/tilemaps/textures/text_textures/swamp_.png" id="1_pp6hs"]
-[ext_resource type="Texture2D" uid="uid://ye6vynr01a66" path="res://assets/tilemaps/textures/text_textures/swamp_ [resources].png" id="2_d3f4h"]
-[ext_resource type="Texture2D" uid="uid://bjyyj6ddb0rjy" path="res://assets/tilemaps/textures/text_textures/walls_floor.png" id="3_vrel6"]
-[ext_resource type="Texture2D" uid="uid://d0sthhjbj04op" path="res://assets/tilemaps/textures/text_textures/swamp_ [bridgeHorizontal].png" id="4_vrel6"]
-[ext_resource type="Texture2D" uid="uid://cydl2oc2a3mdh" path="res://assets/tilemaps/textures/text_textures/swamp_ [bridgeVertical].png" id="5_krdb3"]
+[ext_resource type="Texture2D" uid="uid://sfce2icbhfi2" path="res://assets/tilemaps/textures/test_textures/swamp_.png" id="1_pp6hs"]
+[ext_resource type="Texture2D" uid="uid://ye6vynr01a66" path="res://assets/tilemaps/textures/test_textures/swamp_ [resources].png" id="2_d3f4h"]
+[ext_resource type="Texture2D" uid="uid://bjyyj6ddb0rjy" path="res://assets/tilemaps/textures/test_textures/walls_floor.png" id="3_vrel6"]
+[ext_resource type="Texture2D" uid="uid://d0sthhjbj04op" path="res://assets/tilemaps/textures/test_textures/swamp_ [bridgeHorizontal].png" id="4_vrel6"]
+[ext_resource type="Texture2D" uid="uid://cydl2oc2a3mdh" path="res://assets/tilemaps/textures/test_textures/swamp_ [bridgeVertical].png" id="5_krdb3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_quvfa"]
 texture = ExtResource("1_pp6hs")

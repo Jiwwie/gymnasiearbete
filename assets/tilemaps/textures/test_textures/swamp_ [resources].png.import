@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0sthhjbj04op"
-path="res://.godot/imported/swamp_ [bridgeHorizontal].png-24e6c26b9f767585420401ffc0c60ef9.ctex"
+uid="uid://ye6vynr01a66"
+path="res://.godot/imported/swamp_ [resources].png-86de90091b7c34563b7440e8a685f183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/textures/text_textures/swamp_ [bridgeHorizontal].png"
-dest_files=["res://.godot/imported/swamp_ [bridgeHorizontal].png-24e6c26b9f767585420401ffc0c60ef9.ctex"]
+source_file="res://assets/tilemaps/textures/test_textures/swamp_ [resources].png"
+dest_files=["res://.godot/imported/swamp_ [resources].png-86de90091b7c34563b7440e8a685f183.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://dusi0ivyrcj7p"]
 
 [ext_resource type="TileSet" uid="uid://7ql7iu0b4ees" path="res://assets/tilemaps/tilesets/maptest1.tres" id="1_0isaq"]
-[ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://player/player.tscn" id="2_gs85w"]
+[ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_gs85w"]
 [ext_resource type="TileSet" uid="uid://bbatpd2gmbdt5" path="res://assets/tilemaps/tilesets/maptest91px.tres" id="2_qyum4"]
 
 [node name="Maptest1" type="Node2D"]
