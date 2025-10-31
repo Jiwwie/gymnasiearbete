@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=4 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://7ql7iu0b4ees" path="res://assets/tilemaps/tilesets/maptest1.tres" id="1_aoxwi"]
+[ext_resource type="PackedScene" uid="uid://c2akmqrsxsnxp" path="res://scenes/environment/exits/enter_home.tscn" id="3_exfpn"]
 
 [node name="Outside" type="Node2D"]
 
@@ -37,7 +38,10 @@ tile_map_data = PackedByteArray("AAAEAAUACAACAAEAAAAFAAUACAADAAEAAAADAAUACAABAAE
 tile_set = ExtResource("1_aoxwi")
 
 [node name="Player" parent="." instance=ExtResource("1_4fdg3")]
-position = Vector2(126, 99)
+position = Vector2(127, -50)
 
-[node name="Spawn" type="Marker2D" parent="."]
-position = Vector2(-235, 348)
+[node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
+position = Vector2(128, 86)
+
+[node name="EnterHome" parent="." instance=ExtResource("3_exfpn")]
+position = Vector2(125, 31)
