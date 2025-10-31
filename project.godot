@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SpawnManager="*res://scripts/global/spawnmanager.gd"
+SpawnManager="*res://scripts/global/spawn_manager.gd"
 
 [display]
 

@@ -45,3 +45,5 @@ position = Vector2(128, 86)
 
 [node name="EnterHome" parent="." instance=ExtResource("3_exfpn")]
 position = Vector2(125, 31)
+collision_layer = 0
+collision_mask = 2

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://boegos6m3jjme" path="res://scripts/environment/exits/exit_home.gd" id="1_uby0n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh16d"]
-size = Vector2(92, 26)
+size = Vector2(138, 39)
 
 [node name="ExitHome" type="Area2D"]
 collision_layer = 0
@@ -11,6 +11,7 @@ collision_mask = 2
 script = ExtResource("1_uby0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23, 6.5)
 shape = SubResource("RectangleShape2D_nh16d")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

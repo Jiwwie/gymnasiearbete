@@ -6,8 +6,8 @@ var last_direction = "down"
 
 func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player")
-	SpawnManager.spawn_point = $"../Spawn"
 	if SpawnManager.spawn == true:
+		SpawnManager.spawn_point = $"../Spawn"
 		player.global_position = SpawnManager.spawn_point.global_position
 
 func _process(_delta: float) -> void:
