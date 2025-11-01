@@ -38,10 +38,10 @@ tile_map_data = PackedByteArray("AAAEAAUACAACAAEAAAAFAAUACAADAAEAAAADAAUACAABAAE
 tile_set = ExtResource("1_aoxwi")
 
 [node name="Player" parent="." instance=ExtResource("1_4fdg3")]
-position = Vector2(127, -50)
+position = Vector2(126, -101)
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
-position = Vector2(128, 86)
+position = Vector2(144, 234)
 
 [node name="EnterHome" parent="." instance=ExtResource("3_exfpn")]
 position = Vector2(125, 31)

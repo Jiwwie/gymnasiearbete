@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp7245ssymld2"]
+
+[ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="1_nyju2"]
+
+[node name="Maptest2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_nyju2")

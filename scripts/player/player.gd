@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 200
+var speed = 400
 var last_direction = "down"
 #@onready var spawn_point: Marker2D = $"../Spawn"
 
