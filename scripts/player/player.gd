@@ -39,8 +39,6 @@ func _process(_delta: float) -> void:
 			$AnimatedSprite2D.animation = "idle_up"
 		elif last_direction == "left" or last_direction == "right":
 			$AnimatedSprite2D.animation = "idle_side"
-		#elif last_direction == "right":
-			#$AnimatedSprite2D.animation = "idle_side"
 		else:
 			$AnimatedSprite2D.animation = "idle"
 
