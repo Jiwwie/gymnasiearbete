@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=6 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="TileSet" uid="uid://7ql7iu0b4ees" path="res://assets/tilemaps/tilesets/maptest1.tres" id="1_8rb7l"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
 [ext_resource type="PackedScene" uid="uid://b07prql4kwvxn" path="res://scenes/environment/exits/exit_home.tscn" id="3_m20q4"]
+[ext_resource type="PackedScene" uid="uid://clmsxd7m8li2f" path="res://scenes/environment/interactables/board.tscn" id="5_u3fao"]
 
 [node name="House" type="Node2D"]
 
@@ -28,7 +29,10 @@ tile_set = ExtResource("2_jhjpb")
 position = Vector2(1295, 98)
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
-position = Vector2(2463, 1043)
+position = Vector2(2142, 857)
 
 [node name="ExitHome" parent="." instance=ExtResource("3_m20q4")]
 position = Vector2(2143, 970)
+
+[node name="Board" parent="." instance=ExtResource("5_u3fao")]
+position = Vector2(2040, 550)

@@ -7,7 +7,6 @@ size = Vector2(138, 39)
 
 [node name="ExitHome" type="Area2D"]
 collision_layer = 0
-collision_mask = 2
 script = ExtResource("1_uby0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
