@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var speed = 400
 var last_direction = "down"
-#@onready var spawn_point: Marker2D = $"../Spawn"
 
 func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player")
