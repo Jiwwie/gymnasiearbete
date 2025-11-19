@@ -19,6 +19,10 @@ func _on_body_exited(body: Node2D) -> void:
 	
 func _process(_delta: float) -> void:
 	if zone == true and Input.is_action_just_pressed("interact"):
-		board_ui.show()
+		if board_ui.visible:
+			board_ui.hide()
+		else:
+			board_ui.show()
+
 		
 		
