@@ -36,3 +36,5 @@ position = Vector2(2142, 857)
 
 [node name="ExitHome" parent="." instance=ExtResource("3_m20q4")]
 position = Vector2(2143, 970)
+
+[connection signal="body_exited" from="Board" to="Board" method="_on_body_exited"]
