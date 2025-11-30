@@ -1,23 +1,23 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbq6ah1xqgh02"]
 
-[ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="1_1ts72"]
+[ext_resource type="Texture2D" uid="uid://bke1aqe8owfce" path="res://assets/images/board_img.png" id="1_1ts72"]
 
 [node name="BoardOpen" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchor_top = 0.5
+anchor_bottom = 0.5
 grow_vertical = 2
+scale = Vector2(0.4, 0.4)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 345.0
+offset_top = -857.5
+offset_right = 2651.0
+offset_bottom = 1142.5
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 layout_mode = 2
 texture = ExtResource("1_1ts72")
+expand_mode = 4
+stretch_mode = 3
