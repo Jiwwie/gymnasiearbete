@@ -28,7 +28,7 @@ tile_map_data = PackedByteArray("AAAhAAgAAgAFAAQAAAAhAAkAAgAFAAUAAAAiAAgAAgAGAAQ
 tile_set = ExtResource("2_jhjpb")
 
 [node name="Board" parent="." instance=ExtResource("5_u3fao")]
-position = Vector2(2039, 547)
+position = Vector2(2047, 567)
 
 [node name="Player" parent="." instance=ExtResource("1_kanab")]
 position = Vector2(1295, 98)
@@ -50,5 +50,6 @@ unique_name_in_owner = true
 visible = false
 
 [node name="BoardOpen" parent="BoardUi" instance=ExtResource("7_vql73")]
+anchors_preset = 4
 
 [connection signal="body_exited" from="Board" to="Board" method="_on_body_exited"]

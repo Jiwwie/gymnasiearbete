@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://sfce2icbhfi2" path="res://assets/tilemaps/textures/test_textures/swamp_.png" id="1_pp6hs"]
 [ext_resource type="Texture2D" uid="uid://ye6vynr01a66" path="res://assets/tilemaps/textures/test_textures/swamp_ [resources].png" id="2_d3f4h"]
-[ext_resource type="Texture2D" uid="uid://rsbebf2x2jua" path="res://assets/tilemaps/textures/steven_drown_ss.png" id="3_krdb3"]
+[ext_resource type="Texture2D" uid="uid://rsbebf2x2jua" path="res://assets/sprites/npc/steven/steven_drown_ss.png" id="3_krdb3"]
 [ext_resource type="Texture2D" uid="uid://bjyyj6ddb0rjy" path="res://assets/tilemaps/textures/test_textures/walls_floor.png" id="3_vrel6"]
 [ext_resource type="Texture2D" uid="uid://d0sthhjbj04op" path="res://assets/tilemaps/textures/test_textures/swamp_ [bridgeHorizontal].png" id="4_vrel6"]
 [ext_resource type="Texture2D" uid="uid://cydl2oc2a3mdh" path="res://assets/tilemaps/textures/test_textures/swamp_ [bridgeVertical].png" id="5_krdb3"]

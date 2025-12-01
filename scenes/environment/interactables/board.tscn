@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clmsxd7m8li2f"]
 
 [ext_resource type="Script" uid="uid://dcm8ihaa35pqe" path="res://scripts/environment/interactables/board.gd" id="1_0r3xp"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nk5p7"]
+[ext_resource type="Texture2D" uid="uid://bke1aqe8owfce" path="res://assets/images/board_img.png" id="2_gdydq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nk5p7"]
 radius = 105.30432
@@ -12,8 +11,8 @@ script = ExtResource("1_0r3xp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2.75)
-scale = Vector2(154, 81.50001)
-texture = SubResource("PlaceholderTexture2D_nk5p7")
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_gdydq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 20)
