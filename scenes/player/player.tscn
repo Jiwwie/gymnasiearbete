@@ -202,6 +202,7 @@ position = Vector2(0, 37)
 shape = SubResource("CapsuleShape2D_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+y_sort_enabled = true
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true

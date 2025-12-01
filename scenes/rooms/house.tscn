@@ -34,6 +34,7 @@ position = Vector2(2047, 567)
 position = Vector2(1295, 98)
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
+unique_name_in_owner = true
 position = Vector2(2142, 857)
 
 [node name="ExitHome" parent="." instance=ExtResource("3_m20q4")]
