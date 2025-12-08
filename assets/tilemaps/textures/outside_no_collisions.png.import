@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tgttocao2a4n"
-path="res://.godot/imported/island.png-e437445e2b2b285a83403bf4045b5eed.ctex"
+uid="uid://dl6d876tff651"
+path="res://.godot/imported/outside_no_collisions.png-e6f838186c74b8ac93ca0d072870ea33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/textures/test_textures/island.png"
-dest_files=["res://.godot/imported/island.png-e437445e2b2b285a83403bf4045b5eed.ctex"]
+source_file="res://assets/tilemaps/textures/outside_no_collisions.png"
+dest_files=["res://.godot/imported/outside_no_collisions.png-e6f838186c74b8ac93ca0d072870ea33.ctex"]
 
 [params]
 
