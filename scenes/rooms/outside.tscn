@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=12 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
@@ -48,6 +48,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5q2f"]
+size = Vector2(348.27545, 524.1377)
+
 [node name="Outside" type="Node2D"]
 
 [node name="GroundLayer" type="TileMapLayer" parent="."]
@@ -72,13 +75,20 @@ scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAAKAAMAAgABAAAAAAA=")
 tile_set = ExtResource("1_88mi5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Steven" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Steven"]
 position = Vector2(386, -27.999996)
 scale = Vector2(0.29, 0.29)
 sprite_frames = SubResource("SpriteFrames_fidl1")
 animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.79190886
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Steven"]
+position = Vector2(386.49997, 23.000027)
+scale = Vector2(0.29000008, 0.29000008)
+shape = SubResource("RectangleShape2D_h5q2f")
 
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
