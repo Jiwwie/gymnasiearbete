@@ -78,7 +78,7 @@ tile_set = ExtResource("1_88mi5")
 [node name="Steven" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Steven"]
-position = Vector2(386, -27.999996)
+position = Vector2(364.99997, -23.999998)
 scale = Vector2(0.29, 0.29)
 sprite_frames = SubResource("SpriteFrames_fidl1")
 animation = &"new_animation"
@@ -86,7 +86,7 @@ autoplay = "new_animation"
 frame_progress = 0.79190886
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Steven"]
-position = Vector2(386.49997, 23.000027)
+position = Vector2(366.00003, 22.000002)
 scale = Vector2(0.29000008, 0.29000008)
 shape = SubResource("RectangleShape2D_h5q2f")
 
