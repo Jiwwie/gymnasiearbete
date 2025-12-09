@@ -8,16 +8,19 @@
 		"text" : "dwadaw!",
 		"name" : "Bum",
 		"choices" : {
-			"I will save you." : "Saved",
-			"NO!" : "Died"
+			"I will save you." : "saved",
+			"NO!" : "died"
 		}
 	},
-	"Saved" : {
+	"saved" : {
 		"text": "Dude. Fam. Some crazy guy pushed me as I was minding me own self. He claimed I was an AI.",
-		"next": "A"
+		"next": "close"
 	},
-	"Died" : {
+	"died" : {
 		"text": "AAAAAAAAAAAAAAAaaaaaahh h h h .... . . . *Dead noises*",
-		"next": "A"
+		"next": "close"
+	},
+	"close" : {
+		"trigger" : "ENDCODE"
 	}
 }

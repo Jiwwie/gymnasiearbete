@@ -33,7 +33,11 @@ func load_block(block : Dictionary):
 		
 	if block.has("choices"):
 		ChoiceLayer.show()
+		ChoiceLayer.set_choices(block["choices"])
 		
+	if block.has("trigger") :
+		if block["trigger"] == "ENDCODE":
+			get_tree().quit()
 func next():
 	current_block = next_block
 	load_block(current_block)
@@ -42,3 +46,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		next()
 	pass
+
+
+func _on_choices_next_id(id: String) -> void:
+	next_block = scene_script[id]
+	next()
+	ChoiceLayer.hide()
+	pass # Replace with function body.
