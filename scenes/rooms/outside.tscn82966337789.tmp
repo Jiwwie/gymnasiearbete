@@ -123,9 +123,9 @@ visible = false
 
 [node name="Dialogue" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="DialogueSystem" parent="Dialogue" instance=ExtResource("7_o3qkr")]
-jsonsrc = "res://scripts/dialogue/steven_drown.json"
 
 [connection signal="body_entered" from="Steven" to="Steven" method="_on_body_entered"]
 [connection signal="body_exited" from="Steven" to="Steven" method="_on_body_exited"]

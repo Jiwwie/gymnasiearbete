@@ -35,9 +35,13 @@ func load_block(block : Dictionary):
 		ChoiceLayer.show()
 		ChoiceLayer.set_choices(block["choices"])
 		
+	if block.has("result"):
+		Globals.steven = block["result"]
+		
 	if block.has("trigger") :
 		if block["trigger"] == "ENDCODE":
-			get_tree().quit()
+			queue_free()
+			$"../../Steven".hide()
 func next():
 	current_block = next_block
 	load_block(current_block)
