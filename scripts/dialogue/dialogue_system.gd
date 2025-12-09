@@ -41,7 +41,6 @@ func load_block(block : Dictionary):
 	if block.has("trigger") :
 		if block["trigger"] == "ENDCODE":
 			queue_free()
-			$"../../Steven".hide()
 func next():
 	current_block = next_block
 	load_block(current_block)
