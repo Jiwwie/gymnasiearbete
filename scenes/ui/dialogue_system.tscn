@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpc43ol1uaidh"]
+
+[ext_resource type="Script" uid="uid://by3eugrktctub" path="res://scripts/dialogue/dialogue_system.gd" id="1_r2koh"]
+
+[node name="DialogueSystem" type="Control" node_paths=PackedStringArray("char_text", "char_name", "char_sprite", "BaseLayer", "ChoiceLayer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r2koh")
+jsonsrc = "res://scripts/dialogue/test.json"
+char_text = NodePath("Base/MarginContainer/ColorRect/MarginContainer2/Text")
+char_name = NodePath("Base/MarginContainer/ColorRect/MarginContainer/Name")
+char_sprite = NodePath("Base/CharSprite")
+BaseLayer = NodePath("Base")
+ChoiceLayer = NodePath("Choices")
+
+[node name="Base" type="CanvasLayer" parent="."]
+
+[node name="CharSprite" type="TextureRect" parent="Base"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Base"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 450
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ColorRect" type="ColorRect" parent="Base/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.39607844)
+
+[node name="MarginContainer2" type="MarginContainer" parent="Base/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Text" type="Label" parent="Base/MarginContainer/ColorRect/MarginContainer2"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_vertical = 0
+autowrap_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Base/MarginContainer/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+
+[node name="Name" type="Label" parent="Base/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+text = "Name"
+
+[node name="Choices" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Choices"]
+offset_left = 789.0
+offset_top = 367.0
+offset_right = 1124.0
+offset_bottom = 437.0
+
+[node name="Button" type="Button" parent="Choices/VBoxContainer"]
+layout_mode = 2
+text = "Choice"
+
+[node name="Button2" type="Button" parent="Choices/VBoxContainer"]
+layout_mode = 2
+text = "Choice"
