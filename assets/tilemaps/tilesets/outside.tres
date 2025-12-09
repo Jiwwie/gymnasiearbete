@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://basn5qc3xc287"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://basn5qc3xc287"]
 
 [ext_resource type="Texture2D" uid="uid://d13y5dnw4x2d3" path="res://assets/tilemaps/textures/outside.png" id="1_adlcv"]
 [ext_resource type="Texture2D" uid="uid://c1rc6ygwlisoy" path="res://assets/tilemaps/textures/bridge.png" id="2_milxn"]
 [ext_resource type="Texture2D" uid="uid://beecgsfkh4mhh" path="res://assets/tilemaps/textures/tree_anim.png" id="3_n8ska"]
 [ext_resource type="Texture2D" uid="uid://dl6d876tff651" path="res://assets/tilemaps/textures/outside_no_collisions.png" id="4_dgkk4"]
+[ext_resource type="Texture2D" uid="uid://cmd76qj32vb7x" path="res://assets/tilemaps/textures/house_sprite.png" id="5_im5nv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lasu"]
 texture = ExtResource("1_adlcv")
@@ -398,6 +399,15 @@ texture_region_size = Vector2i(128, 128)
 16:10/0 = 0
 17:10/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pgm2p"]
+texture = ExtResource("5_im5nv")
+texture_region_size = Vector2i(128, 128)
+0:0/size_in_atlas = Vector2i(12, 9)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-704, 512)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(60, -812, 1336, -780, 1344, -180, 76, -172)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(344, -1036, 68, -804, 580, -804)
+
 [resource]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
@@ -412,3 +422,4 @@ sources/1 = SubResource("TileSetAtlasSource_5lasu")
 sources/2 = SubResource("TileSetAtlasSource_n8ska")
 sources/3 = SubResource("TileSetAtlasSource_dgkk4")
 sources/4 = SubResource("TileSetAtlasSource_im5nv")
+sources/5 = SubResource("TileSetAtlasSource_pgm2p")
