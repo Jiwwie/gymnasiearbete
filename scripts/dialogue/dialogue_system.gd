@@ -44,8 +44,11 @@ func load_block(block : Dictionary):
 	if block.has("result"):
 		Globals.steven = block["result"]
 		
-	if block.has("trigger") and block["trigger"] == "ENDCODE":
+	if block.has("trigger") and block["trigger"] == "ENDCODE": # Dialoger
 		queue_free()
+		
+	if block.has("trigger") and block["trigger"] == "IENDCODE": # Interactables
+		BaseLayer.hide()
 
 func next():
 	current_block = next_block

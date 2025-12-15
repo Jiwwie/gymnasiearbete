@@ -1,0 +1,10 @@
+{
+	"start" : {
+		"text" : "You look outside to see nothing hahaha",
+		"name" : "Observation",
+		"next" : "close"
+		},
+	"close" : {
+		"trigger" : "IENDCODE"
+	}
+}

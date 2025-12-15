@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=10 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
 [ext_resource type="PackedScene" uid="uid://b07prql4kwvxn" path="res://scenes/environment/exits/exit_home.tscn" id="3_m20q4"]
 [ext_resource type="PackedScene" uid="uid://clmsxd7m8li2f" path="res://scenes/environment/interactables/board.tscn" id="5_u3fao"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="6_vty7d"]
+[ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_8eaee"]
+[ext_resource type="Script" uid="uid://boek1j6vumefi" path="res://scripts/environment/interactables/window.gd" id="7_60327"]
 [ext_resource type="PackedScene" uid="uid://bbq6ah1xqgh02" path="res://scenes/ui/board_ui.tscn" id="7_vql73"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60327"]
+radius = 52.009613
 
 [node name="House" type="Node2D"]
 
@@ -18,14 +23,14 @@ tile_map_data = PackedByteArray("AAANAAUAAgADAAAAAAANAAYAAgADAAEAAAANAAcAAgADAAI
 tile_set = ExtResource("2_jhjpb")
 
 [node name="MiscLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAhAAgAAgAFAAQAAAAhAAkAAgAFAAUAAAAiAAgAAgAGAAQAAAAiAAkAAgAGAAUAAAAgAAgAAgAIAAUAAAAfAAgAAgAIAAUAAAAQAP//AgAFAAUAAAARAP//AgAGAAUAAAAQAP7/AgAFAAQAAAARAP7/AgAGAAQAAAA=")
+tile_map_data = PackedByteArray("AAAhAAgAAgAFAAQAAAAhAAkAAgAFAAUAAAAiAAgAAgAGAAQAAAAiAAkAAgAGAAUAAAAgAAgAAgABAAMAAAAfAAgAAgABAAMAAAAQAP//AgAFAAUAAAARAP//AgAGAAUAAAAQAP7/AgAFAAQAAAARAP7/AgAGAAQAAAA=")
 tile_set = ExtResource("2_jhjpb")
 
 [node name="Board" parent="." instance=ExtResource("5_u3fao")]
-position = Vector2(2047, 551)
+position = Vector2(1901, 553)
 
 [node name="Player" parent="." instance=ExtResource("1_kanab")]
-position = Vector2(1295, 98)
+position = Vector2(2126, 700)
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
@@ -47,4 +52,21 @@ visible = false
 [node name="BoardOpen" parent="BoardUi" instance=ExtResource("7_vql73")]
 anchors_preset = 4
 
+[node name="Window" type="Area2D" parent="."]
+script = ExtResource("7_60327")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window"]
+position = Vector2(2175, 605)
+shape = SubResource("CircleShape2D_60327")
+
+[node name="DialogueSystem" parent="Window" instance=ExtResource("7_8eaee")]
+offset_left = 2175.0
+offset_top = 605.0
+offset_right = 2175.0
+offset_bottom = 605.0
+jsonsrc = "res://scripts/environment/interactables/observation/windows_interact.json"
+
 [connection signal="body_exited" from="Board" to="Board" method="_on_body_exited"]
+[connection signal="body_entered" from="Window" to="Window" method="_on_body_entered"]
+[connection signal="body_exited" from="Window" to="Window" method="_on_body_exited"]
