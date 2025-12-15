@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=17 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_88mi5"]
 [ext_resource type="Script" uid="uid://2btuqnthkqtt" path="res://scripts/environment/interactables/dialogue_test.gd" id="5_rs61t"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_o3qkr"]
+[ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="9_fidl1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5q2f"]
 atlas = ExtResource("2_h5q2f")
@@ -99,6 +100,14 @@ shape = SubResource("RectangleShape2D_h5q2f")
 [node name="DialogueSystem" parent="Steven" instance=ExtResource("7_o3qkr")]
 jsonsrc = "res://scripts/dialogue/steven_drown.json"
 
+[node name="StevenSaved" type="Area2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="StevenSaved"]
+position = Vector2(277.00003, 51.000004)
+scale = Vector2(0.3203125, 1)
+texture = ExtResource("9_fidl1")
+
 [node name="DialogueTest" type="Area2D" parent="."]
 script = ExtResource("5_rs61t")
 dialogue_system = NodePath("DialogueSystem")
@@ -109,7 +118,7 @@ scale = Vector2(0.29000008, 0.29000008)
 shape = SubResource("RectangleShape2D_h5q2f")
 
 [node name="DialogueSystem" parent="DialogueTest" instance=ExtResource("7_o3qkr")]
-jsonsrc = "res://scripts/dialogue/steven_drown2.json"
+jsonsrc = "res://scripts/dialogue/dialogue_test.json"
 
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true

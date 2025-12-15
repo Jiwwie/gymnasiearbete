@@ -15,12 +15,10 @@
 	"saved" : {
 		"text" : "Dude. tw3atw3. Some crazy twa3tw3a pushed me as I was minding me own self. He claimed I was an AI.",
 		"next" : "close",
-		"result" : "alive"
 	},
 	"died" : {
 		"text" : "t3wattaw3 h h h .... . . . *Dead noises*",
 		"next" : "close",
-		"result" : "dead"
 	},
 	"close" : {
 		"trigger" : "ENDCODE"

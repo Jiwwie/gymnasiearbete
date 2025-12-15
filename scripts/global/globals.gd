@@ -1,3 +1,3 @@
 extends Node
 
-var steven = "alive"
+var steven

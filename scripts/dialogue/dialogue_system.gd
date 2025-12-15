@@ -30,15 +30,20 @@ func get_json(src: String):
 
 func load_block(block : Dictionary):
 	if block.has("text"): char_text.text = block["text"]
+	
 	if block.has("name"): char_name.text = block["name"]
+	
 	if block.has("next"):
 		var key = block["next"]
 		next_block = scene_script[key]
+		
 	if block.has("choices"):
 		ChoiceLayer.show()
 		ChoiceLayer.set_choices(block["choices"])
+		
 	if block.has("result"):
 		Globals.steven = block["result"]
+		
 	if block.has("trigger") and block["trigger"] == "ENDCODE":
 		queue_free()
 

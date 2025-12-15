@@ -26,3 +26,8 @@ func _process(_delta: float) -> void:
 			usage = true
 		else:
 			push_error("DialogueSystem not assigned for NPC!")
+	if Globals.steven == "dead":
+		$".".hide()
+	elif Globals.steven == "alive":
+		$".".hide()
+		$"../StevenSaved".show()
