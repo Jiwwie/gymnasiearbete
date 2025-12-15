@@ -13,34 +13,35 @@ var next_block : Dictionary
 @export var BaseLayer : CanvasLayer
 @export var ChoiceLayer : CanvasLayer
 
-
 func _ready() -> void:
-	get_json(jsonsrc)
-	load_block(current_block)
-	
+	pass  # don’t start automatically
+
+func start_dialogue():
+	if jsonsrc != null:
+		get_json(jsonsrc)
+		load_block(current_block)
+	else:
+		push_error("jsonsrc not set! Please assign a JSON file in the Inspector.")
+
 func get_json(src: String):
 	var jsontext = FileAccess.get_file_as_string(src)
 	scene_script = JSON.parse_string(jsontext)
 	current_block = scene_script["start"]
-	
+
 func load_block(block : Dictionary):
 	if block.has("text"): char_text.text = block["text"]
 	if block.has("name"): char_name.text = block["name"]
-	
 	if block.has("next"):
 		var key = block["next"]
 		next_block = scene_script[key]
-		
 	if block.has("choices"):
 		ChoiceLayer.show()
 		ChoiceLayer.set_choices(block["choices"])
-		
 	if block.has("result"):
 		Globals.steven = block["result"]
-		
-	if block.has("trigger") :
-		if block["trigger"] == "ENDCODE":
-			queue_free()
+	if block.has("trigger") and block["trigger"] == "ENDCODE":
+		queue_free()
+
 func next():
 	current_block = next_block
 	load_block(current_block)
@@ -48,11 +49,8 @@ func next():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		next()
-	pass
-
 
 func _on_choices_next_id(id: String) -> void:
 	next_block = scene_script[id]
 	next()
 	ChoiceLayer.hide()
-	pass # Replace with function body.

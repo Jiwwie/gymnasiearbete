@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=16 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cwqbp48iybem6" path="res://scripts/environment/interactables/steven_drown.gd" id="2_uvdep"]
 [ext_resource type="PackedScene" uid="uid://c2akmqrsxsnxp" path="res://scenes/environment/exits/enter_home.tscn" id="3_exfpn"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_88mi5"]
+[ext_resource type="Script" uid="uid://2btuqnthkqtt" path="res://scripts/environment/interactables/dialogue_test.gd" id="5_rs61t"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_o3qkr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5q2f"]
@@ -80,6 +81,7 @@ tile_set = ExtResource("1_88mi5")
 
 [node name="Steven" type="Area2D" parent="."]
 script = ExtResource("2_uvdep")
+dialogue_system = NodePath("DialogueSystem")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Steven"]
 position = Vector2(364.99997, -23.999998)
@@ -93,6 +95,21 @@ frame_progress = 0.79190886
 position = Vector2(366.00003, 22.000002)
 scale = Vector2(0.29000008, 0.29000008)
 shape = SubResource("RectangleShape2D_h5q2f")
+
+[node name="DialogueSystem" parent="Steven" instance=ExtResource("7_o3qkr")]
+jsonsrc = "res://scripts/dialogue/steven_drown.json"
+
+[node name="DialogueTest" type="Area2D" parent="."]
+script = ExtResource("5_rs61t")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTest"]
+position = Vector2(1278, 229)
+scale = Vector2(0.29000008, 0.29000008)
+shape = SubResource("RectangleShape2D_h5q2f")
+
+[node name="DialogueSystem" parent="DialogueTest" instance=ExtResource("7_o3qkr")]
+jsonsrc = "res://scripts/dialogue/steven_drown2.json"
 
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -121,10 +138,7 @@ visible = false
 
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_88mi5")]
 
-[node name="Dialogue" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-
-[node name="DialogueSystem" parent="Dialogue" instance=ExtResource("7_o3qkr")]
-
 [connection signal="body_entered" from="Steven" to="Steven" method="_on_body_entered"]
 [connection signal="body_exited" from="Steven" to="Steven" method="_on_body_exited"]
+[connection signal="body_entered" from="DialogueTest" to="DialogueTest" method="_on_body_entered"]
+[connection signal="body_exited" from="DialogueTest" to="DialogueTest" method="_on_body_exited"]

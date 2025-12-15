@@ -1,0 +1,28 @@
+{
+	"start" : {
+		"text" : "t3watw3at!",
+		"name" : "Bum",
+		"next" : "B"
+		},
+		"B" : {
+		"text" : "dawtqt3t!",
+		"name" : "Bum",
+		"choices" : {
+			"I will tw3atw3a you." : "saved",
+			"NO!" : "died"
+		}
+	},
+	"saved" : {
+		"text" : "Dude. tw3atw3. Some crazy twa3tw3a pushed me as I was minding me own self. He claimed I was an AI.",
+		"next" : "close",
+		"result" : "alive"
+	},
+	"died" : {
+		"text" : "t3wattaw3 h h h .... . . . *Dead noises*",
+		"next" : "close",
+		"result" : "dead"
+	},
+	"close" : {
+		"trigger" : "ENDCODE"
+	}
+}
