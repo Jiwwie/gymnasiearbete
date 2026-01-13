@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func start_dialogue():
 	if jsonsrc != null:
+		Globals.is_dialogue_active = true
 		get_json(jsonsrc)
 		load_block(current_block)
 	else:
@@ -45,9 +46,11 @@ func load_block(block : Dictionary):
 		Globals.steven = block["result"]
 		
 	if block.has("trigger") and block["trigger"] == "ENDCODE": # Dialoger
+		Globals.is_dialogue_active = false
 		queue_free()
 		
 	if block.has("trigger") and block["trigger"] == "IENDCODE": # Interactables
+		Globals.is_dialogue_active = false
 		BaseLayer.hide()
 
 func next():

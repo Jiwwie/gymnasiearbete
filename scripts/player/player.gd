@@ -10,6 +10,11 @@ func _ready() -> void:
 		player.global_position = SpawnManager.spawn_point.global_position
 
 func _process(_delta: float) -> void:
+	if Globals.is_dialogue_active:
+		velocity = Vector2.ZERO
+		$AnimatedSprite2D.animation = "idle" 
+		return
+	
 	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_right"):
