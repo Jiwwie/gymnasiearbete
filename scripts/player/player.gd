@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Globals.is_dialogue_active:
 		velocity = Vector2.ZERO
-		$AnimatedSprite2D.animation = "idle" 
+		$AnimatedSprite2D.animation = "idle_up" 
 		return
 	
 	velocity = Vector2.ZERO
