@@ -127,7 +127,7 @@ y_sort_enabled = true
 [node name="Player" parent="Environment" instance=ExtResource("1_4fdg3")]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(-206, -18)
+position = Vector2(1850, -2)
 
 [node name="EnvironmentLayer1" type="TileMapLayer" parent="Environment"]
 y_sort_enabled = true
@@ -137,7 +137,7 @@ tile_set = ExtResource("1_88mi5")
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
-position = Vector2(1763, 44)
+position = Vector2(-198, -8)
 
 [node name="EnterHome" parent="." instance=ExtResource("3_exfpn")]
 position = Vector2(-198, -93)
