@@ -31,7 +31,7 @@ tile_set = ExtResource("2_jhjpb")
 position = Vector2(1756, 553)
 
 [node name="Player" parent="." instance=ExtResource("1_kanab")]
-position = Vector2(2045, 754)
+position = Vector2(1061, 77)
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true

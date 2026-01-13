@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=18 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://2btuqnthkqtt" path="res://scripts/environment/interactables/dialogue_test.gd" id="5_rs61t"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_o3qkr"]
 [ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="9_fidl1"]
+[ext_resource type="PackedScene" uid="uid://do40dayd8hy1q" path="res://scenes/environment/exits/bridge.tscn" id="10_f6t8w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5q2f"]
 atlas = ExtResource("2_h5q2f")
@@ -136,7 +137,7 @@ tile_set = ExtResource("1_88mi5")
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
-position = Vector2(-203, -2)
+position = Vector2(1763, 44)
 
 [node name="EnterHome" parent="." instance=ExtResource("3_exfpn")]
 position = Vector2(-198, -93)
@@ -146,6 +147,9 @@ unique_name_in_owner = true
 visible = false
 
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_88mi5")]
+
+[node name="Bridge" parent="." instance=ExtResource("10_f6t8w")]
+position = Vector2(1943, 39)
 
 [connection signal="body_entered" from="Steven" to="Steven" method="_on_body_entered"]
 [connection signal="body_exited" from="Steven" to="Steven" method="_on_body_exited"]
