@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://2btuqnthkqtt" path="res://scripts/environment/interactables/dialogue_test.gd" id="5_rs61t"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_o3qkr"]
 [ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="9_fidl1"]
-[ext_resource type="PackedScene" uid="uid://do40dayd8hy1q" path="res://scenes/environment/exits/bridge.tscn" id="10_f6t8w"]
+[ext_resource type="PackedScene" path="res://scenes/environment/exits/bridge.tscn" id="10_f6t8w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5q2f"]
 atlas = ExtResource("2_h5q2f")
@@ -78,7 +78,7 @@ tile_set = ExtResource("1_88mi5")
 
 [node name="SpriteLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.3, 0.3)
-tile_map_data = PackedByteArray("AAAKAAMAAgABAAAAAADy//7/BQAAAAAAAAAoAAEAAgABAAAAAAAuAAEAAgABAAAAAAA0AAEAAgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAKAAMAAgABAAAAAADy//7/BQAAAAAAAAAoAAEAAgABAAAAAAAuAAEAAgABAAAAAAA0AAEAAgABAAAAAAA6AAEAAgABAAAAAAA9AAEAAgABAAAAAABAAAEAAgABAAAAAABDAAEAAgABAAAAAABGAAEAAgABAAAAAABJAAEAAgABAAAAAABMAAEAAgABAAAAAAA=")
 tile_set = ExtResource("1_88mi5")
 
 [node name="Steven" type="Area2D" parent="."]
