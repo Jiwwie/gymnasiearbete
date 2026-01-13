@@ -35,10 +35,10 @@ position = Vector2(1142, 109)
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
-position = Vector2(2142, 857)
+position = Vector2(1953, 801)
 
 [node name="ExitHome" parent="." instance=ExtResource("3_m20q4")]
-position = Vector2(2143, 914)
+position = Vector2(1949, 914)
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
