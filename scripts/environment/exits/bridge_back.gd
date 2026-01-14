@@ -1,6 +1,6 @@
 extends Area2D
 
-var target_scene = "res://scenes/rooms/forest.tscn"
+var target_scene = "res://scenes/rooms/outside.tscn"
 
 func _ready() -> void:
 	pass
