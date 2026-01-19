@@ -1,6 +1,6 @@
 {
 	"start" : {
-		"text" : "You look outside to see nothing",
+		"text" : "Thats the bed you sleep in",
 		"name" : "Observation",
 		"next" : "close"
 		},

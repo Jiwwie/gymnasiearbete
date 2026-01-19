@@ -1,6 +1,6 @@
 {
 	"start" : {
-		"text" : "You look outside to see nothing",
+		"text" : "The plants that allow you to breathe fresh air after Closed AI contaminated it",
 		"name" : "Observation",
 		"next" : "close"
 		},
