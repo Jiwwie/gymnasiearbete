@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://vr4gpklva2fy"]
+[gd_scene load_steps=17 format=4 uid="uid://vr4gpklva2fy"]
 
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_ffn58"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_yxyrh"]
 [ext_resource type="Texture2D" uid="uid://bjg6vdhjfde1r" path="res://assets/sprites/npc/employee/employee_stand.png" id="3_yxyrh"]
+[ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="4_bv3bl"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="4_nsp88"]
 [ext_resource type="PackedScene" uid="uid://c63pu2rf7a3ti" path="res://scenes/environment/exits/bridge_back.tscn" id="4_oi7p4"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="6_umjnc"]
@@ -91,6 +92,10 @@ unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(1350, 563)
 
+[node name="PointLight2D" type="PointLight2D" parent="Environment/Player"]
+scale = Vector2(0.692, 0.668)
+texture = ExtResource("4_bv3bl")
+
 [node name="employee_standing" type="StaticBody2D" parent="Environment"]
 y_sort_enabled = true
 
@@ -157,6 +162,13 @@ visible = false
 polygon = PackedVector2Array(1634, 766, 1895, 848, 1997, 1091, 2103, 1181, 2197, 1353, 2200, 1542, 2266, 1799, 2298, 2034, 2320, 2072, 2342, 2144, 2337, 2325, 2277, 2319, 2261, 2506, 2257, 2707, 2210, 2795, 2240, 2989, 2273, 3197, 2324, 3277, 2443, 3303, 2592, 3279, 2728, 3251, 2842, 3503, 2790, 3675, 2875, 3956, 2842, 4265, 2726, 4467, 1606, 4446)
 
 [node name="FadeTransition" parent="." instance=ExtResource("9_vu1jx")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.23255315, 0.1925613, 0.16826656, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+energy = 0.3
 
 [connection signal="body_entered" from="Environment/employee_standing/Area2D" to="Environment/employee_standing/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Environment/employee_standing/Area2D" to="Environment/employee_standing/Area2D" method="_on_body_exited"]
