@@ -15,10 +15,8 @@ func _process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 	if Globals.camera == "zoom":
-		while cam.zoom.y > 0.5:
-			cam.zoom.x -= 0.1
-			cam.zoom.y -= 0.1
-			%Timer.start()
+		var tween = create_tween()
+		tween.tween_property(cam, "zoom", Vector2(0.5, 0.5), 1.0)
 		
 	velocity = Vector2.ZERO
 	
