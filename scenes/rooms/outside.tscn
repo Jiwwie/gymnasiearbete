@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=22 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c2akmqrsxsnxp" path="res://scenes/environment/exits/enter_home.tscn" id="3_exfpn"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_88mi5"]
 [ext_resource type="Texture2D" uid="uid://ct685wmm3j36u" path="res://assets/sprites/npc/steven/steven_idle.png" id="5_f6t8w"]
-[ext_resource type="Script" uid="uid://2btuqnthkqtt" path="res://scripts/environment/interactables/dialogue_test.gd" id="5_rs61t"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_o3qkr"]
 [ext_resource type="PackedScene" uid="uid://do40dayd8hy1q" path="res://scenes/environment/exits/bridge.tscn" id="10_f6t8w"]
 
@@ -147,18 +146,6 @@ frame_progress = 0.22490346
 position = Vector2(255, 30.375)
 shape = SubResource("RectangleShape2D_bx4o6")
 
-[node name="DialogueTest" type="Area2D" parent="."]
-script = ExtResource("5_rs61t")
-dialogue_system = NodePath("DialogueSystem")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTest"]
-position = Vector2(1224, 208.00002)
-scale = Vector2(0.29000008, 0.29000008)
-shape = SubResource("RectangleShape2D_h5q2f")
-
-[node name="DialogueSystem" parent="DialogueTest" instance=ExtResource("7_o3qkr")]
-jsonsrc = "res://scripts/dialogue/dialogue_test.json"
-
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -191,5 +178,3 @@ position = Vector2(1943, 39)
 
 [connection signal="body_entered" from="Steven" to="Steven" method="_on_body_entered"]
 [connection signal="body_exited" from="Steven" to="Steven" method="_on_body_exited"]
-[connection signal="body_entered" from="DialogueTest" to="DialogueTest" method="_on_body_entered"]
-[connection signal="body_exited" from="DialogueTest" to="DialogueTest" method="_on_body_exited"]
