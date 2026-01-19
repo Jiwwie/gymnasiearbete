@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var speed = 400
 var last_direction = "down"
+@onready var cam = $Camera2D
 
 func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player")
@@ -13,7 +14,12 @@ func _process(_delta: float) -> void:
 	if Globals.is_dialogue_active:
 		velocity = Vector2.ZERO
 		return
-	
+	if Globals.camera == "zoom":
+		while cam.zoom.y > 0.5:
+			cam.zoom.x -= 0.1
+			cam.zoom.y -= 0.1
+			%Timer.start()
+		
 	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_right"):

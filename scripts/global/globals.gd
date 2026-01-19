@@ -5,3 +5,6 @@ var is_dialogue_active : bool = false
 
 # Dialogue globals
 var steven = "unused"
+
+#test globals
+var camera = "normal"

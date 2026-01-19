@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://vr4gpklva2fy"]
+[gd_scene load_steps=14 format=4 uid="uid://vr4gpklva2fy"]
 
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_ffn58"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_yxyrh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="4_nsp88"]
 [ext_resource type="PackedScene" uid="uid://c63pu2rf7a3ti" path="res://scenes/environment/exits/bridge_back.tscn" id="4_oi7p4"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="6_umjnc"]
+[ext_resource type="PackedScene" uid="uid://ddr3o3g35nt81" path="res://scenes/environment/exits/leave_forest.tscn" id="8_m6ahn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oi7p4"]
 atlas = ExtResource("3_yxyrh")
@@ -103,7 +104,7 @@ jsonsrc = "res://scripts/dialogue/employee_standing.json"
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
-position = Vector2(2289, 1201)
+position = Vector2(2268, 1160)
 
 [node name="BridgeBack" parent="." instance=ExtResource("4_oi7p4")]
 position = Vector2(1605, 595)
@@ -113,6 +114,9 @@ unique_name_in_owner = true
 visible = false
 
 [node name="InteractUi" parent="InteractText" instance=ExtResource("6_umjnc")]
+
+[node name="LeaveForest" parent="." instance=ExtResource("8_m6ahn")]
+position = Vector2(2271, 1336)
 
 [connection signal="body_entered" from="employee_standing" to="employee_standing" method="_on_body_entered"]
 [connection signal="body_exited" from="employee_standing" to="employee_standing" method="_on_body_exited"]
