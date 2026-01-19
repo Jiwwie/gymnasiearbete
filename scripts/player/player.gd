@@ -14,6 +14,10 @@ func _process(_delta: float) -> void:
 	if Globals.is_dialogue_active:
 		velocity = Vector2.ZERO
 		return
+	if Globals.input_locked:
+		velocity = Vector2.ZERO
+		return
+
 	if Globals.camera == "zoom":
 		var tween = create_tween()
 		tween.tween_property(cam, "zoom", Vector2(0.5, 0.5), 1.0)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://ip8oja453bk6"]
+[gd_scene load_steps=5 format=4 uid="uid://ip8oja453bk6"]
 
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_paqoj"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_mj6nf"]
 [ext_resource type="PackedScene" uid="uid://dpkinlfx3xqiw" path="res://scenes/environment/exits/forest_back.tscn" id="3_mj6nf"]
+[ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_x1tve"]
 
 [node name="Headquarters" type="Node2D"]
 
@@ -45,5 +46,4 @@ position = Vector2(1155, 333)
 [node name="ForestBack" parent="." instance=ExtResource("3_mj6nf")]
 position = Vector2(-68, -127)
 
-[node name="Timer" type="Timer" parent="."]
-unique_name_in_owner = true
+[node name="FadeTransition" parent="." instance=ExtResource("4_x1tve")]

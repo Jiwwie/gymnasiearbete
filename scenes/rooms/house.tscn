@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=11 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_8eaee"]
 [ext_resource type="Script" uid="uid://boek1j6vumefi" path="res://scripts/environment/interactables/window.gd" id="7_60327"]
 [ext_resource type="PackedScene" uid="uid://bbq6ah1xqgh02" path="res://scenes/ui/board_ui.tscn" id="7_vql73"]
+[ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="9_60327"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60327"]
 radius = 52.009613
@@ -72,6 +73,8 @@ offset_top = 605.0
 offset_right = 2175.0
 offset_bottom = 605.0
 jsonsrc = "res://scripts/environment/interactables/observation/windows_interact.json"
+
+[node name="FadeTransition" parent="." instance=ExtResource("9_60327")]
 
 [connection signal="body_exited" from="Board" to="Board" method="_on_body_exited"]
 [connection signal="body_entered" from="Window" to="Window" method="_on_body_entered"]
