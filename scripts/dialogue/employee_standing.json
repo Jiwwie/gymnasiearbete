@@ -21,7 +21,7 @@
 		"next" : "work"
 	},
 	"work" : {
-		"text" : "I used to work at Closed AI, if u were wondering.",
+		"text" : "I used to work at Closed AI if you were wondering.",
 		"name" : "Employee",
 		"next" : "hate"
 	},
