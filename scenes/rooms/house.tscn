@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=12 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://boek1j6vumefi" path="res://scripts/environment/interactables/window.gd" id="7_60327"]
 [ext_resource type="PackedScene" uid="uid://bbq6ah1xqgh02" path="res://scenes/ui/board_ui.tscn" id="7_vql73"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="9_60327"]
+[ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="10_25qyn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_60327"]
 radius = 52.009613
@@ -75,6 +76,21 @@ offset_bottom = 605.0
 jsonsrc = "res://scripts/environment/interactables/observation/windows_interact.json"
 
 [node name="FadeTransition" parent="." instance=ExtResource("9_60327")]
+visible = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.6700696, 0.4822511, 0.2785764, 1)
+
+[node name="DoorLight" type="PointLight2D" parent="."]
+position = Vector2(1951.0001, 919.9851)
+scale = Vector2(0.52089775, 0.4559402)
+texture = ExtResource("10_25qyn")
+
+[node name="BoardLight" type="PointLight2D" parent="."]
+position = Vector2(1536.9999, 665)
+scale = Vector2(0.714, 0.56899995)
+color = Color(0.6451779, 0, 0.18687452, 1)
+texture = ExtResource("10_25qyn")
 
 [connection signal="body_exited" from="Board" to="Board" method="_on_body_exited"]
 [connection signal="body_entered" from="Window" to="Window" method="_on_body_entered"]

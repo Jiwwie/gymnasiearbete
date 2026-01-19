@@ -1,12 +1,24 @@
-[gd_scene load_steps=9 format=4 uid="uid://cpjmqjduqtijf"]
+[gd_scene load_steps=11 format=4 uid="uid://ip8oja453bk6"]
 
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_paqoj"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_mj6nf"]
 [ext_resource type="Texture2D" uid="uid://b2nb7qn0wrcit" path="res://assets/images/fade.png" id="3_k52q3"]
-[ext_resource type="PackedScene" path="res://scenes/environment/exits/forest_back.tscn" id="3_mj6nf"]
+[ext_resource type="PackedScene" uid="uid://dpkinlfx3xqiw" path="res://scenes/environment/exits/forest_back.tscn" id="3_mj6nf"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_x1tve"]
-[ext_resource type="Script" path="res://scripts/environment/transitions/zoom_zone.gd" id="5_yh2b7"]
-[ext_resource type="Script" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="7_8calx"]
+[ext_resource type="Script" uid="uid://cgcpbou5wkeoo" path="res://scripts/environment/transitions/zoom_zone.gd" id="5_yh2b7"]
+[ext_resource type="Script" uid="uid://dwaeacslnrtno" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="7_8calx"]
+
+[sub_resource type="Gradient" id="Gradient_8calx"]
+offsets = PackedFloat32Array(0, 0.7948718)
+colors = PackedColorArray(0.8811988, 0.7295614, 0.3797846, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2nv87"]
+gradient = SubResource("Gradient_8calx")
+width = 1000
+height = 1000
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.93370163, 0.07734807)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1tve"]
 size = Vector2(61.5, 1454)
@@ -44,6 +56,11 @@ y_sort_enabled = true
 unique_name_in_owner = true
 y_sort_enabled = true
 position = Vector2(-28, 49)
+
+[node name="PointLight2D" type="PointLight2D" parent="Environment/Player"]
+scale = Vector2(2.5640001, 1.5500002)
+color = Color(0.69801545, 0.5332674, 0.27480248, 1)
+texture = SubResource("GradientTexture2D_2nv87")
 
 [node name="EnvironmentLayer1" type="TileMapLayer" parent="Environment"]
 y_sort_enabled = true
@@ -85,6 +102,9 @@ shape = SubResource("RectangleShape2D_x1tve")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
 polygon = PackedVector2Array(-423, -310, -417, 679, 3990, 706, 3983, -1413, 1844, -1400, 1878, -290, 97, -190, 59, -103, 59, -153, -197, -149, -193, -112)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.20706493, 0.01829356, 0.09521725, 1)
 
 [connection signal="body_entered" from="ZoomBackZone" to="ZoomBackZone" method="_on_body_entered"]
 [connection signal="body_entered" from="ZoomZone" to="ZoomZone" method="_on_body_entered"]
