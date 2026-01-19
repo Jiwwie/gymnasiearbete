@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://vr4gpklva2fy"]
+[gd_scene load_steps=13 format=4 uid="uid://vr4gpklva2fy"]
 
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_ffn58"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_yxyrh"]
+[ext_resource type="Script" uid="uid://bdo0on6o4dqaf" path="res://scenes/rooms/employee_standing.gd" id="3_ahgbg"]
 [ext_resource type="Texture2D" uid="uid://bjg6vdhjfde1r" path="res://assets/sprites/npc/employee/employee_stand.png" id="3_yxyrh"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="4_nsp88"]
 [ext_resource type="PackedScene" uid="uid://c63pu2rf7a3ti" path="res://scenes/environment/exits/bridge_back.tscn" id="4_oi7p4"]
+[ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="6_umjnc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oi7p4"]
 atlas = ExtResource("3_yxyrh")
@@ -35,8 +37,9 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxyrh"]
-size = Vector2(54, 147)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m6ahn"]
+radius = 53.0
+height = 148.0
 
 [node name="Forest" type="Node2D"]
 
@@ -78,7 +81,7 @@ tile_map_data = PackedByteArray("AAAZAAcAAQAEAAAAAAAaAAYAAQAEAAAAAAAbAAcAAQAEAAA
 tile_set = ExtResource("1_ffn58")
 
 [node name="employee_standing" type="Area2D" parent="."]
-collision_mask = 2
+script = ExtResource("3_ahgbg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="employee_standing"]
 position = Vector2(2341, 825.00006)
@@ -88,8 +91,8 @@ autoplay = "default"
 frame_progress = 0.8634738
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing"]
-position = Vector2(2342, 819)
-shape = SubResource("RectangleShape2D_yxyrh")
+position = Vector2(2331, 865)
+shape = SubResource("CapsuleShape2D_m6ahn")
 
 [node name="DialogueSystem" parent="employee_standing" instance=ExtResource("4_nsp88")]
 offset_left = 2339.0
@@ -104,3 +107,12 @@ position = Vector2(2289, 1201)
 
 [node name="BridgeBack" parent="." instance=ExtResource("4_oi7p4")]
 position = Vector2(1605, 595)
+
+[node name="InteractText" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="InteractUi" parent="InteractText" instance=ExtResource("6_umjnc")]
+
+[connection signal="body_entered" from="employee_standing" to="employee_standing" method="_on_body_entered"]
+[connection signal="body_exited" from="employee_standing" to="employee_standing" method="_on_body_exited"]
