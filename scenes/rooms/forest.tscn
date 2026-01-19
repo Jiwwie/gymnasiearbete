@@ -39,7 +39,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m6ahn"]
 radius = 53.0
-height = 148.0
+height = 174.0
 
 [node name="Forest" type="Node2D"]
 
@@ -91,7 +91,7 @@ autoplay = "default"
 frame_progress = 0.8634738
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing"]
-position = Vector2(2331, 865)
+position = Vector2(2328, 868)
 shape = SubResource("CapsuleShape2D_m6ahn")
 
 [node name="DialogueSystem" parent="employee_standing" instance=ExtResource("4_nsp88")]
