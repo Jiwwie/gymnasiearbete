@@ -1,0 +1,28 @@
+{
+	"start" : {
+		"text" : "I just pushed an AI into the water... I saved your ass!!!!",
+		"name" : "???",
+		"next" : "B"
+		},
+		"B" : {
+		"text" : "You should thank me!",
+		"choices" : {
+			"Do you know about Closed AI?" : "askAI",
+			"Who are you?" : "askName"
+		}
+		},
+		"askAI" : {
+			"text" : "Yeah I know about Closed AI, I used to work there",
+			"name" : "Employee",
+			"next" : "close"
+		},
+		"askName" : {
+			"text" : "Name? Call me whatever you want",
+			"choices" : {
+				"Do you know about Closed AI?" : "askAI",
+			}
+		},		
+	"close" : {
+		"trigger" : "ENDCODE"
+	}
+}
