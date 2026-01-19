@@ -173,6 +173,27 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAD/////AQAEAAAAAAAAAAAAAQAEAAAAAAALAP//AQAEAAAAAAARAAAAAQAEAAAAAAAMAAAAAQABAAAAAAD5/wMAAQABAAAAAAA=")
 tile_set = ExtResource("1_ffn58")
 
+[node name="employee_standing" type="Area2D" parent="."]
+script = ExtResource("3_ahgbg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="employee_standing"]
+position = Vector2(2341, 825.00006)
+scale = Vector2(0.475, 0.475)
+sprite_frames = SubResource("SpriteFrames_ahgbg")
+autoplay = "default"
+frame_progress = 0.8634738
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing"]
+position = Vector2(2328, 868)
+shape = SubResource("CapsuleShape2D_m6ahn")
+
+[node name="DialogueSystem" parent="employee_standing" instance=ExtResource("4_nsp88")]
+offset_left = 2339.0
+offset_top = 802.0
+offset_right = 2339.0
+offset_bottom = 802.0
+jsonsrc = "res://scripts/dialogue/employee_standing.json"
+
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
 position = Vector2(-198, -8)
