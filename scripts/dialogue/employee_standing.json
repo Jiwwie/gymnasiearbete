@@ -3,23 +3,23 @@
 		"text" : "I just pushed an AI into the water... I saved your ass!!!!",
 		"name" : "???",
 		"next" : "B"
-		},
+	},
 	"B" : {
 		"text" : "You should thank me!",
 		"choices" : {
 			"Do you know about Closed AI?" : "askAI",
 			"Who are you?" : "askName"
 		}
-		},
+	},
 	"askAI" : {
 		"text" : "Yeah I know about Closed AI, I used to work there",
 		"name" : "Employee",
 		"next" : "hate"
-		},
+	},
 	"askName" : {
 		"text" : "Name? Call me whatever you want.",
 		"next" : "work"
-		},		
+	},
 	"work" : {
 		"text" : "I used to work at Closed AI, if u were wondering.",
 		"name" : "Employee",
@@ -27,6 +27,25 @@
 	},
 	"hate" : {
 		"text" : "Thats why I hate them so much.",
+		"choices" : {
+			"What do you mean?" : "explain",
+			"What happened?" : "reason"
+		}
+	},
+	"explain" : {
+		"text" : "Because their ruining our climate.",
+		"next" : "explain2"
+	},
+	"reason" : {
+		"text" : "They ruined our climate.",
+		"next" : "explain2"
+	},
+	"explain2" : {
+		"text" : "Look around, can you even drink the water in the sea?",
+		"next" : "explain3"
+	},
+	"explain3" : {
+		"text" : "As a human you should be able to smell the shit stained air they created.",
 		"next" : "close"
 	},
 	"close" : {
