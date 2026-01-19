@@ -4,24 +4,31 @@
 		"name" : "???",
 		"next" : "B"
 		},
-		"B" : {
+	"B" : {
 		"text" : "You should thank me!",
 		"choices" : {
 			"Do you know about Closed AI?" : "askAI",
 			"Who are you?" : "askName"
 		}
 		},
-		"askAI" : {
-			"text" : "Yeah I know about Closed AI, I used to work there",
-			"name" : "Employee",
-			"next" : "close"
+	"askAI" : {
+		"text" : "Yeah I know about Closed AI, I used to work there",
+		"name" : "Employee",
+		"next" : "hate"
 		},
-		"askName" : {
-			"text" : "Name? Call me whatever you want",
-			"choices" : {
-				"Do you know about Closed AI?" : "askAI",
-			}
+	"askName" : {
+		"text" : "Name? Call me whatever you want.",
+		"next" : "work"
 		},		
+	"work" : {
+		"text" : "I used to work at Closed AI, if u were wondering.",
+		"name" : "Employee",
+		"next" : "hate"
+	},
+	"hate" : {
+		"text" : "Thats why I hate them so much.",
+		"next" : "close"
+	},
 	"close" : {
 		"trigger" : "ENDCODE"
 	}

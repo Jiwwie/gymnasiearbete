@@ -8,3 +8,4 @@ var steven = "unused"
 
 #test globals
 var camera = "normal"
+var employee = "unused"
