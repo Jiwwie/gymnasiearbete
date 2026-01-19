@@ -21,6 +21,9 @@ func _process(_delta: float) -> void:
 	if Globals.camera == "zoom":
 		var tween = create_tween()
 		tween.tween_property(cam, "zoom", Vector2(0.5, 0.5), 1.0)
+	if Globals.camera == "normal":
+		var tween = create_tween()
+		tween.tween_property(cam, "zoom", Vector2(1.2, 1.2), 1.0)
 		
 	velocity = Vector2.ZERO
 	

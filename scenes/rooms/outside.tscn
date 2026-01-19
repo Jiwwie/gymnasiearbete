@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=24 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
 [ext_resource type="Texture2D" uid="uid://rsbebf2x2jua" path="res://assets/sprites/npc/steven/steven_drown_ss.png" id="2_h5q2f"]
+[ext_resource type="Texture2D" uid="uid://b2nb7qn0wrcit" path="res://assets/images/fade.png" id="2_q88vh"]
 [ext_resource type="Script" uid="uid://cwqbp48iybem6" path="res://scripts/environment/interactables/steven_drown.gd" id="2_uvdep"]
 [ext_resource type="PackedScene" uid="uid://c2akmqrsxsnxp" path="res://scenes/environment/exits/enter_home.tscn" id="3_exfpn"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_88mi5"]
@@ -112,6 +113,12 @@ tile_set = ExtResource("1_88mi5")
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAAKAAMAAgABAAAAAADy//7/BQAAAAAAAAAoAAEAAgABAAAAAAAuAAEAAgABAAAAAAA0AAEAAgABAAAAAAA6AAEAAgABAAAAAAA9AAEAAgABAAAAAABAAAEAAgABAAAAAABDAAEAAgABAAAAAABGAAEAAgABAAAAAABJAAEAAgABAAAAAABMAAEAAgABAAAAAAA=")
 tile_set = ExtResource("1_88mi5")
+
+[node name="DoorVisual" type="Sprite2D" parent="."]
+position = Vector2(2151.9631, 46.999992)
+rotation = -1.5707964
+scale = Vector2(0.24898249, 1.7566378)
+texture = ExtResource("2_q88vh")
 
 [node name="Steven" type="Area2D" parent="."]
 script = ExtResource("2_uvdep")
