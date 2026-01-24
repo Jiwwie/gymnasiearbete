@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://be7ec3w6qhsi4"]
+
+[ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="1_a2src"]
+[ext_resource type="Script" uid="uid://q7vwsiknlcvh" path="res://scripts/environment/vision_area.gd" id="1_xrcrj"]
+
+[node name="Camera" type="Node2D"]
+script = ExtResource("1_xrcrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.30273438, 0.29296875)
+texture = ExtResource("1_a2src")
+
+[node name="VisionCone" type="Polygon2D" parent="."]
+position = Vector2(6, 9)
+color = Color(0.003921569, 0.003921569, 0, 0.6666667)
+polygon = PackedVector2Array(-6, -9, 214, 71, 214, -89)
+
+[node name="VisionArea" type="Area2D" parent="."]
+
+[node name="DetectionCone" type="CollisionPolygon2D" parent="VisionArea"]
+polygon = PackedVector2Array(0, 0, 220, -80, 220, 80)
+
+[node name="DetectionTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="PauseTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]

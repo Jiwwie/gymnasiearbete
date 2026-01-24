@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_mj6nf"]
 [ext_resource type="Texture2D" uid="uid://b2nb7qn0wrcit" path="res://assets/images/fade.png" id="3_k52q3"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_x1tve"]
-[ext_resource type="Script" uid="uid://cgcpbou5wkeoo" path="res://scripts/environment/transitions/zoom_zone.gd" id="5_yh2b7"]
-[ext_resource type="Script" uid="uid://dwaeacslnrtno" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="7_8calx"]
+[ext_resource type="Script" path="res://scripts/environment/transitions/zoom_zone.gd" id="5_yh2b7"]
+[ext_resource type="Script" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="7_8calx"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="7_dbjoj"]
 [ext_resource type="Texture2D" uid="uid://bjg6vdhjfde1r" path="res://assets/sprites/npc/employee/employee_stand.png" id="8_0ri5e"]
-[ext_resource type="Script" path="res://scripts/environment/interactables/employee_outside_hq.gd" id="9_0ri5e"]
+[ext_resource type="Script" uid="uid://bn006tkticv0f" path="res://scripts/environment/interactables/employee_outside_hq.gd" id="9_0ri5e"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="10_yll2u"]
-[ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="11_dbjoj"]
+[ext_resource type="PackedScene" path="res://scenes/environment/transitions/change_scene.tscn" id="11_dbjoj"]
 
 [sub_resource type="Gradient" id="Gradient_8calx"]
 offsets = PackedFloat32Array(0, 0.7948718)

@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://v1jr2m5i4fda"]
+[gd_scene load_steps=4 format=4 uid="uid://byfkjx8uuuvpj"]
 
 [ext_resource type="TileSet" uid="uid://dkjgmq43yc0wr" path="res://assets/tilemaps/tilesets/hallway.tres" id="1_lbtni"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_vvysf"]
-[ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="3_au2at"]
+[ext_resource type="PackedScene" path="res://scenes/environment/transitions/change_scene.tscn" id="3_au2at"]
 
 [node name="Hallway" type="Node2D"]
 

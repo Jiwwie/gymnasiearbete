@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
-[ext_resource type="PackedScene" path="res://scenes/environment/exits/exit_home.tscn" id="3_m20q4"]
 [ext_resource type="PackedScene" uid="uid://clmsxd7m8li2f" path="res://scenes/environment/interactables/board.tscn" id="5_u3fao"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="6_vty7d"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_8eaee"]
@@ -10,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbq6ah1xqgh02" path="res://scenes/ui/board_ui.tscn" id="7_vql73"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="9_60327"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="10_25qyn"]
-[ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="11_v6w0j"]
+[ext_resource type="PackedScene" path="res://scenes/environment/transitions/change_scene.tscn" id="11_v6w0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25qyn"]
 size = Vector2(215, 148)
@@ -42,6 +41,10 @@ radius = 50.039986
 [sub_resource type="CircleShape2D" id="CircleShape2D_x02gy"]
 radius = 42.0119
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25qyn"]
+radius = 30.0
+height = 72.0
+
 [node name="House" type="Node2D"]
 
 [node name="FloorLayer" type="TileMapLayer" parent="."]
@@ -71,11 +74,6 @@ position = Vector2(1171, -11)
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
 position = Vector2(1953, 801)
-
-[node name="ExitHome" parent="." instance=ExtResource("3_m20q4")]
-position = Vector2(1740, 938)
-target_scene = "outside"
-spawn = true
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -108,7 +106,7 @@ script = ExtResource("7_60327")
 dialogue_system = NodePath("DialogueSystem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Window"]
-position = Vector2(2398, 558)
+position = Vector2(2362, 541)
 shape = SubResource("CircleShape2D_60327")
 
 [node name="DialogueSystem" parent="Interactables/Window" instance=ExtResource("7_8eaee")]
@@ -151,11 +149,22 @@ position = Vector2(2125, 838)
 shape = SubResource("CircleShape2D_awgjw")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Interactables/Plants"]
-position = Vector2(1989, 654)
+position = Vector2(1998, 654)
 shape = SubResource("CircleShape2D_x02gy")
 
 [node name="DialogueSystem" parent="Interactables/Plants" instance=ExtResource("7_8eaee")]
 jsonsrc = "res://scripts/environment/interactables/observation/plant_interact.json"
+
+[node name="TvCable" type="Area2D" parent="Interactables"]
+script = ExtResource("7_60327")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TvCable"]
+position = Vector2(1920, 662)
+shape = SubResource("CapsuleShape2D_25qyn")
+
+[node name="DialogueSystem" parent="Interactables/TvCable" instance=ExtResource("7_8eaee")]
+jsonsrc = "res://scripts/environment/interactables/observation/tv_cable_interact.json"
 
 [node name="FadeTransition" parent="." instance=ExtResource("9_60327")]
 visible = false
@@ -187,3 +196,5 @@ spawn = true
 [connection signal="body_exited" from="Interactables/Window" to="Interactables/Window" method="_on_body_exited"]
 [connection signal="body_entered" from="Interactables/Plants" to="Interactables/Plants" method="_on_body_entered"]
 [connection signal="body_exited" from="Interactables/Plants" to="Interactables/Plants" method="_on_body_exited"]
+[connection signal="body_entered" from="Interactables/TvCable" to="Interactables/TvCable" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactables/TvCable" to="Interactables/TvCable" method="_on_body_exited"]
