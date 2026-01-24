@@ -3,7 +3,6 @@
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_paqoj"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_mj6nf"]
 [ext_resource type="Texture2D" uid="uid://b2nb7qn0wrcit" path="res://assets/images/fade.png" id="3_k52q3"]
-[ext_resource type="PackedScene" uid="uid://dpkinlfx3xqiw" path="res://scenes/environment/exits/forest_back.tscn" id="3_mj6nf"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_x1tve"]
 [ext_resource type="Script" uid="uid://cgcpbou5wkeoo" path="res://scripts/environment/transitions/zoom_zone.gd" id="5_yh2b7"]
 [ext_resource type="Script" uid="uid://dwaeacslnrtno" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="7_8calx"]
@@ -11,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bjg6vdhjfde1r" path="res://assets/sprites/npc/employee/employee_stand.png" id="8_0ri5e"]
 [ext_resource type="Script" path="res://scripts/environment/interactables/employee_outside_hq.gd" id="9_0ri5e"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="10_yll2u"]
+[ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="11_dbjoj"]
 
 [sub_resource type="Gradient" id="Gradient_8calx"]
 offsets = PackedFloat32Array(0, 0.7948718)
@@ -137,7 +137,7 @@ jsonsrc = "res://scripts/dialogue/employee_outside_hq.json"
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
-position = Vector2(2901, -256)
+position = Vector2(2911, -26)
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -150,11 +150,6 @@ position = Vector2(555.4039, -970.9434)
 rotation = 2.994985
 scale = Vector2(16.423376, 3.8919775)
 texture = ExtResource("3_k52q3")
-
-[node name="ForestBack" parent="." instance=ExtResource("3_mj6nf")]
-position = Vector2(-68, -127)
-target_scene = "forest"
-spawn = true
 
 [node name="FadeTransition" parent="." instance=ExtResource("4_x1tve")]
 
@@ -180,6 +175,18 @@ polygon = PackedVector2Array(-423, -310, -417, 679, 3990, 706, 3983, -1413, 1892
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.20706493, 0.01829356, 0.09521725, 1)
+
+[node name="ChangeScene" parent="." instance=ExtResource("11_dbjoj")]
+position = Vector2(-67.00001, -140)
+rotation = -0.08129038
+scale = Vector2(5.4, 1)
+target_scene = "forest"
+spawn = true
+
+[node name="ChangeScene2" parent="." instance=ExtResource("11_dbjoj")]
+position = Vector2(2913.0002, -199)
+scale = Vector2(3.7600195, 1)
+target_scene = "hallway"
 
 [connection signal="body_entered" from="Environment/employee_standing/Area2D" to="Environment/employee_standing/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Environment/employee_standing/Area2D" to="Environment/employee_standing/Area2D" method="_on_body_exited"]

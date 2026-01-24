@@ -1,17 +1,16 @@
-[gd_scene load_steps=25 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=24 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
 [ext_resource type="Texture2D" uid="uid://rsbebf2x2jua" path="res://assets/sprites/npc/steven/steven_drown_ss.png" id="2_h5q2f"]
 [ext_resource type="Texture2D" uid="uid://b2nb7qn0wrcit" path="res://assets/images/fade.png" id="2_q88vh"]
 [ext_resource type="Script" uid="uid://cwqbp48iybem6" path="res://scripts/environment/interactables/steven_drown.gd" id="2_uvdep"]
-[ext_resource type="PackedScene" uid="uid://c2akmqrsxsnxp" path="res://scenes/environment/exits/enter_home.tscn" id="3_exfpn"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_88mi5"]
 [ext_resource type="Texture2D" uid="uid://ct685wmm3j36u" path="res://assets/sprites/npc/steven/steven_idle.png" id="5_f6t8w"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_o3qkr"]
-[ext_resource type="PackedScene" uid="uid://do40dayd8hy1q" path="res://scenes/environment/exits/bridge.tscn" id="10_f6t8w"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="10_q88vh"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="12_wket6"]
+[ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="13_pbe43"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5q2f"]
 atlas = ExtResource("2_h5q2f")
@@ -173,20 +172,11 @@ tile_set = ExtResource("1_88mi5")
 unique_name_in_owner = true
 position = Vector2(-198, -8)
 
-[node name="EnterHome" parent="." instance=ExtResource("3_exfpn")]
-position = Vector2(-198, -93)
-target_scene = "house"
-spawn = true
-
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 visible = false
 
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_88mi5")]
-
-[node name="Bridge" parent="." instance=ExtResource("10_f6t8w")]
-position = Vector2(1943, 39)
-target_scene = "forest"
 
 [node name="FadeTransition" parent="." instance=ExtResource("10_q88vh")]
 
@@ -198,6 +188,16 @@ position = Vector2(-293.25, -342.5)
 scale = Vector2(3.509, 2.334)
 color = Color(0.8208631, 0.48445565, 0.0743975, 1)
 texture = ExtResource("12_wket6")
+
+[node name="ChangeScene" parent="." instance=ExtResource("13_pbe43")]
+position = Vector2(-196, -84)
+target_scene = "house"
+spawn = true
+
+[node name="ChangeScene2" parent="." instance=ExtResource("13_pbe43")]
+position = Vector2(1942.0001, 43)
+scale = Vector2(-0.7730252, 6.4647827)
+target_scene = "forest"
 
 [connection signal="body_entered" from="Steven" to="Steven" method="_on_body_entered"]
 [connection signal="body_exited" from="Steven" to="Steven" method="_on_body_exited"]
