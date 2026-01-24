@@ -7,6 +7,7 @@ func _ready() -> void:
 	pass
 
 func _on_body_entered(body):
+	Globals.camera = "normal"
 	if body.is_in_group("player"):
 		call_deferred("_change_scene")
 
