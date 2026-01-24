@@ -20,6 +20,7 @@ var player_inside := false
 
 func _ready():
 	base_rotation = rotation
+	$VisionCone.color = normal_color
 
 func _process(delta):
 	if paused:
@@ -27,25 +28,44 @@ func _process(delta):
 
 	rotation += direction * sweep_speed * delta
 
-	var max_rot = base_rotation + deg_to_rad(sweep_angle)
-	var min_rot = base_rotation - deg_to_rad(sweep_angle)
+	if rotation > base_rotation + deg_to_rad(sweep_angle):
+		_pause_and_turn(-1)
+	elif rotation < base_rotation - deg_to_rad(sweep_angle):
+		_pause_and_turn(1)
 
-	if rotation >= max_rot:
-		rotation = max_rot
-		direction = -1
-		pause_at_edge()
-
-	elif rotation <= min_rot:
-		rotation = min_rot
-		direction = 1
-		pause_at_edge()
-
-func pause_at_edge():
+func _pause_and_turn(new_direction):
 	paused = true
-	await get_tree().create_timer(pause_time).timeout
-	paused = false
+	direction = new_direction
+	$PauseTimer.start()
+	
+func alert_on():
+	$VisionCone.color = alert_color
+	if not $SpotSound.playing:
+		$SpotSound.play()
 
-func _on_vision_area_body_entered(body: Node2D) -> void:
+		print("PLAYER SPOTTED")
+	# Emit signal / restart level / alert guards
+	
+func alert_off():
+	$VisionCone.color = normal_color
+
+
+func _on_vision_area_body_entered(body):
 	if body.is_in_group("player"):
-		print("Player spotted!")
-		# trigger alarm, restart, etc.
+		player_inside = true
+		$DetectionTimer.start()
+
+func _on_vision_area_body_exited(body):
+	if body.is_in_group("player"):
+		player_inside = false
+		$DetectionTimer.stop()
+		alert_off()
+
+
+func _on_detection_timer_timeout():
+	if player_inside:
+		alert_on()
+
+
+func _on_pause_timer_timeout():
+	paused = false
