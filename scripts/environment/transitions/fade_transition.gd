@@ -7,7 +7,7 @@ func _ready() -> void:
 	Globals.input_locked = true
 
 	rect.modulate.a = 1.0
-	fade_in(1.5)
+	fade_in(0.5)
 
 func fade_in(duration := 0.5) -> void:
 	if tween:

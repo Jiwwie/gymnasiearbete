@@ -4,11 +4,13 @@ var speed = 400
 var last_direction = "down"
 @onready var cam = $Camera2D
 
-func _ready() -> void:
-	var player = get_tree().get_first_node_in_group("player")
+func _enter_tree() -> void:
 	if SpawnManager.spawn == true:
 		SpawnManager.spawn_point = %Spawn
-		player.global_position = SpawnManager.spawn_point.global_position
+		global_position = SpawnManager.spawn_point.global_position
+		
+func _ready() -> void:
+	pass
 
 func _process(_delta: float) -> void:
 	if Globals.is_dialogue_active:

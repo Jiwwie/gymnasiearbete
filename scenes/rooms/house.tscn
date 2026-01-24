@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=21 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
-[ext_resource type="PackedScene" path="res://scenes/environment/exits/exit_home.tscn" id="3_m20q4"]
 [ext_resource type="PackedScene" uid="uid://clmsxd7m8li2f" path="res://scenes/environment/interactables/board.tscn" id="5_u3fao"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="6_vty7d"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_8eaee"]
@@ -71,11 +70,6 @@ position = Vector2(1171, -11)
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
 position = Vector2(1953, 801)
-
-[node name="ExitHome" parent="." instance=ExtResource("3_m20q4")]
-position = Vector2(1740, 938)
-target_scene = "outside"
-spawn = true
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
