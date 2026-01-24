@@ -1,0 +1,10 @@
+{
+	"start" : {
+		"text" : "Follow the path, and you'll come to the Closed AI headquarters.",
+		"name" : "Employee",
+		"next" : "close"
+	},
+	"close" : {
+		"trigger" : "IENDCODE"
+	}
+}

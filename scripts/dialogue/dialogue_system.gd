@@ -12,6 +12,7 @@ var next_block : Dictionary
 
 @export var BaseLayer : CanvasLayer
 @export var ChoiceLayer : CanvasLayer
+@onready var interact_text: CanvasLayer = %InteractText
 
 func _ready() -> void:
 	pass  # don’t start automatically
@@ -52,6 +53,7 @@ func load_block(block : Dictionary):
 	if block.has("trigger") and block["trigger"] == "IENDCODE": # Interactables
 		Globals.is_dialogue_active = false
 		BaseLayer.hide()
+		interact_text.show()
 
 func next():
 	current_block = next_block

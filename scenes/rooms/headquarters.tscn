@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://ip8oja453bk6"]
+[gd_scene load_steps=21 format=4 uid="uid://ip8oja453bk6"]
 
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_paqoj"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_mj6nf"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_x1tve"]
 [ext_resource type="Script" path="res://scripts/environment/transitions/zoom_zone.gd" id="5_yh2b7"]
 [ext_resource type="Script" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="7_8calx"]
+[ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="7_dbjoj"]
+[ext_resource type="Texture2D" uid="uid://bjg6vdhjfde1r" path="res://assets/sprites/npc/employee/employee_stand.png" id="8_0ri5e"]
+[ext_resource type="Script" uid="uid://bn006tkticv0f" path="res://scripts/environment/interactables/employee_outside_hq.gd" id="9_0ri5e"]
+[ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="10_yll2u"]
 
 [sub_resource type="Gradient" id="Gradient_8calx"]
 offsets = PackedFloat32Array(0, 0.7948718)
@@ -19,6 +23,43 @@ height = 1000
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.93370163, 0.07734807)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi7p4"]
+atlas = ExtResource("8_0ri5e")
+region = Rect2(0, 0, 300, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsp88"]
+atlas = ExtResource("8_0ri5e")
+region = Rect2(300, 0, 300, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umjnc"]
+atlas = ExtResource("8_0ri5e")
+region = Rect2(600, 0, 300, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gyeu7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi7p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsp88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umjnc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8b23g"]
+radius = 33.0
+height = 158.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_463jb"]
+radius = 56.0
+height = 186.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1tve"]
 size = Vector2(61.5, 1454)
@@ -64,9 +105,45 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAD8////AQABAAAAAAACAP//AQABAAAAAAACAP7/AQABAAAAAAADAP7/AQAEAAAAAAAEAPz/AQAEAAAAAAADAPz/AQABAAAAAAACAPz/AQAEAAAAAAD7//7/AQABAAAAAAD6//3/AQABAAAAAAD6//z/AQABAAAAAAD7//z/AQAEAAAAAAD8//z/AQABAAAAAAD8//v/AQABAAAAAAD3//z/AQABAAAAAAD4//z/AQAEAAAAAAD6//7/AQAEAAAAAAD6////AQAEAAAAAAD4//7/AQAEAAAAAAAFAPv/AQAEAAAAAAAGAPv/AQAEAAAAAAAHAPz/AQAEAAAAAAAFAPz/AQAEAAAAAAAFAP7/AQAEAAAAAAD9//v/AQAEAAAAAAABAPv/AQAEAAAAAAAAAPv/AQAEAAAAAAD+//v/AQAEAAAAAAAAAPz/AQABAAAAAAABAPz/AQABAAAAAAD///z/AQAEAAAAAAD+//z/AQABAAAAAAAAAP3/AQABAAAAAAD6//n/AQAEAAAAAAD5//n/AQAEAAAAAAD5//j/AQAEAAAAAAD6//j/AQABAAAAAAD7//j/AQABAAAAAAD8//j/AQABAAAAAAD9//j/AQAEAAAAAAD+//j/AQABAAAAAAD///j/AQAEAAAAAAAAAPj/AQAEAAAAAAABAPj/AQAEAAAAAAACAPj/AQAEAAAAAAADAPj/AQAEAAAAAAAEAPj/AQAEAAAAAAAFAPj/AQABAAAAAAAFAPn/AQABAAAAAAAEAPn/AQAEAAAAAAADAPr/AQABAAAAAAD5////AQAEAAAAAAD5/wEAAQAEAAAAAAD5//f/AQAEAAAAAAD5//b/AQAEAAAAAAAAAPT/AQAEAAAAAAADAPX/AQAEAAAAAAADAPb/AQABAAAAAAACAPb/AQABAAAAAAD9//X/AQAEAAAAAAD8//H/AQAEAAAAAAACAPP/AQAEAAAAAAACAPT/AQAEAAAAAAADAPT/AQAEAAAAAAAEAPT/AQAEAAAAAAAFAPb/AQAEAAAAAAAGAPf/AQAEAAAAAAAGAPn/AQABAAAAAAAHAPn/AQAEAAAAAAAIAPn/AQAEAAAAAAAJAPT/AQAEAAAAAAAFAPX/AQABAAAAAAAEAPX/AQABAAAAAAAEAPb/AQABAAAAAAADAPf/AQABAAAAAAAEAPf/AQABAAAA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AAD4/+z/AQAEAAAAAAD3/+z/AQAEAAAAAAD7/+3/AQAEAAAAAAD7/+7/AQAEAAAAAAD8/+7/AQAEAAAAAAD9/+7/AQAEAAAAAAD9/+//AQAEAAAAAAD///D/AQAEAAAAAAACAPD/AQABAAAAAAABAPD/AQABAAAAAAABAPH/AQAEAAAAAAANAPX/AQAEAAAAAAALAPT/AQAEAAAAAAAKAPP/AQABAAAAAAAIAPD/AQAEAAAAAAAGAO3/AQAEAAAAAAAOAPP/AQABAAAAAAANAPP/AQABAAAAAAAMAPP/AQABAAAAAAALAPP/AQABAAAAAAAIAPL/AQABAAAAAAAHAPL/AQABAAAAAAAGAO7/AQABAAAAAAAFAO7/AQABAAAAAAAEAO7/AQABAAAAAAAEAO3/AQABAAAAAAADAO3/AQABAAAAAAACAO3/AQABAAAAAAD9//D/AQABAAAAAAD8//D/AQABAAAAAAD7//D/AQABAAAAAAD6//H/AQABAAAAAADy/+//AQABAAAAAADx//D/AQABAAAAAADw//D/AQABAAAAAADv//D/AQABAAAAAADv//T/AQABAAAAAADx//T/AQABAAAAAADx//P/AQABAAAAAADx//L/AQABAAAAAADz//H/AQABAAAAAAD0//H/AQABAAAAAADy//X/AQABAAAAAAD0//f/AQABAAAAAAD0//j/AQABAAAAAADz//j/AQABAAAAAADy//j/AQABAAAAAADx//n/AQABAAAAAADv//n/AQABAAAAAAD7//H/AQABAAAAAAADAPD/AQABAAAAAAAPAPP/AQABAAAAAAD//+3/AQABAAAAAAD+/+3/AQABAAAAAAD4//L/AQABAAAAAAD7//P/AQABAAAAAAD3//L/AQABAAAAAAD2//L/AQABAAAAAAD1//L/AQABAAAAAADt/+3/AQABAAAAAADn/+//AQABAAAAAADp//H/AQABAAAAAADp//T/AQABAAAAAADp//X/AQABAAAAAADj//f/AQABAAAAAAD///H/AQABAAAAAAAAAPH/AQABAAAAAAAAAPD/AQABAAAAAAAHAPH/AQABAAAAAAAKAPT/AQABAAAAAAAKAPX/AQABAAAAAAARAPb/AQABAAAAAAASAPb/AQABAAAAAAAWAPD/AQABAAAAAAAQAOv/AQABAAAAAAARAO//AQABAAAAAAAUAO3/AQABAAAAAAD4/+v/AQABAAAAAADz/+7/AQABAAAAAAD4/+7/AQABAAAAAAD4/+3/AQABAAAAAADq//r/AQABAAAAAADs//D/AQABAAAAAADq//L/AQABAAAAAAAJAPb/AQABAAAAAAAKAPb/AQABAAAAAAALAPb/AQABAAAAAAALAPf/AQABAAAAAAAQAPf/AQABAAAAAAAZAPb/AQABAAAAAADo/+//AQABAAAAAADk//T/AQABAAAAAADh//n/AQABAAAAAAD5/woAAQAEAAAAAAAEAAYAAQABAAAAAAAYAAMAAQABAAAAAAA=")
 tile_set = ExtResource("1_paqoj")
 
+[node name="employee_standing" type="StaticBody2D" parent="Environment"]
+y_sort_enabled = true
+position = Vector2(-2013, -935)
+scale = Vector2(0.99920183, 1.0041968)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Environment/employee_standing"]
+position = Vector2(2341, 825.00006)
+scale = Vector2(0.475, 0.475)
+sprite_frames = SubResource("SpriteFrames_gyeu7")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/employee_standing"]
+position = Vector2(2346, 847)
+shape = SubResource("CapsuleShape2D_8b23g")
+
+[node name="Area2D" type="Area2D" parent="Environment/employee_standing"]
+script = ExtResource("9_0ri5e")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/employee_standing/Area2D"]
+position = Vector2(2344, 879)
+shape = SubResource("CapsuleShape2D_463jb")
+
+[node name="DialogueSystem" parent="Environment/employee_standing/Area2D" instance=ExtResource("10_yll2u")]
+offset_left = 2339.0
+offset_top = 802.0
+offset_right = 2339.0
+offset_bottom = 802.0
+jsonsrc = "res://scripts/dialogue/employee_outside_hq.json"
+
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
 position = Vector2(1155, 333)
+
+[node name="InteractText" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="InteractUi" parent="InteractText" instance=ExtResource("7_dbjoj")]
 
 [node name="DoorVisual" type="Sprite2D" parent="."]
 position = Vector2(555.4039, -970.9434)
@@ -98,10 +175,12 @@ shape = SubResource("RectangleShape2D_x1tve")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(-423, -310, -417, 679, 3990, 706, 3983, -1413, 1844, -1400, 1878, -290, 97, -190, 59, -103, 59, -153, -197, -149, -193, -112)
+polygon = PackedVector2Array(-423, -310, -417, 679, 3990, 706, 3983, -1413, 1892, -1388, 1882, -327, 441, -180, 362, -104, 59, -103, 59, -153, -197, -149, -193, -112)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.20706493, 0.01829356, 0.09521725, 1)
 
+[connection signal="body_entered" from="Environment/employee_standing/Area2D" to="Environment/employee_standing/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Environment/employee_standing/Area2D" to="Environment/employee_standing/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="ZoomBackZone" to="ZoomBackZone" method="_on_body_entered"]
 [connection signal="body_entered" from="ZoomZone" to="ZoomZone" method="_on_body_entered"]
