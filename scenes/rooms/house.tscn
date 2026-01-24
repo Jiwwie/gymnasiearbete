@@ -73,6 +73,8 @@ position = Vector2(1953, 801)
 
 [node name="ExitHome" parent="." instance=ExtResource("3_m20q4")]
 position = Vector2(1949, 914)
+target_scene = "outside"
+spawn = true
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true

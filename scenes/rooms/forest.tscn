@@ -152,6 +152,7 @@ position = Vector2(2368, 2582)
 
 [node name="BridgeBack" parent="." instance=ExtResource("4_oi7p4")]
 position = Vector2(1256, 596)
+target_scene = "outside"
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -161,6 +162,7 @@ visible = false
 
 [node name="LeaveForest" parent="." instance=ExtResource("8_m6ahn")]
 position = Vector2(2339, 2802)
+target_scene = "headquarters"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

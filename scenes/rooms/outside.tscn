@@ -175,6 +175,8 @@ position = Vector2(-198, -8)
 
 [node name="EnterHome" parent="." instance=ExtResource("3_exfpn")]
 position = Vector2(-198, -93)
+target_scene = "house"
+spawn = true
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -184,6 +186,7 @@ visible = false
 
 [node name="Bridge" parent="." instance=ExtResource("10_f6t8w")]
 position = Vector2(1943, 39)
+target_scene = "forest"
 
 [node name="FadeTransition" parent="." instance=ExtResource("10_q88vh")]
 
