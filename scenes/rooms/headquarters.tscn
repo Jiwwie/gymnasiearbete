@@ -101,7 +101,6 @@ build_mode = 1
 polygon = PackedVector2Array(-423, -310, -417, 679, 3990, 706, 3983, -1413, 1844, -1400, 1878, -290, 97, -190, 59, -103, 59, -153, -197, -149, -193, -112)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.20706493, 0.01829356, 0.09521725, 1)
 
 [connection signal="body_entered" from="ZoomBackZone" to="ZoomBackZone" method="_on_body_entered"]
