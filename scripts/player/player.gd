@@ -26,7 +26,13 @@ func _process(_delta: float) -> void:
 	if Globals.camera == "normal":
 		var tween = create_tween()
 		tween.tween_property(cam, "zoom", Vector2(1.2, 1.2), 1.0)
-		
+	
+	if Globals.steven == "unused" or "dead":
+		Globals.ending = "bad"
+	else: 
+		Globals.ending = "good"
+	print(Globals.ending)
+	
 	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_right"):
