@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfqmm3bkruqyu"]
+
+[ext_resource type="AudioStream" uid="uid://bdvakwytnmtne" path="res://assets/audio/sfx/click.mp3" id="1_ak861"]
+
+[node name="GlobalSounds" type="Node2D"]
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_ak861")
+volume_db = -10.0
+parameters/looping = false

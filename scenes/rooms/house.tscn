@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=22 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbq6ah1xqgh02" path="res://scenes/ui/board_ui.tscn" id="7_vql73"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="9_60327"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="10_25qyn"]
-[ext_resource type="PackedScene" path="res://scenes/environment/transitions/change_scene.tscn" id="11_v6w0j"]
+[ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="11_v6w0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25qyn"]
 size = Vector2(215, 148)
@@ -167,7 +167,6 @@ shape = SubResource("CapsuleShape2D_25qyn")
 jsonsrc = "res://scripts/environment/interactables/observation/tv_cable_interact.json"
 
 [node name="FadeTransition" parent="." instance=ExtResource("9_60327")]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.6700696, 0.4822511, 0.2785764, 1)

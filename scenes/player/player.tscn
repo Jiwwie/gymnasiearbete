@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bcyrg6u8o2mbx"]
+[gd_scene load_steps=31 format=3 uid="uid://bcyrg6u8o2mbx"]
 
 [ext_resource type="Script" uid="uid://dl43mg3clqtaf" path="res://scripts/player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://cq0tuij1egen8" path="res://assets/sprites/player/idle.png" id="2_rkbax"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bpet0siwn6jpi" path="res://assets/sprites/player/idle_up.png" id="4_boad6"]
 [ext_resource type="Texture2D" uid="uid://cpx2dg3exuu5i" path="res://assets/sprites/player/walk_side.png" id="5_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://msnkk28yb145" path="res://assets/sprites/player/walk_up.png" id="7_rgyib"]
+[ext_resource type="AudioStream" uid="uid://bdvakwytnmtne" path="res://assets/audio/sfx/click.mp3" id="8_qek5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
 atlas = ExtResource("2_rkbax")
@@ -207,3 +208,8 @@ zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 1.0
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_qek5x")
+volume_db = -10.0

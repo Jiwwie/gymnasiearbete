@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 400
 var last_direction = "down"
 @onready var cam = $Camera2D
+@onready var interact_text: CanvasLayer = %InteractText
 
 func _enter_tree() -> void:
 	if SpawnManager.spawn == true:
@@ -19,7 +20,8 @@ func _process(_delta: float) -> void:
 	if Globals.input_locked:
 		velocity = Vector2.ZERO
 		return
-
+	
+	#camera zoom manager
 	if Globals.camera == "zoom":
 		var tween = create_tween()
 		tween.tween_property(cam, "zoom", Vector2(0.5, 0.5), 1.0)
@@ -33,13 +35,19 @@ func _process(_delta: float) -> void:
 		Globals.ending = "good"
 	print(Globals.ending)
 	
+	if Input.is_action_just_pressed("interact"):
+		if interact_text.visible:
+			$ClickSound.play()
+	
 	velocity = Vector2.ZERO
 	
+	#movement
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 		last_direction = "right"
 		$AnimatedSprite2D.animation = "walk_side"
 		$AnimatedSprite2D.flip_h = true
+		
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 		last_direction = "left"
