@@ -202,7 +202,7 @@ target_scene = "forest"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_pbe43")
-volume_db = -20.0
+volume_db = -5.0
 autoplay = true
 parameters/looping = true
 

@@ -29,12 +29,6 @@ func _process(_delta: float) -> void:
 		var tween = create_tween()
 		tween.tween_property(cam, "zoom", Vector2(1.2, 1.2), 1.0)
 	
-	if Globals.steven == "unused" or "dead":
-		Globals.ending = "bad"
-	else: 
-		Globals.ending = "good"
-	print(Globals.ending)
-	
 	if Input.is_action_just_pressed("interact"):
 		if interact_text.visible:
 			$ClickSound.play()

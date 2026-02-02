@@ -1,6 +1,6 @@
 {
 	"start" : {
-		"text" : "Dangerous cable blalba",
+		"text" : "The cable is pulled out. I haven't used any technology since that day...",
 		"name" : "Observation",
 		"next" : "close"
 		},

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=19 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
@@ -21,29 +21,20 @@ radius = 52.009613
 radius = 73.061615
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6w0j"]
-radius = 52.03845
+radius = 75.31268
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_momy1"]
 radius = 51.24451
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kvtx8"]
-radius = 76.02631
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ygvd6"]
 radius = 48.010414
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_y8gu5"]
-radius = 45.276924
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_awgjw"]
 radius = 50.039986
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x02gy"]
-radius = 42.0119
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25qyn"]
-radius = 30.0
-height = 72.0
+radius = 67.0
+height = 134.0
 
 [node name="House" type="Node2D"]
 
@@ -121,36 +112,24 @@ script = ExtResource("7_60327")
 dialogue_system = NodePath("DialogueSystem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Plants"]
-position = Vector2(1328, 526)
+position = Vector2(1337, 533)
 shape = SubResource("CircleShape2D_25qyn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactables/Plants"]
-position = Vector2(1359, 114)
+position = Vector2(1372, 121)
 shape = SubResource("CircleShape2D_v6w0j")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Interactables/Plants"]
 position = Vector2(943, 521)
 shape = SubResource("CircleShape2D_momy1")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Interactables/Plants"]
-position = Vector2(968, 209)
-shape = SubResource("CircleShape2D_kvtx8")
-
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Interactables/Plants"]
 position = Vector2(2135, 635)
 shape = SubResource("CircleShape2D_ygvd6")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Interactables/Plants"]
-position = Vector2(1637, 756)
-shape = SubResource("CircleShape2D_y8gu5")
-
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Interactables/Plants"]
-position = Vector2(2125, 838)
+position = Vector2(2135, 848)
 shape = SubResource("CircleShape2D_awgjw")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Interactables/Plants"]
-position = Vector2(1998, 654)
-shape = SubResource("CircleShape2D_x02gy")
 
 [node name="DialogueSystem" parent="Interactables/Plants" instance=ExtResource("7_8eaee")]
 jsonsrc = "res://scripts/environment/interactables/observation/plant_interact.json"
@@ -160,13 +139,14 @@ script = ExtResource("7_60327")
 dialogue_system = NodePath("DialogueSystem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TvCable"]
-position = Vector2(1920, 662)
+position = Vector2(1887, 632)
 shape = SubResource("CapsuleShape2D_25qyn")
 
 [node name="DialogueSystem" parent="Interactables/TvCable" instance=ExtResource("7_8eaee")]
 jsonsrc = "res://scripts/environment/interactables/observation/tv_cable_interact.json"
 
 [node name="FadeTransition" parent="." instance=ExtResource("9_60327")]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.6700696, 0.4822511, 0.2785764, 1)
@@ -177,8 +157,8 @@ scale = Vector2(0.52089775, 0.4559402)
 texture = ExtResource("10_25qyn")
 
 [node name="BoardLight" type="PointLight2D" parent="."]
-position = Vector2(1536.9999, 665)
-scale = Vector2(0.714, 0.56899995)
+position = Vector2(1528.0001, 652)
+scale = Vector2(0.6365002, 0.5812499)
 color = Color(0.6451779, 0, 0.18687452, 1)
 texture = ExtResource("10_25qyn")
 

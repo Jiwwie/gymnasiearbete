@@ -40,10 +40,9 @@ func _pause_and_turn(new_direction):
 	
 func alert_on():
 	$VisionCone.color = alert_color
-	if not $SpotSound.playing:
-		$SpotSound.play()
-
-		print("PLAYER SPOTTED")
+	#if not $SpotSound.playing:
+		#$SpotSound.play()
+	print("PLAYER SPOTTED")
 	# Emit signal / restart level / alert guards
 	
 func alert_off():
@@ -65,6 +64,7 @@ func _on_vision_area_body_exited(body):
 func _on_detection_timer_timeout():
 	if player_inside:
 		alert_on()
+		get_tree().reload_current_scene()
 
 
 func _on_pause_timer_timeout():

@@ -1,6 +1,6 @@
 {
 	"start" : {
-		"text" : "The plants that allow me to breathe fresh air after Closed AI contaminated it",
+		"text" : "My plants help keep the air fresh after the environment made it bad...",
 		"name" : "Observation",
 		"next" : "close"
 		},
