@@ -5,6 +5,7 @@ var scene_script : Dictionary
 var current_block : Dictionary
 var next_block : Dictionary
 
+
 @export_category("scene reference")
 @export var char_text : Label
 @export var char_name : Label
@@ -22,6 +23,7 @@ func start_dialogue():
 		Globals.is_dialogue_active = true
 		get_json(jsonsrc)
 		load_block(current_block)
+		Globals.close_check = false
 	else:
 		push_error("jsonsrc not set! Please assign a JSON file in the Inspector.")
 
@@ -46,8 +48,12 @@ func load_block(block : Dictionary):
 	if block.has("result"):
 		Globals.steven = block["result"]
 		
+	if block.has("decision"):
+		Globals.decision = block["decision"]
+		
 	if block.has("trigger") and block["trigger"] == "ENDCODE": # Dialoger
 		Globals.is_dialogue_active = false
+		Globals.close_check = true
 		queue_free()
 		
 	if block.has("trigger") and block["trigger"] == "IENDCODE": # Interactables

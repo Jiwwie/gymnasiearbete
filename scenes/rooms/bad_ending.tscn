@@ -1,14 +1,126 @@
-[gd_scene format=3 uid="uid://bygxi4defkhwl"]
+[gd_scene load_steps=8 format=3 uid="uid://bygxi4defkhwl"]
+
+[ext_resource type="Script" uid="uid://clei56dquh3uw" path="res://scripts/dialogue/bad_ending.gd" id="1_ia47k"]
+[ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="2_cricv"]
+[ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="3_cricv"]
+[ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="4_4c0vi"]
+[ext_resource type="Script" uid="uid://c05chpkx0wril" path="res://scripts/environment/interactables/button.gd" id="5_1jr46"]
+
+[sub_resource type="FontFile" id="FontFile_wsxfy"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bt3rw"]
+font = SubResource("FontFile_wsxfy")
+font_size = 50
 
 [node name="BadEnding" type="Node2D"]
+script = ExtResource("1_ia47k")
+dialogue_system = NodePath("DialogueSystem")
 
-[node name="Container" type="Control" parent="."]
+[node name="DialogueSystem" parent="." node_paths=PackedStringArray("char_sprite") instance=ExtResource("2_cricv")]
+jsonsrc = "res://scripts/dialogue/bad_ending.json"
+char_sprite = NodePath("../TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 451.0
+offset_top = 156.0
+offset_right = 680.0
+offset_bottom = 341.0
+texture = ExtResource("3_cricv")
+
+[node name="InteractText" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="InteractUi" parent="InteractText" instance=ExtResource("4_4c0vi")]
+
+[node name="SceneChanger" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="ColorRect" type="ColorRect" parent="Container"]
+[node name="ColorRect" type="ColorRect" parent="SceneChanger"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,4 +128,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(0.2, 0.019607844, 0, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="SceneChanger"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 224.0
+offset_right = 1087.0
+offset_bottom = 371.0
+text = "I have to find another way to defeat this guy.."
+label_settings = SubResource("LabelSettings_bt3rw")
+
+[node name="Button" type="Button" parent="SceneChanger"]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 412.0
+offset_right = 677.0
+offset_bottom = 511.0
+text = "Click to continue
+"
+script = ExtResource("5_1jr46")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="SceneChanger/Button" to="SceneChanger/Button" method="_on_pressed"]

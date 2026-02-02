@@ -1,0 +1,31 @@
+{
+	"start": {
+		"text": "blablabla big boss fight",
+		"name": "M.AI.K",
+		"next": "B"
+	},
+	"B": {
+		"text": "blablabla im going to kill u blablbabal",
+		"next": "choice"
+	},
+	"choice": {
+		"text": "Do you wish to fight?",
+		"choices": {
+			"Fight": "fight",
+			"Run": "run"
+	}
+	},
+	"fight": {
+		"text": "You rush forward",
+		"decision": "fight",
+		"next": "close"
+	},
+	"run": {
+		"text": "You try to run away",
+		"decision": "run",
+		"next": "close"
+	},
+	"close": {
+	"trigger": "ENDCODE"
+	}
+}
