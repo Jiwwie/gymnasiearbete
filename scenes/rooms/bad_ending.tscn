@@ -6,6 +6,77 @@
 [ext_resource type="Script" path="res://scripts/environment/interactables/button.gd" id="5_1jr46"]
 [ext_resource type="Texture2D" uid="uid://dw0mis0dxe6vw" path="res://assets/sprites/npc/maik_spritesheet.png" id="5_wsxfy"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_18l7t"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(2222, 0, 1111, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt3rw"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(0, 0, 1111, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5leev"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(1111, 0, 1111, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rupf"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(3333, 0, 1111, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4xaj"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(4444, 0, 1111, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf2xs"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(5555, 0, 1111, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18r5r"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(6666, 0, 1111, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_557gr"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(7777, 0, 1111, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty6s6"]
+atlas = ExtResource("5_wsxfy")
+region = Rect2(8888, 0, 1111, 741)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cpcxg"]
+animations = [{
+"frames": [{
+"duration": 2.11,
+"texture": SubResource("AtlasTexture_18l7t")
+}, {
+"duration": 1.31,
+"texture": SubResource("AtlasTexture_bt3rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5leev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rupf")
+}, {
+"duration": 2.41,
+"texture": SubResource("AtlasTexture_o4xaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf2xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18r5r")
+}, {
+"duration": 3.11,
+"texture": SubResource("AtlasTexture_557gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty6s6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="FontFile" id="FontFile_wsxfy"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
@@ -92,84 +163,37 @@ cache/0/50/0/scale = 1.0
 font = SubResource("FontFile_wsxfy")
 font_size = 50
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bt3rw"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(0, 0, 1111, 741)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5leev"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(1111, 0, 1111, 741)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18l7t"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(2222, 0, 1111, 741)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2rupf"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(3333, 0, 1111, 741)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4xaj"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(4444, 0, 1111, 741)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kf2xs"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(5555, 0, 1111, 741)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18r5r"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(6666, 0, 1111, 741)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_557gr"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(7777, 0, 1111, 741)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ty6s6"]
-atlas = ExtResource("5_wsxfy")
-region = Rect2(8888, 0, 1111, 741)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cpcxg"]
-animations = [{
-"frames": [{
-"duration": 1.31,
-"texture": SubResource("AtlasTexture_bt3rw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5leev")
-}, {
-"duration": 2.11,
-"texture": SubResource("AtlasTexture_18l7t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2rupf")
-}, {
-"duration": 2.41,
-"texture": SubResource("AtlasTexture_o4xaj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kf2xs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_18r5r")
-}, {
-"duration": 3.11,
-"texture": SubResource("AtlasTexture_557gr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ty6s6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="BadEnding" type="Node2D"]
 script = ExtResource("1_ia47k")
 dialogue_system = NodePath("DialogueSystem")
 
+[node name="bg" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+
 [node name="DialogueSystem" parent="." node_paths=PackedStringArray("char_sprite") instance=ExtResource("2_cricv")]
 jsonsrc = "res://scripts/dialogue/bad_ending.json"
 char_sprite = NodePath("")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(586, 316)
+scale = Vector2(0.875, 0.875)
+sprite_frames = SubResource("SpriteFrames_cpcxg")
+autoplay = "default"
+frame = 3
+frame_progress = 0.28148496
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -212,13 +236,6 @@ offset_bottom = 511.0
 text = "Click to continue
 "
 script = ExtResource("5_1jr46")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(586, 316)
-scale = Vector2(0.875, 0.875)
-sprite_frames = SubResource("SpriteFrames_cpcxg")
-autoplay = "default"
-frame_progress = 0.082171425
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="SceneChanger/Button" to="SceneChanger/Button" method="_on_pressed"]
