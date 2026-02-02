@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://byfkjx8uuuvpj"]
+[gd_scene load_steps=6 format=4 uid="uid://byfkjx8uuuvpj"]
 
 [ext_resource type="TileSet" uid="uid://dkjgmq43yc0wr" path="res://assets/tilemaps/tilesets/hallway.tres" id="1_lbtni"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_vvysf"]
 [ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="3_au2at"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_qew3q"]
+[ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_vl156"]
 
 [node name="Hallway" type="Node2D"]
 
@@ -39,3 +40,9 @@ position = Vector2(480, 1068)
 [node name="ChangeScene2" parent="." instance=ExtResource("3_au2at")]
 position = Vector2(481, 1004)
 target_scene = "camera_room"
+
+[node name="InteractText" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="InteractUi" parent="InteractText" instance=ExtResource("5_vl156")]
