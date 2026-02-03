@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://ip8oja453bk6"]
+[gd_scene load_steps=24 format=4 uid="uid://ip8oja453bk6"]
 
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_paqoj"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_mj6nf"]
@@ -11,8 +11,10 @@
 [ext_resource type="Script" uid="uid://bn006tkticv0f" path="res://scripts/environment/interactables/employee_outside_hq.gd" id="9_0ri5e"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="10_yll2u"]
 [ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="11_dbjoj"]
+[ext_resource type="Texture2D" uid="uid://crde5c5y7gslc" path="res://assets/images/hq_sprite.png" id="12_yll2u"]
 
 [sub_resource type="Gradient" id="Gradient_8calx"]
+interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.7948718)
 colors = PackedColorArray(0.8811988, 0.7295614, 0.3797846, 1, 0, 0, 0, 1)
 
@@ -64,6 +66,18 @@ height = 186.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1tve"]
 size = Vector2(61.5, 1454)
 
+[sub_resource type="Gradient" id="Gradient_yll2u"]
+interpolation_mode = 2
+colors = PackedColorArray(0.39310616, 0.38104928, 0.24660689, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gyeu7"]
+gradient = SubResource("Gradient_yll2u")
+width = 124
+height = 119
+fill = 1
+fill_from = Vector2(0.519337, 0.50276244)
+fill_to = Vector2(0.8453039, 0.15469614)
+
 [node name="Headquarters" type="Node2D"]
 
 [node name="GroundLayer" type="TileMapLayer" parent="."]
@@ -85,6 +99,10 @@ position = Vector2(-198.92609, -246.76985)
 rotation = 2.994985
 scale = Vector2(2.5737405, 0.5626831)
 texture = ExtResource("3_k52q3")
+
+[node name="hq" type="Sprite2D" parent="."]
+position = Vector2(2829, -747)
+texture = ExtResource("12_yll2u")
 
 [node name="Environment" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -137,7 +155,7 @@ jsonsrc = "res://scripts/dialogue/employee_outside_hq.json"
 
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
-position = Vector2(2911, -26)
+position = Vector2(2562, -306)
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -150,6 +168,7 @@ position = Vector2(555.4039, -970.9434)
 rotation = 2.994985
 scale = Vector2(16.423376, 3.8919775)
 texture = ExtResource("3_k52q3")
+metadata/_edit_lock_ = true
 
 [node name="FadeTransition" parent="." instance=ExtResource("4_x1tve")]
 
@@ -170,8 +189,10 @@ shape = SubResource("RectangleShape2D_x1tve")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(35, -71)
 build_mode = 1
 polygon = PackedVector2Array(-423, -310, -417, 679, 3990, 706, 3983, -1413, 1892, -1388, 1882, -327, 441, -180, 362, -104, 59, -103, 59, -153, -197, -149, -193, -112)
+metadata/_edit_lock_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.20706493, 0.01829356, 0.09521725, 1)
@@ -184,9 +205,14 @@ target_scene = "forest"
 spawn = true
 
 [node name="ChangeScene2" parent="." instance=ExtResource("11_dbjoj")]
-position = Vector2(2913.0002, -199)
+position = Vector2(2564, -406)
 scale = Vector2(3.7600195, 1)
 target_scene = "hallway"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2872.0002, -631.00006)
+scale = Vector2(22.492304, 9.768633)
+texture = SubResource("GradientTexture2D_gyeu7")
 
 [connection signal="body_entered" from="Environment/employee_standing/Area2D" to="Environment/employee_standing/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Environment/employee_standing/Area2D" to="Environment/employee_standing/Area2D" method="_on_body_exited"]

@@ -6,6 +6,8 @@ var input_locked = false
 
 # Dialogue globals
 var steven = "unused"
+var decision
+var close_check : bool
 
 #test globals
 var camera = "normal"

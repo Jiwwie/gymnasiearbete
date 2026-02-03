@@ -6,7 +6,7 @@ extends Node2D
 @export var pause_time := 0.6
 
 @export_group("Detection")
-@export var detection_delay := 1.0
+@export var detection_delay := 0.2
 
 @export_group("Visuals")
 @export var normal_color := Color(1, 1, 0, 0.25)
@@ -16,13 +16,15 @@ var direction := 1
 var base_rotation := 0.0
 var paused := false
 var player_inside := false
+var detection_progress := 0.0
 
 
-func _ready():
+func _ready() -> void:
 	base_rotation = rotation
 	$VisionCone.color = normal_color
 
-func _process(delta):
+
+func _process(delta: float) -> void:
 	if paused:
 		return
 
@@ -33,39 +35,49 @@ func _process(delta):
 	elif rotation < base_rotation - deg_to_rad(sweep_angle):
 		_pause_and_turn(1)
 
-func _pause_and_turn(new_direction):
+	# Smooth alert color buildup
+	if player_inside:
+		detection_progress += delta
+		var t: float = clamp(detection_progress / detection_delay, 0.0, 1.0)
+		$VisionCone.color = normal_color.lerp(alert_color, t)
+
+
+func _pause_and_turn(new_direction: int) -> void:
 	paused = true
 	direction = new_direction
-	$PauseTimer.start()
-	
-func alert_on():
+	$PauseTimer.start(pause_time)
+
+
+func alert_on() -> void:
 	$VisionCone.color = alert_color
-	#if not $SpotSound.playing:
-		#$SpotSound.play()
 	print("PLAYER SPOTTED")
 	# Emit signal / restart level / alert guards
-	
-func alert_off():
+
+
+func alert_off() -> void:
 	$VisionCone.color = normal_color
 
 
-func _on_vision_area_body_entered(body):
+func _on_vision_area_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		player_inside = true
-		$DetectionTimer.start()
+		detection_progress = 0.0
+		$DetectionTimer.start(detection_delay)
 
-func _on_vision_area_body_exited(body):
+
+func _on_vision_area_body_exited(body: Node) -> void:
 	if body.is_in_group("player"):
 		player_inside = false
+		detection_progress = 0.0
 		$DetectionTimer.stop()
 		alert_off()
 
 
-func _on_detection_timer_timeout():
+func _on_detection_timer_timeout() -> void:
 	if player_inside:
 		alert_on()
 		get_tree().reload_current_scene()
 
 
-func _on_pause_timer_timeout():
+func _on_pause_timer_timeout() -> void:
 	paused = false
