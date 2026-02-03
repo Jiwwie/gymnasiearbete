@@ -1,6 +1,6 @@
 {
 	"start" : {
-		"text" : "The cable is pulled out. I haven't used any technology since that day...",
+		"text" : "The cable is pulled out. I haven't used any technology since that day... It's no use wasting more power.",
 		"name" : "Observation",
 		"next" : "close"
 		},

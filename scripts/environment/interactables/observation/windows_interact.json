@@ -1,6 +1,6 @@
 {
 	"start" : {
-		"text" : "I look outside to see nothing",
+		"text" : "The outside look cold and empty. There used to be so much life here before the floods submerged everything.",
 		"name" : "Observation",
 		"next" : "close"
 		},

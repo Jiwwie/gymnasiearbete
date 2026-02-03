@@ -12,28 +12,28 @@
 		}
 	},
 	"askAI" : {
-		"text" : "Yeah I know about Closed AI, I used to work there",
+		"text" : "Closed AI... Yes. I used to work there. I helped work on the NewBrain project, it ruined me, it really did.",
 		"name" : "Employee",
 		"next" : "hate"
 	},
 	"askName" : {
-		"text" : "Name? Call me whatever you want.",
+		"text" : "What good are names anymore? The world is ending, shouldn't you worry about better things? Going on that trip from your bucket list... Or working day in and day out, just like you always do. Even though you know it's your fault all of this happened. Sorry! I got a little carried away, what was it you said again?",
 		"next" : "work"
 	},
 	"work" : {
-		"text" : "I used to work at Closed AI if you were wondering.",
+		"text" : "I've spent more years in the Closed AI labs than i wish to admit. It wasn't easy to let go. They wanted you to stay forever.",
 		"name" : "Employee",
 		"next" : "hate"
 	},
 	"hate" : {
-		"text" : "Thats why I hate them so much.",
+		"text" : "They didn't care what was happening around them. They didn't even stop to look around at all. All that mattered was the money and the engagement.",
 		"choices" : {
-			"What do you mean?" : "explain",
-			"What happened?" : "reason"
+			"NewBrain?" : "explain",
+			"Where are the headquarters?" : "reason"
 		}
 	},
 	"explain" : {
-		"text" : "Because their ruining our climate.",
+		"text" : "The last project. The one everyone talked about. I'm sure you remember, it was everywhere. NewBrain... The brain chip that would make you smart, likeable, funny and perfect. Everyone went crazy for it and the world became so bland.",
 		"next" : "explain2"
 	},
 	"reason" : {
@@ -41,7 +41,7 @@
 		"next" : "explain2"
 	},
 	"explain2" : {
-		"text" : "Look around, can you even drink the water in the sea?",
+		"text" : "And the production, look what it did. Nothing's the same anymore, do you remember what fresh air felt like?",
 		"next" : "explain3"
 	},
 	"explain3" : {
