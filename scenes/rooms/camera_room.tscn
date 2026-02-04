@@ -25,7 +25,7 @@ tile_map_data = PackedByteArray("AACJAJcAAAACAAEAAAAIAAsAAAADAAAAAAAIAAwAAAADAAE
 tile_set = ExtResource("1_22c5s")
 
 [node name="Player" parent="." instance=ExtResource("2_pvxgn")]
-position = Vector2(3049, 116)
+position = Vector2(689.00024, 1602.9999)
 scale = Vector2(0.8, 0.8)
 
 [node name="ChangeScene" parent="." instance=ExtResource("3_81bjp")]
@@ -41,8 +41,8 @@ position = Vector2(1382, 768)
 [node name="FadeTransition" parent="." instance=ExtResource("4_we7p2")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2655, 1359)
-scale = Vector2(7.2356114, 1.7794118)
+position = Vector2(673, 1649.5)
+scale = Vector2(0.57913667, 0.2886029)
 texture = ExtResource("5_s6dp6")
 
 [node name="InteractText" type="CanvasLayer" parent="."]
@@ -118,7 +118,7 @@ pause_time = 0.88
 [node name="Camera13" parent="Cameras" instance=ExtResource("6_pvxgn")]
 position = Vector2(2223, 2478)
 rotation = -1.5707964
-sweep_speed = 1.1400000000000001
+sweep_speed = 1.14
 pause_time = 0.935
 
 [node name="Camera14" parent="Cameras" instance=ExtResource("6_pvxgn")]
@@ -216,4 +216,4 @@ pause_time = 0.2
 position = Vector2(2920, -634)
 rotation = 3.1415927
 sweep_speed = 2.41
-pause_time = 1.2650000000000001
+pause_time = 1.265
