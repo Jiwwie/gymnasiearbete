@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_mj6nf"]
 [ext_resource type="Texture2D" uid="uid://b2nb7qn0wrcit" path="res://assets/images/fade.png" id="3_k52q3"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_x1tve"]
-[ext_resource type="Script" uid="uid://cgcpbou5wkeoo" path="res://scripts/environment/transitions/zoom_zone.gd" id="5_yh2b7"]
-[ext_resource type="Script" uid="uid://dwaeacslnrtno" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="7_8calx"]
+[ext_resource type="Script" path="res://scripts/environment/transitions/zoom_zone.gd" id="5_yh2b7"]
+[ext_resource type="Script" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="7_8calx"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="7_dbjoj"]
 [ext_resource type="Texture2D" uid="uid://bjg6vdhjfde1r" path="res://assets/sprites/npc/employee/employee_stand.png" id="8_0ri5e"]
 [ext_resource type="Script" uid="uid://bn006tkticv0f" path="res://scripts/environment/interactables/employee_outside_hq.gd" id="9_0ri5e"]
@@ -194,6 +194,9 @@ build_mode = 1
 polygon = PackedVector2Array(-423, -310, -417, 679, 3990, 706, 3983, -1413, 1892, -1388, 1882, -327, 441, -180, 362, -104, 59, -103, 59, -153, -197, -149, -193, -112)
 metadata/_edit_lock_ = true
 
+[node name="HQShape" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(2244, -442, 2303, -444, 2304, -405, 2812, -405, 2817, -378, 2959, -371, 2963, -389, 3020, -389, 3020, -374, 3389, -374, 3391, -389, 3519, -389, 3521, -838, 3505, -935, 3472, -1010, 3398, -1009, 3396, -1025, 3367, -1029, 3364, -1256, 3157, -1257, 3158, -1147, 2856, -1151, 2839, -898, 2442, -896, 2443, -1082, 2241, -1081)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.20706493, 0.01829356, 0.09521725, 1)
 
@@ -210,7 +213,7 @@ scale = Vector2(3.7600195, 1)
 target_scene = "hallway"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(2872.0002, -631.00006)
+position = Vector2(2873, -623)
 scale = Vector2(22.492304, 9.768633)
 texture = SubResource("GradientTexture2D_gyeu7")
 
