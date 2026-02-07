@@ -21,7 +21,6 @@ SpawnManager="*res://scripts/global/spawn_manager.gd"
 Globals="*res://scripts/global/globals.gd"
 Fade="*res://scenes/environment/transitions/fade_transition.tscn"
 SceneManager="*res://scripts/global/scene_manager.gd"
-GlobalSounds="*res://scenes/GlobalSounds.tscn"
 
 [display]
 
