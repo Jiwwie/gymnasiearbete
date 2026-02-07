@@ -74,7 +74,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="FontFile" id="FontFile_wsxfy"]
@@ -191,8 +191,7 @@ position = Vector2(586, 316)
 scale = Vector2(0.875, 0.875)
 sprite_frames = SubResource("SpriteFrames_cpcxg")
 autoplay = "default"
-frame = 3
-frame_progress = 0.28148496
+frame_progress = 0.19305293
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
