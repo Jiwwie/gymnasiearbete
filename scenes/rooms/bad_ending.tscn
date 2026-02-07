@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://bygxi4defkhwl"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/bad_ending.gd" id="1_ia47k"]
+[ext_resource type="Script" uid="uid://clei56dquh3uw" path="res://scripts/dialogue/bad_ending.gd" id="1_ia47k"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="2_cricv"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="4_4c0vi"]
-[ext_resource type="Script" path="res://scripts/environment/interactables/button.gd" id="5_1jr46"]
+[ext_resource type="Script" uid="uid://c05chpkx0wril" path="res://scripts/environment/interactables/button.gd" id="5_1jr46"]
 [ext_resource type="Texture2D" uid="uid://dw0mis0dxe6vw" path="res://assets/sprites/npc/maik_spritesheet.png" id="5_wsxfy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18l7t"]
@@ -183,9 +183,8 @@ grow_vertical = 2
 size_flags_horizontal = 4
 color = Color(0.2592937, 0.2592937, 0.2592937, 1)
 
-[node name="DialogueSystem" parent="." node_paths=PackedStringArray("char_sprite") instance=ExtResource("2_cricv")]
+[node name="DialogueSystem" parent="." instance=ExtResource("2_cricv")]
 jsonsrc = "res://scripts/dialogue/bad_ending.json"
-char_sprite = NodePath("")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(586, 316)

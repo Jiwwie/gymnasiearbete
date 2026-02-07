@@ -1,0 +1,146 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlsw1m7sx7414"]
+
+[ext_resource type="Script" uid="uid://bnbnibbryqyi1" path="res://scripts/environment/interactables/playagain.gd" id="1_6o3ft"]
+
+[node name="Credits" type="Node2D"]
+
+[node name="bg" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09879845, 0.13522458, 0.1893264, 1)
+
+[node name="text" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 14.0
+offset_right = 1152.0
+offset_bottom = 153.0
+
+[node name="Label" type="Label" parent="text"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.0
+offset_right = 384.0
+offset_bottom = 152.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "Thanks for playing!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="text"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = 44.5
+offset_right = 384.0
+offset_bottom = 134.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 65
+text = "Credits:"
+horizontal_alignment = 1
+
+[node name="credits" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 153.0
+
+[node name="VFlowContainer" type="VFlowContainer" parent="credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 2.552
+anchor_right = 0.5
+anchor_bottom = 2.552
+offset_left = -278.5
+offset_top = -178.456
+offset_right = 278.5
+offset_bottom = 178.544
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="credits/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 45
+text = "Nur"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="credits/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 45
+text = "Julia"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="credits/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 45
+text = "Valeria"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="credits/VFlowContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 51
+text = "-----------"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="credits/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 65
+text = "MUSIC BY STEVEN"
+horizontal_alignment = 1
+
+[node name="buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+
+[node name="HFlowContainer" type="HFlowContainer" parent="buttons"]
+layout_mode = 0
+offset_top = 540.0
+offset_right = 1153.0
+offset_bottom = 630.0
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 14
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="Button" type="Button" parent="buttons/HFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Play again"
+script = ExtResource("1_6o3ft")
+
+[node name="exitgame" type="Button" parent="buttons/HFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Exit game"
+
+[connection signal="pressed" from="buttons/HFlowContainer/Button" to="buttons/HFlowContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="buttons/HFlowContainer/exitgame" to="buttons/HFlowContainer/Button" method="_on_exitgame_pressed"]
