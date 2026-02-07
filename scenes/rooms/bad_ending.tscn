@@ -191,7 +191,7 @@ position = Vector2(586, 316)
 scale = Vector2(0.875, 0.875)
 sprite_frames = SubResource("SpriteFrames_cpcxg")
 autoplay = "default"
-frame_progress = 0.19305293
+frame_progress = 0.863699
 
 [node name="InteractText" type="CanvasLayer" parent="."]
 unique_name_in_owner = true

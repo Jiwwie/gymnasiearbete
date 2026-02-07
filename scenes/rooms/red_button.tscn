@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=4 uid="uid://ccgaxdana8yb6"]
+[gd_scene load_steps=19 format=4 uid="uid://ccgaxdana8yb6"]
 
 [ext_resource type="TileSet" uid="uid://dkjgmq43yc0wr" path="res://assets/tilemaps/tilesets/hallway.tres" id="1_demvq"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_s23jr"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_su6qf"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_gh0cw"]
 [ext_resource type="Texture2D" uid="uid://dw0mis0dxe6vw" path="res://assets/sprites/npc/maik_spritesheet.png" id="5_oxxsn"]
+[ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="6_demvq"]
+[ext_resource type="Script" uid="uid://ce72avl8ef4l1" path="res://scripts/environment/interactables/red_button.gd" id="6_s23jr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18l7t"]
 atlas = ExtResource("5_oxxsn")
@@ -77,6 +79,9 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s23jr"]
+size = Vector2(90.375, 98.75)
+
 [node name="RedButton" type="Node2D"]
 
 [node name="BackgroundLayer" type="TileMapLayer" parent="."]
@@ -103,12 +108,24 @@ position = Vector2(1026, 978.99994)
 scale = Vector2(0.21, 0.21)
 sprite_frames = SubResource("SpriteFrames_demvq")
 autoplay = "default"
-frame_progress = 0.7842015
+frame_progress = 0.90640146
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mAIk"]
 position = Vector2(1028, 980)
 scale = Vector2(0.20729178, 0.20833345)
 polygon = PackedVector2Array(-288.88916, 350.0005, 311.11084, 355.55615, 16.666504, -244.44385, -144.44482, -205.55518, -188.88916, -38.888184, -172.22266, 94.444824, -227.77783, 250.00049)
+
+[node name="Button" type="Area2D" parent="."]
+script = ExtResource("6_s23jr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(1027.0001, 1108)
+scale = Vector2(0.16015768, 0.78125066)
+texture = ExtResource("6_demvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
+position = Vector2(1027, 1155)
+shape = SubResource("RectangleShape2D_s23jr")
 
 [node name="Player" parent="." instance=ExtResource("2_s23jr")]
 position = Vector2(1030, 1855)
@@ -121,3 +138,5 @@ unique_name_in_owner = true
 visible = false
 
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_gh0cw")]
+
+[connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
