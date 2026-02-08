@@ -139,4 +139,8 @@ visible = false
 
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_gh0cw")]
 
+[node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
+unique_name_in_owner = true
+position = Vector2(1028, 1886)
+
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]

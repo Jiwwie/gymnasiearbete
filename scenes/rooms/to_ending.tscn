@@ -48,10 +48,15 @@ visible = false
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_e8nbn")]
 
 [node name="EndingDoor" type="Area2D" parent="."]
+position = Vector2(-363, -7)
 script = ExtResource("6_op1bn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndingDoor"]
 position = Vector2(608, 810)
 shape = SubResource("RectangleShape2D_1obcu")
+
+[node name="ChangeScene2" parent="." instance=ExtResource("3_1obcu")]
+position = Vector2(609, 815)
+target_scene = "maik1"
 
 [connection signal="body_entered" from="EndingDoor" to="EndingDoor" method="_on_body_entered"]
