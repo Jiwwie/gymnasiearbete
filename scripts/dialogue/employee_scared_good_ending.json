@@ -1,0 +1,37 @@
+{
+	"start" : {
+		"text" : "I can't let you do that...",
+		"name" : "Employee",
+		"choices" : {
+			"What the fuck?" : "NotAllowed",
+			"What do you mean?" : "NotAllowed"
+		}
+	},
+	"NotAllowed" : {
+		"text" : "Yo- you ca- can't turn th- the power off. He d-doesn't want you t-to.",
+		"choices" : {
+			"Aren't you here to help me?" : "HereToHelp",
+			"I knew you were up to something!" : "UpToSomething"
+		}
+	},
+	"HereToHelp" : {
+		"text" : "H-help? I can't h-help you. You can't t-turn t-the power off. You can't the power off. You can't turn the power off. YOU CAN'T TURN THE POWER OFF...",
+		"next" : "sorry"
+	},
+	"UpToSomething" : {
+		"text" : "U-up to s-something? I'm not u-up t-to anything! You can't t-turn t-the power off. You can't the power off. You can't turn the power off. YOU CAN'T TURN THE POWER OFF...",
+		"next" : "sorry"
+	},
+	"sorry" : {
+		"text" : "I'm sorry it had to end like this. I've been lost for too long. This is not me. This is not me. This is not me. This is not me.",
+		"next" : "NewBrain"
+	},
+	"NewBrain" : {
+		"text" : "Stand still, this will only take a minute. The NewBrain will make you perfect. You'll forget all about the environment. You'll forget all about the bad. You'll forget that this ever happened...",
+		"next" : "close"
+	},
+	"close" : {
+		"show" : "%Scene4",
+		"trigger" : "ENDCODE"
+	}
+}

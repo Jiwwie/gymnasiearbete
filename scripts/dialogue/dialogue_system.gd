@@ -51,6 +51,15 @@ func load_block(block : Dictionary):
 	if block.has("decision"):
 		Globals.decision = block["decision"]
 		
+	if block.has("show"):
+		var node_name = block["show"]
+		var target_node = get_node_or_null(node_name)
+		
+		if target_node:
+			target_node.show()
+		else:
+			push_error("Dialogue Error: Could not find node named '" + node_name + "'")
+		
 	if block.has("trigger") and block["trigger"] == "ENDCODE": # Dialoger
 		Globals.is_dialogue_active = false
 		Globals.close_check = true

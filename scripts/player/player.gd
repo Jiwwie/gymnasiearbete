@@ -2,8 +2,19 @@ extends CharacterBody2D
 
 var speed = 400
 var last_direction = "down"
+var hit_count: int = 0
 @onready var cam = $Camera2D
 @onready var interact_text: CanvasLayer = %InteractText
+
+func was_hit():
+	hit_count += 1
+	print("Player hit! Total hits: ", hit_count)
+	
+	if hit_count >= 2:
+		call_deferred("retry")
+
+func retry():
+	get_tree().change_scene_to_file("res://scenes/rooms/secret_ending.tscn")
 
 func _enter_tree() -> void:
 	if SpawnManager.spawn == true:

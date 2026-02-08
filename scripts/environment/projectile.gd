@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var speed: float = 600.0
-@export var lifetime: float = 3.0
+@export var speed: float = 300
+@export var lifetime: float = 5.0
 var direction: Vector2 = Vector2.ZERO
 
 func _ready():
@@ -25,4 +25,8 @@ func _on_body_entered(body):
 	# Ignore the player (mAIk)
 	if body.is_in_group("player"):
 		print("Hit: ", body.name)
+		
+		if body.has_method("was_hit"):
+			body.was_hit()
+			
 		queue_free()

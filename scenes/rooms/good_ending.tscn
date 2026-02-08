@@ -1,4 +1,181 @@
-[gd_scene format=3 uid="uid://bnnrj721yjh86"]
+[gd_scene load_steps=15 format=3 uid="uid://bnnrj721yjh86"]
+
+[ext_resource type="PackedScene" uid="uid://cu05ih8rjf5jw" path="res://scenes/environment/transitions/flash_transition.tscn" id="1_0heoo"]
+[ext_resource type="Texture2D" uid="uid://b5ypnvtftc6nl" path="res://assets/images/button_background.png" id="1_aehsq"]
+[ext_resource type="Script" uid="uid://dep0rnw6h7wk6" path="res://scripts/dialogue/dialogue_button_start.gd" id="2_sfard"]
+[ext_resource type="Texture2D" uid="uid://cotabiwo10avq" path="res://assets/sprites/npc/employee/employee_scared.png" id="3_aehsq"]
+[ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="4_gmq31"]
+[ext_resource type="Script" uid="uid://gab66xams1r4" path="res://scripts/environment/transitions/employee_move_left.gd" id="6_aehsq"]
+[ext_resource type="Texture2D" uid="uid://ct685wmm3j36u" path="res://assets/sprites/npc/steven/steven_idle.png" id="7_gmq31"]
+
+[sub_resource type="FontFile" id="FontFile_wsxfy"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/75/0/ascent = 0.0
+cache/0/75/0/descent = 0.0
+cache/0/75/0/underline_position = 0.0
+cache/0/75/0/underline_thickness = 0.0
+cache/0/75/0/scale = 1.0
+cache/0/80/0/ascent = 0.0
+cache/0/80/0/descent = 0.0
+cache/0/80/0/underline_position = 0.0
+cache/0/80/0/underline_thickness = 0.0
+cache/0/80/0/scale = 1.0
+cache/0/85/0/ascent = 0.0
+cache/0/85/0/descent = 0.0
+cache/0/85/0/underline_position = 0.0
+cache/0/85/0/underline_thickness = 0.0
+cache/0/85/0/scale = 1.0
+cache/0/90/0/ascent = 0.0
+cache/0/90/0/descent = 0.0
+cache/0/90/0/underline_position = 0.0
+cache/0/90/0/underline_thickness = 0.0
+cache/0/90/0/scale = 1.0
+cache/0/95/0/ascent = 0.0
+cache/0/95/0/descent = 0.0
+cache/0/95/0/underline_position = 0.0
+cache/0/95/0/underline_thickness = 0.0
+cache/0/95/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/105/0/ascent = 0.0
+cache/0/105/0/descent = 0.0
+cache/0/105/0/underline_position = 0.0
+cache/0/105/0/underline_thickness = 0.0
+cache/0/105/0/scale = 1.0
+cache/0/110/0/ascent = 0.0
+cache/0/110/0/descent = 0.0
+cache/0/110/0/underline_position = 0.0
+cache/0/110/0/underline_thickness = 0.0
+cache/0/110/0/scale = 1.0
+cache/0/115/0/ascent = 0.0
+cache/0/115/0/descent = 0.0
+cache/0/115/0/underline_position = 0.0
+cache/0/115/0/underline_thickness = 0.0
+cache/0/115/0/scale = 1.0
+cache/0/120/0/ascent = 0.0
+cache/0/120/0/descent = 0.0
+cache/0/120/0/underline_position = 0.0
+cache/0/120/0/underline_thickness = 0.0
+cache/0/120/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_odjpt"]
+font = SubResource("FontFile_wsxfy")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6faj"]
+font = SubResource("FontFile_wsxfy")
+font_size = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr0ty"]
+atlas = ExtResource("7_gmq31")
+region = Rect2(0, 0, 860, 920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odjpt"]
+atlas = ExtResource("7_gmq31")
+region = Rect2(860, 0, 860, 920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6faj"]
+atlas = ExtResource("7_gmq31")
+region = Rect2(1720, 0, 860, 920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjdd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr0ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odjpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6faj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="GoodEnding" type="Node2D"]
 
@@ -17,3 +194,196 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 color = Color(0.074601434, 0.31529257, 0.25738198, 1)
+
+[node name="Scene1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Scene1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 13.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_aehsq")
+
+[node name="Label2" type="Label" parent="Scene1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -531.0
+offset_top = 39.0
+offset_right = 531.0
+offset_bottom = 507.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "There's a red button marked \"POWER\""
+label_settings = SubResource("LabelSettings_odjpt")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Scene1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -498.5
+offset_top = -24.5
+offset_right = 498.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You figure pressing it will shut down M.AI.K"
+label_settings = SubResource("LabelSettings_u6faj")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Scene1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -245.0
+offset_right = 94.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Press
+"
+
+[node name="FlashTransition" parent="." instance=ExtResource("1_0heoo")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Scene2" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="Scene2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="Scene2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -531.0
+offset_top = 100.0
+offset_right = 531.0
+offset_bottom = 332.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Someone stops you?"
+label_settings = SubResource("LabelSettings_odjpt")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Scene2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -234.0
+offset_right = 119.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Continue
+"
+script = ExtResource("2_sfard")
+dialogue_system = NodePath("../../Scene3/DialogueSystem")
+
+[node name="Scene3" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Scene3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 13.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_aehsq")
+
+[node name="Employee" type="Sprite2D" parent="Scene3"]
+position = Vector2(302, 407)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_aehsq")
+
+[node name="DialogueSystem" parent="Scene3" instance=ExtResource("4_gmq31")]
+layout_mode = 1
+jsonsrc = "res://scripts/dialogue/employee_scared_good_ending.json"
+
+[node name="Scene4" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Scene4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 13.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_aehsq")
+
+[node name="Employee" type="Sprite2D" parent="Scene4"]
+position = Vector2(302, 407)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_aehsq")
+script = ExtResource("6_aehsq")
+
+[node name="Bum" type="AnimatedSprite2D" parent="Scene4"]
+position = Vector2(835.00006, 546.00006)
+scale = Vector2(1.205, 1.205)
+sprite_frames = SubResource("SpriteFrames_sjdd8")
+autoplay = "default"
+flip_h = true
+
+[connection signal="pressed" from="Scene1/Button" to="FlashTransition" method="_on_button_pressed"]
+[connection signal="pressed" from="Scene2/Button" to="Scene2/Button" method="_on_pressed"]
+[connection signal="visibility_changed" from="Scene4" to="FlashTransition" method="_on_scene_4_visibility_changed"]
+[connection signal="visibility_changed" from="Scene4" to="Scene4/Employee" method="_on_scene_4_visibility_changed"]
