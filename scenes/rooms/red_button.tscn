@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ccgaxdana8yb6"]
+[gd_scene load_steps=20 format=4 uid="uid://ccgaxdana8yb6"]
 
 [ext_resource type="TileSet" uid="uid://dkjgmq43yc0wr" path="res://assets/tilemaps/tilesets/hallway.tres" id="1_demvq"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_s23jr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dw0mis0dxe6vw" path="res://assets/sprites/npc/maik_spritesheet.png" id="5_oxxsn"]
 [ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="6_demvq"]
 [ext_resource type="Script" uid="uid://ce72avl8ef4l1" path="res://scripts/environment/interactables/red_button.gd" id="6_s23jr"]
+[ext_resource type="Texture2D" uid="uid://dii4p1k7fcvvc" path="res://assets/images/screen2.png" id="8_1g1c2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18l7t"]
 atlas = ExtResource("5_oxxsn")
@@ -142,5 +143,13 @@ visible = false
 [node name="Spawn" type="Marker2D" parent="." groups=["spawn"]]
 unique_name_in_owner = true
 position = Vector2(1028, 1886)
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1383, 1002.99994)
+scale = Vector2(0.4241669, 0.42416686)
+texture = ExtResource("8_1g1c2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
