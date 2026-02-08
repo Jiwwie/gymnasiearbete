@@ -184,7 +184,7 @@ size_flags_horizontal = 4
 color = Color(0.2592937, 0.2592937, 0.2592937, 1)
 
 [node name="DialogueSystem" parent="." instance=ExtResource("2_cricv")]
-jsonsrc = "res://scripts/dialogue/bad_ending.json"
+jsonsrc = "res://scripts/dialogue/maik1.json"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(586, 316)

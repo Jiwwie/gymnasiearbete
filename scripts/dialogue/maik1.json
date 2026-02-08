@@ -1,0 +1,31 @@
+{
+	"start": {
+		"text": "That look in your eye... You are in dire need of a NewBrain. It'll make you better, I promise...",
+		"name": "M.AI.K",
+		"next": "B"
+	},
+	"B": {
+		"text": "Or are you here to stop me? I've heard rumours about rebellious humans like you. Actually, there's no hope for you. I could experiment on your virgin brain.",
+		"next": "choice"
+	},
+	"choice": {
+		"text": "Do you have any last words?",
+		"choices": {
+			"Fight": "fight",
+			"Run": "run"
+	}
+	},
+	"fight": {
+		"text": "Come at me! Fight!",
+		"decision": "fight",
+		"next": "close"
+	},
+	"run": {
+		"text": "You can't run coward!",
+		"decision": "run",
+		"next": "close"
+	},
+	"close": {
+	"trigger": "ENDCODE"
+	}
+}
