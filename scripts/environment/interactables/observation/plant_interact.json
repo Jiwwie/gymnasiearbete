@@ -1,6 +1,6 @@
 {
 	"start" : {
-		"text" : "My plants help keep the air fresh after the environment made it bad...",
+		"text" : "My plants help me breathe after the air got polluted...",
 		"name" : "Observation",
 		"next" : "close"
 		},
