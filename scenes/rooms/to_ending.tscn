@@ -88,6 +88,7 @@ visible = false
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_e8nbn")]
 
 [node name="EndingDoor" type="Area2D" parent="."]
+visible = false
 position = Vector2(-363, -7)
 script = ExtResource("6_op1bn")
 
