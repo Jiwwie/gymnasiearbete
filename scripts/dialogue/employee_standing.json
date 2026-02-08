@@ -17,16 +17,16 @@
 		"next" : "hate"
 	},
 	"askName" : {
-		"text" : "What good are names anymore? The world is ending, shouldn't you worry about better things? Going on that trip from your bucket list... Or working day in and day out, just like you always do. Even though you know it's your fault all of this happened. Sorry! I got a little carried away, what was it you said again?",
+		"text" : "Who am I? The world is ending, shouldn't you worry about better things? Going on that trip from your bucket list... Or working day in and day out, just like you always do. Even though you know it's your fault all of this happened. Sorry! I got a little carried away, what was it you said again?",
 		"next" : "work"
 	},
 	"work" : {
-		"text" : "I've spent more years in the Closed AI labs than i wish to admit. It wasn't easy to let go. They wanted you to stay forever.",
+		"text" : "Who am I? I don't know. I've spent more years in the Closed AI labs than I wish to admit. It wasn't easy to let go. They wanted you to stay forever.",
 		"name" : "Employee",
 		"next" : "hate"
 	},
 	"hate" : {
-		"text" : "They didn't care what was happening around them. They didn't even stop to look around at all. All that mattered was the money and the engagement.",
+		"text" : "They didn't care what was happening around them. They didn't even stop to look around at all, especially after the launch of NewBrain. All that mattered was the money and the engagement.",
 		"choices" : {
 			"NewBrain?" : "explain",
 			"Where are the headquarters?" : "reason"
@@ -37,7 +37,7 @@
 		"next" : "explain2"
 	},
 	"reason" : {
-		"text" : "They ruined our climate.",
+		"text" : "The headquarters are really close by actually. Just head out of the forest and follow the path.",
 		"next" : "explain2"
 	},
 	"explain2" : {
@@ -45,7 +45,7 @@
 		"next" : "explain3"
 	},
 	"explain3" : {
-		"text" : "As a human you should be able to smell the shit stained air they created.",
+		"text" : "They ruined our climate. Why are you just standing there? You propably have a NewBrain too...",
 		"next" : "close"
 	},
 	"close" : {

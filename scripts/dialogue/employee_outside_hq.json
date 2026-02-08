@@ -1,6 +1,19 @@
 {
 	"start" : {
-		"text" : "Follow the path, and you'll come to the Closed AI headquarters.",
+		"text" : "Follow the path, and you'll come to the Closed AI headquarters. Be careful... It might be dangerous.",
+		"name" : "Employee",
+		"choices" : {
+			"Are you following me?" : "askFollow",
+			"Danger?" : "lookFor"
+		}
+	},
+	"askFollow" : {
+		"text" : "Following you? You're going to need my help if you want to get through the HQ.",
+		"name" : "Employee",
+		"next" : "close"
+	},
+	"lookFor" : {
+		"text" : "There's someone in there... He used to be like you and me, but the company got ahold of him.",
 		"name" : "Employee",
 		"next" : "close"
 	},
