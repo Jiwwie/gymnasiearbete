@@ -6,12 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_t05m8"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_e8nbn"]
 [ext_resource type="Script" uid="uid://bawar2buxfg30" path="res://scripts/environment/transitions/ending_door.gd" id="6_op1bn"]
+[ext_resource type="Script" uid="uid://boek1j6vumefi" path="res://scripts/environment/interactables/interact.gd" id="7_bmygu"]
 [ext_resource type="Texture2D" uid="uid://bjg6vdhjfde1r" path="res://assets/sprites/npc/employee/employee_stand.png" id="7_e8nbn"]
-[ext_resource type="Script" uid="uid://bn006tkticv0f" path="res://scripts/environment/interactables/employee_outside_hq.gd" id="8_bmygu"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="9_cuyub"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1obcu"]
-size = Vector2(68, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oi7p4"]
 atlas = ExtResource("7_e8nbn")
@@ -50,6 +47,9 @@ height = 158.0
 radius = 56.0
 height = 186.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1obcu"]
+size = Vector2(68, 26)
+
 [node name="ToEnding" type="Node2D"]
 
 [node name="BackgroundLayer" type="TileMapLayer" parent="."]
@@ -64,6 +64,36 @@ tile_set = ExtResource("1_0kxhh")
 [node name="WallLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AACJAJcAAAACAAEAAAAJAAsAAAADAAYAAAAJAAwAAAADAAcAAAAKAAsAAAAEAAYAAAAKAAwAAAAEAAcAAAAIAAsAAAACAAYAAAAIAAwAAAACAAcAAAALAAsAAAAEAAEAAAALAAwAAAAEAAIAAAAHAAsAAAADAAEAAAAHAAwAAAADAAIAAAAHAAoAAAADAAAAAAALAAoAAAAEAAAAAAAIAAoAAAABAAIAAAAKAAoAAAABAAIAAAAJAAoAAAABAAIAAAAHAA0AAAACAAEAAAAHAA4AAAACAAEAAAAHAA8AAAACAAEAAAAHABAAAAACAAEAAAAHABEAAAACAAEAAAAHABIAAAACAAEAAAAHABMAAAACAAEAAAAHABQAAAADAAMAAAALAA0AAAAAAAEAAAALAA4AAAAAAAEAAAALAA8AAAAAAAEAAAALABAAAAAAAAEAAAALABEAAAAAAAEAAAALABIAAAAAAAEAAAALABMAAAAAAAEAAAALABQAAAAEAAMAAAAIABQAAAABAAAAAAAKABQAAAABAAAAAAA=")
 tile_set = ExtResource("1_0kxhh")
+
+[node name="employee_standing" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-1620.0001, 109)
+scale = Vector2(0.99920183, 1.0041968)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="employee_standing"]
+position = Vector2(2341, 825.00006)
+scale = Vector2(0.475, 0.475)
+sprite_frames = SubResource("SpriteFrames_y4ajg")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing"]
+position = Vector2(2346, 847)
+shape = SubResource("CapsuleShape2D_rryxk")
+
+[node name="Area2D" type="Area2D" parent="employee_standing"]
+script = ExtResource("7_bmygu")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing/Area2D"]
+position = Vector2(2344, 879)
+shape = SubResource("CapsuleShape2D_7qw6t")
+
+[node name="DialogueSystem" parent="employee_standing/Area2D" instance=ExtResource("9_cuyub")]
+offset_left = 2339.0
+offset_top = 802.0
+offset_right = 2339.0
+offset_bottom = 802.0
+jsonsrc = "res://scripts/dialogue/employee_to_ending.json"
 
 [node name="Player" parent="." instance=ExtResource("2_op1bn")]
 position = Vector2(610, 1251)
@@ -100,35 +130,6 @@ shape = SubResource("RectangleShape2D_1obcu")
 position = Vector2(609, 815)
 target_scene = "maik1"
 
-[node name="employee_standing" type="StaticBody2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-1620.0001, 109)
-scale = Vector2(0.99920183, 1.0041968)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="employee_standing"]
-position = Vector2(2341, 825.00006)
-scale = Vector2(0.475, 0.475)
-sprite_frames = SubResource("SpriteFrames_y4ajg")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing"]
-position = Vector2(2346, 847)
-shape = SubResource("CapsuleShape2D_rryxk")
-
-[node name="Area2D" type="Area2D" parent="employee_standing"]
-script = ExtResource("8_bmygu")
-dialogue_system = NodePath("DialogueSystem")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing/Area2D"]
-position = Vector2(2344, 879)
-shape = SubResource("CapsuleShape2D_7qw6t")
-
-[node name="DialogueSystem" parent="employee_standing/Area2D" instance=ExtResource("9_cuyub")]
-offset_left = 2339.0
-offset_top = 802.0
-offset_right = 2339.0
-offset_bottom = 802.0
-
-[connection signal="body_entered" from="EndingDoor" to="EndingDoor" method="_on_body_entered"]
 [connection signal="body_entered" from="employee_standing/Area2D" to="employee_standing/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="employee_standing/Area2D" to="employee_standing/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="EndingDoor" to="EndingDoor" method="_on_body_entered"]
