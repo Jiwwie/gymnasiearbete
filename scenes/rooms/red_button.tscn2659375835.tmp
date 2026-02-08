@@ -107,11 +107,10 @@ tile_set = ExtResource("1_demvq")
 metadata/_edit_lock_ = true
 
 [node name="mAIk" type="Node2D" parent="."]
-position = Vector2(1026, 1075)
+position = Vector2(1028, 1075)
 script = ExtResource("2_su6qf")
 projectile_scene = ExtResource("3_gh0cw")
-cone_angle = 60.0
-bullets_per_shot = 3
+bullets_per_shot = 1
 
 [node name="MaikSprite" type="AnimatedSprite2D" parent="mAIk"]
 position = Vector2(-2.999878, -48.99994)
@@ -133,7 +132,7 @@ polygon = PackedVector2Array(-288.88916, 350.0005, 311.11084, 355.55615, 16.6665
 autostart = true
 
 [node name="Button" type="Area2D" parent="."]
-position = Vector2(0, 44)
+position = Vector2(364, 16)
 script = ExtResource("6_s23jr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Button"]
