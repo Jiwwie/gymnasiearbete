@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bygxi4defkhwl"]
+[gd_scene load_steps=19 format=3 uid="uid://bygxi4defkhwl"]
 
 [ext_resource type="Script" uid="uid://clei56dquh3uw" path="res://scripts/dialogue/bad_ending.gd" id="1_ia47k"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="2_cricv"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="4_4c0vi"]
 [ext_resource type="Script" uid="uid://c05chpkx0wril" path="res://scripts/environment/interactables/button.gd" id="5_1jr46"]
 [ext_resource type="Texture2D" uid="uid://dw0mis0dxe6vw" path="res://assets/sprites/npc/maik_spritesheet.png" id="5_wsxfy"]
+[ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="6_ta7yp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18l7t"]
 atlas = ExtResource("5_wsxfy")
@@ -234,6 +235,8 @@ offset_bottom = 511.0
 text = "Click to continue
 "
 script = ExtResource("5_1jr46")
+
+[node name="FadeTransition" parent="." instance=ExtResource("6_ta7yp")]
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="SceneChanger/Button" to="SceneChanger/Button" method="_on_pressed"]
