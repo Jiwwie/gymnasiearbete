@@ -62,7 +62,7 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_vertical = 0
-autowrap_mode = 1
+autowrap_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="Base/MarginContainer/ColorRect"]
 layout_mode = 0
