@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3frnld1ssuih"]
+[gd_scene load_steps=5 format=3 uid="uid://d3frnld1ssuih"]
 
 [ext_resource type="Script" uid="uid://pt70cvppddra" path="res://scripts/environment/projectile.gd" id="1_pxqi7"]
 [ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="2_v2c0g"]
+[ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="3_xl5y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2c0g"]
 size = Vector2(9, 126)
@@ -21,5 +22,10 @@ position = Vector2(-7.152559e-07, 2.3841858e-06)
 rotation = 1.5707964
 scale = Vector2(0.11255353, 1)
 texture = ExtResource("2_v2c0g")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.408, 0.188)
+color = Color(0.8509804, 0.6666667, 0.22745098, 0.49803922)
+texture = ExtResource("3_xl5y1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

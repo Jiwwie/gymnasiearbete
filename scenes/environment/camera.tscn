@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://be7ec3w6qhsi4"]
 
-[ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="1_a2src"]
 [ext_resource type="Script" uid="uid://q7vwsiknlcvh" path="res://scripts/environment/vision_area.gd" id="1_xrcrj"]
+[ext_resource type="Texture2D" uid="uid://dp7uvwiu3nnkp" path="res://assets/images/camera.png" id="2_xrcrj"]
 
 [node name="Camera" type="Node2D"]
 script = ExtResource("1_xrcrj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.30273438, 0.29296875)
-texture = ExtResource("1_a2src")
+position = Vector2(-14.000002, 1)
+scale = Vector2(0.083194666, 0.08585859)
+texture = ExtResource("2_xrcrj")
 
 [node name="VisionCone" type="Polygon2D" parent="."]
 position = Vector2(6, 9)

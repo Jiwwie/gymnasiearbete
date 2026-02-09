@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bcxpmvoc2yiq5"]
+[gd_scene load_steps=20 format=4 uid="uid://bcxpmvoc2yiq5"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_kanab"]
 [ext_resource type="TileSet" uid="uid://dq8qupt0al5v5" path="res://assets/tilemaps/tilesets/house_ts.tres" id="2_jhjpb"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbq6ah1xqgh02" path="res://scenes/ui/board_ui.tscn" id="7_vql73"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="9_60327"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="10_25qyn"]
+[ext_resource type="AudioStream" uid="uid://bqnh4mij4ewsn" path="res://assets/audio/music/Björksten.mp3" id="11_momy1"]
 [ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="11_v6w0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25qyn"]
@@ -167,6 +168,12 @@ position = Vector2(1949, 907)
 scale = Vector2(2.1121159, 1.2800919)
 target_scene = "outside"
 spawn = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_momy1")
+volume_db = -8.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_exited" from="Board" to="Board" method="_on_body_exited"]
 [connection signal="body_entered" from="Interactables/Bed" to="Interactables/Bed" method="_on_body_entered"]

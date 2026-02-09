@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_su6qf"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_gh0cw"]
 [ext_resource type="Texture2D" uid="uid://dw0mis0dxe6vw" path="res://assets/sprites/npc/maik_spritesheet.png" id="5_oxxsn"]
-[ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="6_demvq"]
 [ext_resource type="Script" uid="uid://ce72avl8ef4l1" path="res://scripts/environment/interactables/red_button.gd" id="6_s23jr"]
+[ext_resource type="Texture2D" uid="uid://7k3akpfcxiqw" path="res://assets/images/power_button.png" id="7_ogp7f"]
 [ext_resource type="Script" uid="uid://cgcpbou5wkeoo" path="res://scripts/environment/transitions/zoom_zone.gd" id="11_iexwk"]
 [ext_resource type="Script" uid="uid://dwaeacslnrtno" path="res://scripts/environment/transitions/zoom_back_zone.gd" id="12_ogp7f"]
 
@@ -142,9 +142,9 @@ position = Vector2(265, -357)
 script = ExtResource("6_s23jr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Button"]
-position = Vector2(1027.0001, 1108)
-scale = Vector2(0.16015768, 0.78125066)
-texture = ExtResource("6_demvq")
+position = Vector2(1026.9999, 1127)
+scale = Vector2(0.13169426, 0.1147027)
+texture = ExtResource("7_ogp7f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
 position = Vector2(1027, 1155)
@@ -203,6 +203,9 @@ script = ExtResource("11_iexwk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoomZone2"]
 position = Vector2(2008, 108.99986)
 shape = SubResource("RectangleShape2D_sagon")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.70242375, 0.20299602, 0.1984846, 1)
 
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
 [connection signal="body_entered" from="ZoomZone" to="ZoomZone" method="_on_body_entered"]
