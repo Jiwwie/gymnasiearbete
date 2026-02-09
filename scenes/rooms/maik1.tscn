@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bygxi4defkhwl"]
+[gd_scene load_steps=20 format=3 uid="uid://bygxi4defkhwl"]
 
-[ext_resource type="Script" uid="uid://clei56dquh3uw" path="res://scripts/dialogue/bad_ending.gd" id="1_ia47k"]
+[ext_resource type="Script" path="res://scripts/dialogue/bad_ending.gd" id="1_ia47k"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="2_cricv"]
+[ext_resource type="Texture2D" uid="uid://67t8mdxclggx" path="res://assets/images/lab_bg.png" id="2_g6brg"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="4_4c0vi"]
 [ext_resource type="Script" uid="uid://c05chpkx0wril" path="res://scripts/environment/interactables/button.gd" id="5_1jr46"]
 [ext_resource type="Texture2D" uid="uid://dw0mis0dxe6vw" path="res://assets/sprites/npc/maik_spritesheet.png" id="5_wsxfy"]
@@ -174,7 +175,7 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="ColorRect" type="ColorRect" parent="bg"]
+[node name="ColorRect" type="TextureRect" parent="bg"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -182,7 +183,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+texture = ExtResource("2_g6brg")
 
 [node name="DialogueSystem" parent="." instance=ExtResource("2_cricv")]
 jsonsrc = "res://scripts/dialogue/maik1.json"
@@ -215,7 +216,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.84705883)
 
 [node name="Label" type="Label" parent="SceneChanger"]
 layout_mode = 0

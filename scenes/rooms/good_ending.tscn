@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://bnnrj721yjh86"]
+[gd_scene load_steps=19 format=3 uid="uid://bnnrj721yjh86"]
 
 [ext_resource type="PackedScene" uid="uid://cu05ih8rjf5jw" path="res://scenes/environment/transitions/flash_transition.tscn" id="1_0heoo"]
 [ext_resource type="Texture2D" uid="uid://b5ypnvtftc6nl" path="res://assets/images/button_background.png" id="1_aehsq"]
 [ext_resource type="Script" uid="uid://dep0rnw6h7wk6" path="res://scripts/dialogue/dialogue_button_start.gd" id="2_sfard"]
 [ext_resource type="Texture2D" uid="uid://cotabiwo10avq" path="res://assets/sprites/npc/employee/employee_scared.png" id="3_aehsq"]
+[ext_resource type="Texture2D" uid="uid://b1uersv32hfbv" path="res://assets/images/employee_button.png" id="3_gmq31"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="4_gmq31"]
 [ext_resource type="Script" uid="uid://gab66xams1r4" path="res://scripts/environment/transitions/employee_move_left.gd" id="6_aehsq"]
 [ext_resource type="Texture2D" uid="uid://ct685wmm3j36u" path="res://assets/sprites/npc/steven/steven_idle.png" id="7_gmq31"]
+[ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="7_nr0ty"]
 
 [sub_resource type="FontFile" id="FontFile_wsxfy"]
 cache/0/16/0/ascent = 0.0
@@ -148,6 +150,142 @@ font_size = 80
 font = SubResource("FontFile_wsxfy")
 font_size = 50
 
+[sub_resource type="FontFile" id="FontFile_1jr46"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/75/0/ascent = 0.0
+cache/0/75/0/descent = 0.0
+cache/0/75/0/underline_position = 0.0
+cache/0/75/0/underline_thickness = 0.0
+cache/0/75/0/scale = 1.0
+cache/0/80/0/ascent = 0.0
+cache/0/80/0/descent = 0.0
+cache/0/80/0/underline_position = 0.0
+cache/0/80/0/underline_thickness = 0.0
+cache/0/80/0/scale = 1.0
+cache/0/85/0/ascent = 0.0
+cache/0/85/0/descent = 0.0
+cache/0/85/0/underline_position = 0.0
+cache/0/85/0/underline_thickness = 0.0
+cache/0/85/0/scale = 1.0
+cache/0/90/0/ascent = 0.0
+cache/0/90/0/descent = 0.0
+cache/0/90/0/underline_position = 0.0
+cache/0/90/0/underline_thickness = 0.0
+cache/0/90/0/scale = 1.0
+cache/0/95/0/ascent = 0.0
+cache/0/95/0/descent = 0.0
+cache/0/95/0/underline_position = 0.0
+cache/0/95/0/underline_thickness = 0.0
+cache/0/95/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/105/0/ascent = 0.0
+cache/0/105/0/descent = 0.0
+cache/0/105/0/underline_position = 0.0
+cache/0/105/0/underline_thickness = 0.0
+cache/0/105/0/scale = 1.0
+cache/0/110/0/ascent = 0.0
+cache/0/110/0/descent = 0.0
+cache/0/110/0/underline_position = 0.0
+cache/0/110/0/underline_thickness = 0.0
+cache/0/110/0/scale = 1.0
+cache/0/115/0/ascent = 0.0
+cache/0/115/0/descent = 0.0
+cache/0/115/0/underline_position = 0.0
+cache/0/115/0/underline_thickness = 0.0
+cache/0/115/0/scale = 1.0
+cache/0/120/0/ascent = 0.0
+cache/0/120/0/descent = 0.0
+cache/0/120/0/underline_position = 0.0
+cache/0/120/0/underline_thickness = 0.0
+cache/0/120/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_nr0ty"]
+font = SubResource("FontFile_1jr46")
+font_size = 80
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr0ty"]
 atlas = ExtResource("7_gmq31")
 region = Rect2(0, 0, 860, 920)
@@ -275,29 +413,33 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="ColorRect" type="ColorRect" parent="Scene2"]
+[node name="ColorRect2" type="TextureRect" parent="Scene2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 20.0
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-color = Color(0, 0, 0, 1)
+texture = ExtResource("3_gmq31")
 
-[node name="Label2" type="Label" parent="Scene2"]
+[node name="Label3" type="Label" parent="Scene2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -531.0
-offset_top = 100.0
-offset_right = 531.0
-offset_bottom = 332.0
+offset_left = -559.0
+offset_top = 23.0
+offset_right = -125.0
+offset_bottom = 262.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "Someone stops you?"
-label_settings = SubResource("LabelSettings_odjpt")
+label_settings = SubResource("LabelSettings_nr0ty")
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -308,10 +450,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -119.0
-offset_top = -234.0
-offset_right = 119.0
-offset_bottom = -135.0
+offset_left = 308.0
+offset_top = -127.0
+offset_right = 546.0
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
@@ -348,6 +490,8 @@ texture = ExtResource("3_aehsq")
 [node name="DialogueSystem" parent="Scene3" instance=ExtResource("4_gmq31")]
 layout_mode = 1
 jsonsrc = "res://scripts/dialogue/employee_scared_good_ending.json"
+
+[node name="FadeTransition" parent="Scene3" instance=ExtResource("7_nr0ty")]
 
 [node name="Scene4" type="Control" parent="."]
 unique_name_in_owner = true
