@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dsendunb2lpaa"]
+[gd_scene load_steps=9 format=4 uid="uid://dsendunb2lpaa"]
 
 [ext_resource type="TileSet" uid="uid://dkjgmq43yc0wr" path="res://assets/tilemaps/tilesets/hallway.tres" id="1_22c5s"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_pvxgn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b2nb7qn0wrcit" path="res://assets/images/fade.png" id="5_s6dp6"]
 [ext_resource type="PackedScene" uid="uid://be7ec3w6qhsi4" path="res://scenes/environment/camera.tscn" id="6_pvxgn"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="7_81bjp"]
+[ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="8_we7p2"]
 
 [node name="CameraRoom" type="Node2D"]
 
@@ -221,3 +222,13 @@ pause_time = 1.265
 [node name="ChangeScene2" parent="." instance=ExtResource("3_81bjp")]
 position = Vector2(3617, -1171)
 target_scene = "to_ending"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.14554062, 0.18489432, 0.25275135, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3315.5535, -1038.1626)
+rotation = -0.8713514
+scale = Vector2(6.3534093, 4.3945045)
+color = Color(0.65029246, 0.523478, 0.30935577, 1)
+texture = ExtResource("8_we7p2")

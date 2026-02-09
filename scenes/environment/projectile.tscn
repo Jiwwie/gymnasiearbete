@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3frnld1ssuih"]
 
 [ext_resource type="Script" uid="uid://pt70cvppddra" path="res://scripts/environment/projectile.gd" id="1_pxqi7"]
-[ext_resource type="Texture2D" uid="uid://c0yqon880ggfm" path="res://icon.svg" id="2_v2c0g"]
+[ext_resource type="Texture2D" uid="uid://duov036odx1bw" path="res://assets/images/projectile.png" id="2_xl5y1"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="3_xl5y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2c0g"]
-size = Vector2(9, 126)
+size = Vector2(6.000003, 115)
 
 [node name="Projectile" type="Area2D"]
 collision_mask = 3
 script = ExtResource("1_pxqi7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.09278474e-07, 1.5)
+position = Vector2(-1.5, 1.2457351e-06)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_v2c0g")
 
@@ -20,12 +20,14 @@ shape = SubResource("RectangleShape2D_v2c0g")
 z_index = 10
 position = Vector2(-7.152559e-07, 2.3841858e-06)
 rotation = 1.5707964
-scale = Vector2(0.11255353, 1)
-texture = ExtResource("2_v2c0g")
+scale = Vector2(0.036927737, 0.219403)
+texture = ExtResource("2_xl5y1")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(0.408, 0.188)
-color = Color(0.8509804, 0.6666667, 0.22745098, 0.49803922)
+position = Vector2(0, -1.0000007)
+scale = Vector2(0.408, 0.19199999)
+color = Color(0.40038958, 0.7449437, 0.9008447, 0.49803922)
+shadow_enabled = true
 texture = ExtResource("3_xl5y1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://be7ec3w6qhsi4"]
+[gd_scene load_steps=4 format=3 uid="uid://be7ec3w6qhsi4"]
 
 [ext_resource type="Script" uid="uid://q7vwsiknlcvh" path="res://scripts/environment/vision_area.gd" id="1_xrcrj"]
 [ext_resource type="Texture2D" uid="uid://dp7uvwiu3nnkp" path="res://assets/images/camera.png" id="2_xrcrj"]
+[ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="3_y8aqr"]
 
 [node name="Camera" type="Node2D"]
 script = ExtResource("1_xrcrj")
@@ -10,6 +11,12 @@ script = ExtResource("1_xrcrj")
 position = Vector2(-14.000002, 1)
 scale = Vector2(0.083194666, 0.08585859)
 texture = ExtResource("2_xrcrj")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(252.4198, 11.647057)
+scale = Vector2(8.996827, 7.0348225)
+color = Color(0.9318481, 0.2712679, 0, 0.45882353)
+texture = ExtResource("3_y8aqr")
 
 [node name="VisionCone" type="Polygon2D" parent="."]
 position = Vector2(6, 9)
@@ -20,6 +27,7 @@ polygon = PackedVector2Array(-6, -9, 214, 71, 214, -89)
 
 [node name="DetectionCone" type="CollisionPolygon2D" parent="VisionArea"]
 polygon = PackedVector2Array(0, 0, 220, -80, 220, 80)
+metadata/_edit_lock_ = true
 
 [node name="DetectionTimer" type="Timer" parent="."]
 one_shot = true

@@ -205,7 +205,7 @@ position = Vector2(2008, 108.99986)
 shape = SubResource("RectangleShape2D_sagon")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.70242375, 0.20299602, 0.1984846, 1)
+color = Color(0.529274, 0.36099434, 0.29775482, 1)
 
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
 [connection signal="body_entered" from="ZoomZone" to="ZoomZone" method="_on_body_entered"]
