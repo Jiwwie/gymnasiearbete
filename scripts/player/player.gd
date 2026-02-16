@@ -9,9 +9,18 @@ var hit_count: int = 0
 func was_hit():
 	hit_count += 1
 	print("Player hit! Total hits: ", hit_count)
+	%HitSoundElectricity.play()
 	
 	if hit_count >= 2:
-		get_tree().change_scene_to_file("res://scenes/rooms/secret_ending.tscn")
+		var t = get_tree().create_timer(0.1)
+		t.timeout.connect(_go_to_secret_ending)
+
+func _go_to_secret_ending():
+	var tree = Engine.get_main_loop() as SceneTree
+	if tree:
+		tree.change_scene_to_file("res://scenes/rooms/secret_ending.tscn")
+	else:
+		print("Error: SceneTree not available for scene change")
 
 func _enter_tree() -> void:
 	if SpawnManager.spawn == true:

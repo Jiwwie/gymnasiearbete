@@ -22,7 +22,6 @@ func _process(delta):
 		global_position += direction * speed * delta
 
 func _on_body_entered(body):
-	# Ignore the player (mAIk)
 	if body.is_in_group("player"):
 		print("Hit: ", body.name)
 		
