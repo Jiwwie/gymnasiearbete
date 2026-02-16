@@ -11,10 +11,7 @@ func was_hit():
 	print("Player hit! Total hits: ", hit_count)
 	
 	if hit_count >= 2:
-		call_deferred("retry")
-
-func retry():
-	get_tree().change_scene_to_file("res://scenes/rooms/secret_ending.tscn")
+		get_tree().change_scene_to_file("res://scenes/rooms/secret_ending.tscn")
 
 func _enter_tree() -> void:
 	if SpawnManager.spawn == true:

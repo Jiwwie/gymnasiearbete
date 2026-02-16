@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cukuvh7dtmd6h"]
+[gd_scene load_steps=17 format=3 uid="uid://cukuvh7dtmd6h"]
 
 [ext_resource type="PackedScene" uid="uid://cu05ih8rjf5jw" path="res://scenes/environment/transitions/flash_transition.tscn" id="1_36xqr"]
 [ext_resource type="Texture2D" uid="uid://b5ypnvtftc6nl" path="res://assets/images/button_background.png" id="1_wsxfy"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cotabiwo10avq" path="res://assets/sprites/npc/employee/employee_scared.png" id="3_1jr46"]
 [ext_resource type="Texture2D" uid="uid://b1uersv32hfbv" path="res://assets/images/employee_button.png" id="3_bt3rw"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="4_wsxfy"]
-[ext_resource type="Script" uid="uid://bktd8y5abbmn8" path="res://scripts/environment/button_to_credits.gd" id="5_1jr46"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="7_5leev"]
+[ext_resource type="Script" uid="uid://cy0e3eg1y2xg" path="res://scripts/environment/transitions/button_transition.gd" id="8_18l7t"]
+[ext_resource type="PackedScene" uid="uid://dlsw1m7sx7414" path="res://scenes/rooms/credits.tscn" id="9_2rupf"]
 
 [sub_resource type="FontFile" id="FontFile_bt3rw"]
 cache/0/16/0/ascent = 0.0
@@ -674,7 +675,8 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Credits
 "
-script = ExtResource("5_1jr46")
+script = ExtResource("8_18l7t")
+target_scene = ExtResource("9_2rupf")
 
 [connection signal="pressed" from="Scene1/Button" to="FlashTransition" method="_on_button_pressed"]
 [connection signal="pressed" from="Scene2/Button" to="Scene2/Button" method="_on_pressed"]

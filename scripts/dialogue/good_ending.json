@@ -1,0 +1,31 @@
+{
+	"start" : {
+		"text" : "STOOOOOOOP!!!",
+		"name" : "Bum",
+		"next" : "E1"
+	},
+	"E1" : {
+		"text" : "WHAAT!!!!!!! It's you... I thought I finished you!",
+		"name" : "Employee",
+		"next" : "B2"
+	},
+	"B2" : {
+		"text" : "I thought you were against AI... You thought I was an AI... YOU PUSHED ME INTO THE WATER!! I COULD HAVE DIED!!!",
+		"name" : "Bum",
+		"next" : "E2",
+	},
+	"E2" : {
+		"text" : "You're a bum... I'm gonna take your brain TOO!!!",
+		"name" : "Employee",
+		"next" : "B3"
+	},
+	"B3" : {
+		"text" : "No... *Presses button*",
+		"name" : "Bum",
+		"next" : "close"
+	},
+	"close" : {
+		"show" : "%Scene5",
+		"trigger" : "ENDCODE"
+	}
+}

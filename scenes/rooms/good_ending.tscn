@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bnnrj721yjh86"]
+[gd_scene load_steps=24 format=3 uid="uid://bnnrj721yjh86"]
 
 [ext_resource type="PackedScene" uid="uid://cu05ih8rjf5jw" path="res://scenes/environment/transitions/flash_transition.tscn" id="1_0heoo"]
 [ext_resource type="Texture2D" uid="uid://b5ypnvtftc6nl" path="res://assets/images/button_background.png" id="1_aehsq"]
@@ -9,8 +9,17 @@
 [ext_resource type="Script" uid="uid://gab66xams1r4" path="res://scripts/environment/transitions/employee_move_left.gd" id="6_aehsq"]
 [ext_resource type="Texture2D" uid="uid://ct685wmm3j36u" path="res://assets/sprites/npc/steven/steven_idle.png" id="7_gmq31"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="7_nr0ty"]
+[ext_resource type="Script" uid="uid://cw6juuydbehjh" path="res://scripts/environment/transitions/bum_button_press.gd" id="10_odjpt"]
+[ext_resource type="Script" uid="uid://cy0e3eg1y2xg" path="res://scripts/environment/transitions/button_transition.gd" id="11_u6faj"]
+[ext_resource type="PackedScene" uid="uid://dlsw1m7sx7414" path="res://scenes/rooms/credits.tscn" id="12_sjdd8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sjdd8"]
+font_size = 70
 
 [sub_resource type="FontFile" id="FontFile_wsxfy"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -141,10 +150,31 @@ cache/0/120/0/descent = 0.0
 cache/0/120/0/underline_position = 0.0
 cache/0/120/0/underline_thickness = 0.0
 cache/0/120/0/scale = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_odjpt"]
-font = SubResource("FontFile_wsxfy")
-font_size = 80
+cache/0/79/0/ascent = 0.0
+cache/0/79/0/descent = 0.0
+cache/0/79/0/underline_position = 0.0
+cache/0/79/0/underline_thickness = 0.0
+cache/0/79/0/scale = 1.0
+cache/0/78/0/ascent = 0.0
+cache/0/78/0/descent = 0.0
+cache/0/78/0/underline_position = 0.0
+cache/0/78/0/underline_thickness = 0.0
+cache/0/78/0/scale = 1.0
+cache/0/77/0/ascent = 0.0
+cache/0/77/0/descent = 0.0
+cache/0/77/0/underline_position = 0.0
+cache/0/77/0/underline_thickness = 0.0
+cache/0/77/0/scale = 1.0
+cache/0/65/0/ascent = 0.0
+cache/0/65/0/descent = 0.0
+cache/0/65/0/underline_position = 0.0
+cache/0/65/0/underline_thickness = 0.0
+cache/0/65/0/scale = 1.0
+cache/0/70/0/ascent = 0.0
+cache/0/70/0/descent = 0.0
+cache/0/70/0/underline_position = 0.0
+cache/0/70/0/underline_thickness = 0.0
+cache/0/70/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_u6faj"]
 font = SubResource("FontFile_wsxfy")
@@ -315,6 +345,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_mo6vm"]
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_odjpt"]
+font = SubResource("FontFile_wsxfy")
+font_size = 120
+
 [node name="GoodEnding" type="Node2D"]
 
 [node name="Container" type="Control" parent="."]
@@ -358,13 +395,13 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -531.0
-offset_top = 39.0
+offset_top = 56.0
 offset_right = 531.0
-offset_bottom = 507.0
+offset_bottom = 545.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "There's a red button marked \"POWER\""
-label_settings = SubResource("LabelSettings_odjpt")
+label_settings = SubResource("LabelSettings_sjdd8")
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -492,6 +529,7 @@ layout_mode = 1
 jsonsrc = "res://scripts/dialogue/employee_scared_good_ending.json"
 
 [node name="FadeTransition" parent="Scene3" instance=ExtResource("7_nr0ty")]
+visible = false
 
 [node name="Scene4" type="Control" parent="."]
 unique_name_in_owner = true
@@ -519,6 +557,7 @@ position = Vector2(302, 407)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_aehsq")
 script = ExtResource("6_aehsq")
+dialogue_system = NodePath("../DialogueSystem")
 
 [node name="Bum" type="AnimatedSprite2D" parent="Scene4"]
 position = Vector2(835.00006, 546.00006)
@@ -527,7 +566,199 @@ sprite_frames = SubResource("SpriteFrames_sjdd8")
 autoplay = "default"
 flip_h = true
 
+[node name="DialogueSystem" parent="Scene4" instance=ExtResource("4_gmq31")]
+layout_mode = 1
+jsonsrc = "res://scripts/dialogue/good_ending.json"
+
+[node name="Scene5" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Scene5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 13.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_aehsq")
+
+[node name="Employee" type="Sprite2D" parent="Scene5"]
+position = Vector2(227, 407)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_aehsq")
+
+[node name="Bum" type="AnimatedSprite2D" parent="Scene5"]
+position = Vector2(835.00006, 546.00006)
+scale = Vector2(1.205, 1.205)
+sprite_frames = SubResource("SpriteFrames_sjdd8")
+autoplay = "default"
+flip_h = true
+script = ExtResource("10_odjpt")
+
+[node name="Scene6" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="Scene6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 13.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="Scene6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -531.0
+offset_top = -294.0
+offset_right = 531.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Pressing the button cuts power to the hive mind. M.AI.K and Employee collapse infront of you"
+label_settings = SubResource("LabelSettings_mo6vm")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Scene6"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -498.5
+offset_top = -24.5
+offset_right = 498.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You figure pressing it will shut down M.AI.K"
+label_settings = SubResource("LabelSettings_u6faj")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Scene6"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -193.0
+offset_right = 119.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Next
+"
+script = ExtResource("11_u6faj")
+target_node = NodePath("../../Scene7")
+hide_on_start = true
+
+[node name="Scene7" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="Scene7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 13.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="Scene7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -531.0
+offset_top = -268.0
+offset_right = 531.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "You won, but at what cost?"
+label_settings = SubResource("LabelSettings_odjpt")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Scene7"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -498.5
+offset_top = -24.5
+offset_right = 498.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You figure pressing it will shut down M.AI.K"
+label_settings = SubResource("LabelSettings_u6faj")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Scene7"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -222.0
+offset_right = 119.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Credits
+"
+script = ExtResource("11_u6faj")
+target_scene = ExtResource("12_sjdd8")
+
 [connection signal="pressed" from="Scene1/Button" to="FlashTransition" method="_on_button_pressed"]
 [connection signal="pressed" from="Scene2/Button" to="Scene2/Button" method="_on_pressed"]
 [connection signal="visibility_changed" from="Scene4" to="FlashTransition" method="_on_scene_4_visibility_changed"]
 [connection signal="visibility_changed" from="Scene4" to="Scene4/Employee" method="_on_scene_4_visibility_changed"]
+[connection signal="visibility_changed" from="Scene5" to="FlashTransition" method="_on_scene_5_visibility_changed"]
+[connection signal="visibility_changed" from="Scene5" to="Scene5/Bum" method="_on_scene_5_visibility_changed"]

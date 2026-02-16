@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpc43ol1uaidh"]
+[gd_scene load_steps=6 format=3 uid="uid://cpc43ol1uaidh"]
 
 [ext_resource type="Script" uid="uid://by3eugrktctub" path="res://scripts/dialogue/dialogue_system.gd" id="1_r2koh"]
 [ext_resource type="Script" uid="uid://0j75w3g7wa70" path="res://scripts/dialogue/dialogue_choices.gd" id="2_jkk5n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jkk5n"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_uddgh"]
+font_size = 24
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_uddgh"]
 
@@ -62,6 +68,7 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_jkk5n")
 autowrap_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="Base/MarginContainer/ColorRect"]
@@ -73,6 +80,7 @@ theme_override_constants/margin_left = 10
 [node name="Name" type="Label" parent="Base/MarginContainer/ColorRect/MarginContainer"]
 layout_mode = 2
 text = "Name"
+label_settings = SubResource("LabelSettings_uddgh")
 
 [node name="Choices" type="CanvasLayer" parent="."]
 visible = false
@@ -87,12 +95,14 @@ offset_bottom = 437.0
 
 [node name="Button" type="Button" parent="Choices/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
 toggle_mode = true
 button_group = SubResource("ButtonGroup_uddgh")
 text = "Choice"
 
 [node name="Button2" type="Button" parent="Choices/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
 toggle_mode = true
 button_group = SubResource("ButtonGroup_uddgh")
 text = "Choice"

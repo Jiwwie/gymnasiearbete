@@ -27,3 +27,8 @@ func _on_scene_4_visibility_changed() -> void:
 	$".".show()
 	rect.modulate.a = 1.0
 	fade_in(0.5)
+
+func _on_scene_5_visibility_changed() -> void:
+	$".".show()
+	rect.modulate.a = 1.0
+	fade_in(0.5)

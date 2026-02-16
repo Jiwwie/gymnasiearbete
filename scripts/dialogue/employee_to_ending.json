@@ -21,6 +21,6 @@
 		"next" : "close",
 	},
 	"close" : {
-		"trigger" : "ENDCODE"
+		"trigger" : "IENDCODE"
 	}
 }

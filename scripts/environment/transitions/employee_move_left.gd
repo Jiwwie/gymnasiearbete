@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @onready var employee := $"."
+@export var dialogue_system : NodePath
 var tween: Tween
 
 func move_left(duration := 0.5, distance := 75.0) -> void:
@@ -21,3 +22,8 @@ func move_left(duration := 0.5, distance := 75.0) -> void:
 
 func _on_scene_4_visibility_changed() -> void:
 	move_left()
+	if dialogue_system != null:
+		var ds = get_node(dialogue_system)
+		ds.start_dialogue()
+		ds.show()
+		$"../DialogueSystem/Base".show()
