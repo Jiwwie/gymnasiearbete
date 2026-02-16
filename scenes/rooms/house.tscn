@@ -171,7 +171,7 @@ spawn = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_momy1")
-volume_db = -8.0
+volume_db = -15.0
 autoplay = true
 parameters/looping = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=25 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cwqbp48iybem6" path="res://scripts/environment/interactables/steven_drown.gd" id="2_uvdep"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_88mi5"]
 [ext_resource type="Texture2D" uid="uid://ct685wmm3j36u" path="res://assets/sprites/npc/steven/steven_idle.png" id="5_f6t8w"]
+[ext_resource type="AudioStream" uid="uid://clt7cirybran4" path="res://assets/audio/sfx/bum_drown.mp3" id="6_wket6"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_o3qkr"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="10_q88vh"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="12_wket6"]
@@ -139,6 +140,12 @@ shape = SubResource("RectangleShape2D_h5q2f")
 
 [node name="DialogueSystem" parent="Steven" instance=ExtResource("7_o3qkr")]
 jsonsrc = "res://scripts/dialogue/steven_drown.json"
+
+[node name="screams" type="AudioStreamPlayer2D" parent="Steven"]
+stream = ExtResource("6_wket6")
+volume_db = -25.0
+autoplay = true
+parameters/looping = true
 
 [node name="StevenSaved" type="Area2D" parent="."]
 visible = false

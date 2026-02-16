@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlsw1m7sx7414"]
+[gd_scene load_steps=3 format=3 uid="uid://dlsw1m7sx7414"]
 
+[ext_resource type="Script" uid="uid://dpds1dinx16k8" path="res://scripts/gui/exitgame.gd" id="1_6srs4"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="2_6srs4"]
 
 [node name="Credits" type="Node2D"]
@@ -135,6 +136,8 @@ last_wrap_alignment = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Exit game"
+script = ExtResource("1_6srs4")
 
 [node name="FadeTransition" parent="." instance=ExtResource("2_6srs4")]
-visible = false
+
+[connection signal="pressed" from="buttons/HFlowContainer/exitgame" to="buttons/HFlowContainer/exitgame" method="_on_pressed"]
