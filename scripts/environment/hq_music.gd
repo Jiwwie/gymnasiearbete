@@ -13,7 +13,7 @@ extends Node
 
 # Internal state
 var _tween: Tween
-var _target_volume_db: float = 0.0
+var _target_volume_db: float = -10.0
 var _last_scene_name: String = ""
 
 func _ready():

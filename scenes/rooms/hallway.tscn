@@ -1,10 +1,54 @@
-[gd_scene load_steps=6 format=4 uid="uid://byfkjx8uuuvpj"]
+[gd_scene load_steps=17 format=4 uid="uid://byfkjx8uuuvpj"]
 
 [ext_resource type="TileSet" uid="uid://dkjgmq43yc0wr" path="res://assets/tilemaps/tilesets/hallway.tres" id="1_lbtni"]
+[ext_resource type="Texture2D" uid="uid://b1vhjpoxm2iyd" path="res://assets/images/environment/papers.png" id="2_bdh0l"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_vvysf"]
 [ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="3_au2at"]
+[ext_resource type="Script" uid="uid://boek1j6vumefi" path="res://scripts/environment/interactables/interact.gd" id="3_t5deg"]
+[ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="4_0wydy"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="4_qew3q"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_vl156"]
+[ext_resource type="Texture2D" uid="uid://bcdoux2tie5lh" path="res://assets/sprites/npc/robot1_spritesheet.png" id="6_mowoc"]
+[ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="9_0wydy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frs0p"]
+atlas = ExtResource("6_mowoc")
+region = Rect2(0, 0, 762, 508)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5deg"]
+atlas = ExtResource("6_mowoc")
+region = Rect2(762, 0, 762, 508)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wydy"]
+atlas = ExtResource("6_mowoc")
+region = Rect2(1524, 0, 762, 508)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdh0l"]
+atlas = ExtResource("6_mowoc")
+region = Rect2(2286, 0, 762, 508)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yb0pa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frs0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5deg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wydy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdh0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdh0l"]
+size = Vector2(551.35004, 410.81125)
 
 [node name="Hallway" type="Node2D"]
 
@@ -20,6 +64,41 @@ tile_set = ExtResource("1_lbtni")
 [node name="WallLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AACJAJcAAAACAAEAAAAFAA0AAAADAAAAAAAFAA4AAAADAAEAAAAFAA8AAAADAAIAAAAGAA0AAAABAAIAAAAGAA4AAAACAAYAAAAGAA8AAAACAAcAAAAHAA0AAAABAAIAAAAHAA4AAAADAAYAAAAHAA8AAAADAAcAAAAIAA0AAAABAAIAAAAIAA4AAAAEAAYAAAAIAA8AAAAEAAcAAAAJAA0AAAABAAIAAAAJAA4AAAABAAMAAAAJAA8AAAABAAQAAAAKAA0AAAABAAIAAAAKAA4AAAABAAMAAAAKAA8AAAABAAQAAAALAA0AAAABAAIAAAALAA4AAAABAAMAAAALAA8AAAABAAQAAAAMAA0AAAABAAIAAAAMAA4AAAABAAMAAAAMAA8AAAABAAQAAAANAA0AAAABAAIAAAANAA4AAAABAAMAAAANAA8AAAABAAQAAAAFABAAAAACAAEAAAAFABEAAAACAAEAAAAFABIAAAACAAEAAAAFABMAAAACAAEAAAAFABQAAAADAAMAAAAMABQAAAABAAAAAAALABQAAAABAAAAAAAIABQAAAABAAAAAAAHABQAAAABAAAAAAAGABQAAAABAAAAAAAJABQAAAACAAAAAAAKABQAAAAAAAAAAAAOAA0AAAAEAAAAAAAOAA4AAAAEAAEAAAAOAA8AAAAEAAIAAAAOABQAAAAEAAMAAAAOABAAAAAAAAEAAAAOABEAAAAAAAEAAAAOABIAAAAAAAEAAAAOABMAAAAAAAEAAAANABQAAAABAAAAAAA=")
 tile_set = ExtResource("1_lbtni")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(803, 1081)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("2_bdh0l")
+
+[node name="Robot1" type="StaticBody2D" parent="."]
+position = Vector2(837, 1046)
+scale = Vector2(0.185, 0.185)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Robot1"]
+polygon = PackedVector2Array(-194.59424, 178.37842, -167.56738, -86.48633, 135.13525, -81.081055, 151.35156, 189.18896)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Robot1"]
+sprite_frames = SubResource("SpriteFrames_yb0pa")
+autoplay = "default"
+frame = 3
+frame_progress = 0.10301964
+
+[node name="PointLight2D" type="PointLight2D" parent="Robot1"]
+position = Vector2(-54.05371, -162.16211)
+scale = Vector2(1.4489279, 1.1712242)
+color = Color(0.17546478, 0.49383783, 0.8606432, 0.61960787)
+texture = ExtResource("9_0wydy")
+
+[node name="Area2D" type="Area2D" parent="Robot1"]
+script = ExtResource("3_t5deg")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot1/Area2D"]
+position = Vector2(-21.620605, 48.648438)
+shape = SubResource("RectangleShape2D_bdh0l")
+
+[node name="DialogueSystem" parent="Robot1/Area2D" instance=ExtResource("4_0wydy")]
+jsonsrc = "res://scripts/environment/interactables/observation/robot_1_interact.json"
 
 [node name="Player" parent="." instance=ExtResource("2_vvysf")]
 position = Vector2(640, 1260)
@@ -49,3 +128,6 @@ visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.14554062, 0.18489432, 0.25275135, 1)
+
+[connection signal="body_entered" from="Robot1/Area2D" to="Robot1/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Robot1/Area2D" to="Robot1/Area2D" method="_on_body_exited"]

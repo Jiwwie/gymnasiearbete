@@ -1,16 +1,26 @@
-[gd_scene load_steps=24 format=4 uid="uid://b66brjcgtfvq"]
+[gd_scene load_steps=30 format=4 uid="uid://b66brjcgtfvq"]
 
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="1_4fdg3"]
 [ext_resource type="TileSet" uid="uid://basn5qc3xc287" path="res://assets/tilemaps/tilesets/outside.tres" id="1_88mi5"]
 [ext_resource type="Texture2D" uid="uid://rsbebf2x2jua" path="res://assets/sprites/npc/steven/steven_drown_ss.png" id="2_h5q2f"]
 [ext_resource type="Texture2D" uid="uid://b2nb7qn0wrcit" path="res://assets/images/fade.png" id="2_q88vh"]
 [ext_resource type="Script" uid="uid://cwqbp48iybem6" path="res://scripts/environment/interactables/steven_drown.gd" id="2_uvdep"]
+[ext_resource type="Texture2D" uid="uid://bsso8x81c24n5" path="res://assets/images/environment/scraps.png" id="3_pbe43"]
+[ext_resource type="Script" uid="uid://boek1j6vumefi" path="res://scripts/environment/interactables/interact.gd" id="4_8x5y0"]
 [ext_resource type="PackedScene" uid="uid://dblxc7qly0lmm" path="res://scenes/ui/interact_ui.tscn" id="5_88mi5"]
 [ext_resource type="Texture2D" uid="uid://ct685wmm3j36u" path="res://assets/sprites/npc/steven/steven_idle.png" id="5_f6t8w"]
+[ext_resource type="Texture2D" uid="uid://cl3sr80ywjnaa" path="res://assets/images/environment/newspaper.png" id="6_8x5y0"]
+[ext_resource type="Texture2D" uid="uid://b1vhjpoxm2iyd" path="res://assets/images/environment/papers.png" id="7_bx4o6"]
 [ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="7_o3qkr"]
 [ext_resource type="PackedScene" uid="uid://bp7vqhd8dglf2" path="res://scenes/environment/transitions/fade_transition.tscn" id="10_q88vh"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="12_wket6"]
 [ext_resource type="PackedScene" uid="uid://dys1r6cugr656" path="res://scenes/environment/transitions/change_scene.tscn" id="13_pbe43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyt3m"]
+size = Vector2(1482.0836, 883.3336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te6dr"]
+size = Vector2(2595.0005, 1680.0005)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5q2f"]
 atlas = ExtResource("2_h5q2f")
@@ -120,6 +130,51 @@ rotation = -1.5707964
 scale = Vector2(0.24898249, 1.7566378)
 texture = ExtResource("2_q88vh")
 
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Scrap" type="Sprite2D" parent="Interactables"]
+position = Vector2(980.00006, 161)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("3_pbe43")
+
+[node name="Area2D" type="Area2D" parent="Interactables/Scrap"]
+position = Vector2(-21.621338, 367.56787)
+script = ExtResource("4_8x5y0")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Scrap/Area2D"]
+position = Vector2(146.62073, -25.90112)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_dyt3m")
+
+[node name="DialogueSystem" parent="Interactables/Scrap/Area2D" instance=ExtResource("7_o3qkr")]
+jsonsrc = "res://scripts/environment/interactables/observation/scrap_interact.json"
+
+[node name="Newspaper" type="Sprite2D" parent="Interactables"]
+position = Vector2(-335, 154)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_8x5y0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Newspaper"]
+position = Vector2(340, 740)
+rotation = -0.40142572
+scale = Vector2(0.9999999, 0.9999999)
+skew = -0.65449846
+texture = ExtResource("7_bx4o6")
+
+[node name="Area2D" type="Area2D" parent="Interactables/Newspaper"]
+position = Vector2(-21.621338, 367.56787)
+script = ExtResource("4_8x5y0")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Newspaper/Area2D"]
+position = Vector2(81.62207, 52.431885)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_te6dr")
+
+[node name="DialogueSystem" parent="Interactables/Newspaper/Area2D" instance=ExtResource("7_o3qkr")]
+jsonsrc = "res://scripts/environment/interactables/observation/newspaper_interact.json"
+
 [node name="Steven" type="Area2D" parent="."]
 script = ExtResource("2_uvdep")
 dialogue_system = NodePath("DialogueSystem")
@@ -179,6 +234,7 @@ visible = false
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_88mi5")]
 
 [node name="FadeTransition" parent="." instance=ExtResource("10_q88vh")]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.28444386, 0.36267278, 0.20696133, 1)
@@ -199,5 +255,9 @@ position = Vector2(1942.0001, 43)
 scale = Vector2(-0.7730252, 6.4647827)
 target_scene = "forest"
 
+[connection signal="body_entered" from="Interactables/Scrap/Area2D" to="Interactables/Scrap/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactables/Scrap/Area2D" to="Interactables/Scrap/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Interactables/Newspaper/Area2D" to="Interactables/Newspaper/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactables/Newspaper/Area2D" to="Interactables/Newspaper/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="Steven" to="Steven" method="_on_body_entered"]
 [connection signal="body_exited" from="Steven" to="Steven" method="_on_body_exited"]

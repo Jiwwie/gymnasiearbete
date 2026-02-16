@@ -1,0 +1,14 @@
+{
+	"start" : {
+		"text" : "Remains of a NewBrain chip.",
+		"name" : "Observation",
+		"next" : "next"
+		},
+	"next" : {
+		"text" : "Someone must have forgotten it.",
+		"next" : "close"
+		},
+	"close" : {
+		"trigger" : "IENDCODE"
+	}
+}

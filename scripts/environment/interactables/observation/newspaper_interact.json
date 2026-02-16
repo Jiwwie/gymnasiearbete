@@ -1,0 +1,14 @@
+{
+	"start" : {
+		"text" : "It's an article about people losing control.",
+		"name" : "Observation",
+		"next" : "same"
+		},
+	"same" : {
+		"text" : "It happened over a year ago.",
+		"next" : "close"
+		},
+	"close" : {
+		"trigger" : "IENDCODE"
+	}
+}

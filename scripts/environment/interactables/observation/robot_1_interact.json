@@ -1,0 +1,15 @@
+{
+	"start" : {
+		"text" : "This place used to be full of humans.",
+		"name" : "Robot",
+		"next" : "same"
+		},
+	"same" : {
+		"text" : "Now we are all the same.",
+		"name" : "Robot",
+		"next" : "close"
+		},
+	"close" : {
+		"trigger" : "IENDCODE"
+	}
+}

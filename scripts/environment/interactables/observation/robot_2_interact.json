@@ -1,0 +1,20 @@
+{
+	"start" : {
+		"text" : "The big boss has lost it.",
+		"name" : "Robot",
+		"next" : "wild"
+	},
+	"wild" : {
+		"text" : "He's gone completely wild.",
+		"name" : "Robot",
+		"next" : "mean"
+	},
+	"mean" : {
+		"text" : "I mean it. Watch out.",
+		"name" : "Robot",
+		"next" : "close"
+	},
+	"close" : {
+		"trigger" : "IENDCODE"
+	}
+}
