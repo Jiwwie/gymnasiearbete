@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dsendunb2lpaa"]
+[gd_scene load_steps=23 format=4 uid="uid://dsendunb2lpaa"]
 
 [ext_resource type="TileSet" uid="uid://dkjgmq43yc0wr" path="res://assets/tilemaps/tilesets/hallway.tres" id="1_22c5s"]
 [ext_resource type="PackedScene" uid="uid://bcyrg6u8o2mbx" path="res://scenes/player/player.tscn" id="2_pvxgn"]
@@ -15,6 +15,17 @@
 [ext_resource type="Texture2D" uid="uid://ldum7cw5ki8" path="res://assets/images/environment/wall2.png" id="7_fnhbw"]
 [ext_resource type="Texture2D" uid="uid://cly2w3r8jrsaq" path="res://assets/images/environment/wall1.png" id="8_vwc7w"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="8_we7p2"]
+[ext_resource type="Texture2D" uid="uid://bsso8x81c24n5" path="res://assets/images/environment/scraps.png" id="16_fnhbw"]
+[ext_resource type="Script" uid="uid://boek1j6vumefi" path="res://scripts/environment/interactables/interact.gd" id="17_vwc7w"]
+[ext_resource type="PackedScene" uid="uid://cpc43ol1uaidh" path="res://scenes/ui/dialogue_system.tscn" id="18_5kfe0"]
+[ext_resource type="Texture2D" uid="uid://cl3sr80ywjnaa" path="res://assets/images/environment/newspaper.png" id="19_8eid5"]
+[ext_resource type="Texture2D" uid="uid://b1vhjpoxm2iyd" path="res://assets/images/environment/papers.png" id="20_gn3l4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekwoh"]
+size = Vector2(1482.0836, 883.3336)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74tuu"]
+size = Vector2(2595.0005, 1680.0005)
 
 [node name="CameraRoom" type="Node2D"]
 
@@ -288,3 +299,54 @@ rotation = -0.8713514
 scale = Vector2(6.3534093, 4.3945045)
 color = Color(0.65029246, 0.523478, 0.30935577, 1)
 texture = ExtResource("8_we7p2")
+
+[node name="Interactables" type="Node2D" parent="."]
+position = Vector2(3592, -1125)
+
+[node name="Scrap" type="Sprite2D" parent="Interactables"]
+position = Vector2(-905.0002, 1936)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("16_fnhbw")
+
+[node name="Area2D" type="Area2D" parent="Interactables/Scrap"]
+position = Vector2(-21.621338, 367.56787)
+script = ExtResource("17_vwc7w")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Scrap/Area2D"]
+position = Vector2(146.62073, -25.90112)
+scale = Vector2(0.9999996, 0.9999996)
+shape = SubResource("RectangleShape2D_ekwoh")
+
+[node name="DialogueSystem" parent="Interactables/Scrap/Area2D" instance=ExtResource("18_5kfe0")]
+jsonsrc = "res://scripts/environment/interactables/observation/scrap_interact.json"
+
+[node name="Newspaper" type="Sprite2D" parent="Interactables"]
+position = Vector2(-335, 154)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("19_8eid5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Newspaper"]
+position = Vector2(340, 740)
+rotation = -0.40142572
+scale = Vector2(0.9999999, 0.9999999)
+skew = -0.65449846
+texture = ExtResource("20_gn3l4")
+
+[node name="Area2D" type="Area2D" parent="Interactables/Newspaper"]
+position = Vector2(-21.621338, 367.56787)
+script = ExtResource("17_vwc7w")
+dialogue_system = NodePath("DialogueSystem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Newspaper/Area2D"]
+position = Vector2(81.62207, 52.431885)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_74tuu")
+
+[node name="DialogueSystem" parent="Interactables/Newspaper/Area2D" instance=ExtResource("18_5kfe0")]
+jsonsrc = "res://scripts/environment/interactables/observation/newspaper_interact.json"
+
+[connection signal="body_entered" from="Interactables/Scrap/Area2D" to="Interactables/Scrap/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactables/Scrap/Area2D" to="Interactables/Scrap/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Interactables/Newspaper/Area2D" to="Interactables/Newspaper/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactables/Newspaper/Area2D" to="Interactables/Newspaper/Area2D" method="_on_body_exited"]
