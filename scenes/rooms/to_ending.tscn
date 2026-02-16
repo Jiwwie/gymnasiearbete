@@ -66,29 +66,35 @@ tile_map_data = PackedByteArray("AACJAJcAAAACAAEAAAAJAAsAAAADAAYAAAAJAAwAAAADAAc
 tile_set = ExtResource("1_0kxhh")
 
 [node name="employee_standing" type="StaticBody2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(-1620.0001, 109)
 scale = Vector2(0.99920183, 1.0041968)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="employee_standing"]
+visible = false
 position = Vector2(2341, 825.00006)
 scale = Vector2(0.475, 0.475)
 sprite_frames = SubResource("SpriteFrames_y4ajg")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing"]
+visible = false
 position = Vector2(2346, 847)
 shape = SubResource("CapsuleShape2D_rryxk")
 
 [node name="Area2D" type="Area2D" parent="employee_standing"]
+visible = false
 script = ExtResource("7_bmygu")
 dialogue_system = NodePath("DialogueSystem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="employee_standing/Area2D"]
+visible = false
 position = Vector2(2344, 879)
 shape = SubResource("CapsuleShape2D_7qw6t")
 
 [node name="DialogueSystem" parent="employee_standing/Area2D" instance=ExtResource("9_cuyub")]
+visible = false
 offset_left = 2339.0
 offset_top = 802.0
 offset_right = 2339.0
@@ -129,6 +135,9 @@ shape = SubResource("RectangleShape2D_1obcu")
 [node name="ChangeScene2" parent="." instance=ExtResource("3_1obcu")]
 position = Vector2(609, 815)
 target_scene = "maik1"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.14554062, 0.18489432, 0.25275135, 1)
 
 [connection signal="body_entered" from="employee_standing/Area2D" to="employee_standing/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="employee_standing/Area2D" to="employee_standing/Area2D" method="_on_body_exited"]

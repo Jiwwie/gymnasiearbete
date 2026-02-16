@@ -46,3 +46,6 @@ unique_name_in_owner = true
 visible = false
 
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_vl156")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.14554062, 0.18489432, 0.25275135, 1)
