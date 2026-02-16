@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1x55cohti8vs"]
+
+[ext_resource type="Script" uid="uid://cab1ej78bu01a" path="res://scripts/environment/boss_music.gd" id="1_01dfm"]
+[ext_resource type="AudioStream" uid="uid://cicniifqd740" path="res://assets/audio/music/CRAZY DISTORTION.mp3" id="2_tf87q"]
+
+[node name="BossMusic" type="Node"]
+script = ExtResource("1_01dfm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tf87q")
+volume_db = -1.0

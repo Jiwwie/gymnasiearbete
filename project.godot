@@ -21,6 +21,9 @@ SpawnManager="*res://scripts/global/spawn_manager.gd"
 Globals="*res://scripts/global/globals.gd"
 Fade="*res://scenes/environment/transitions/fade_transition.tscn"
 SceneManager="*res://scripts/global/scene_manager.gd"
+BossMusic="*res://scenes/environment/boss_music.tscn"
+OutsideMusic="*res://scenes/environment/outside_music.tscn"
+HqMusic="*res://scenes/environment/hq_music.tscn"
 
 [display]
 

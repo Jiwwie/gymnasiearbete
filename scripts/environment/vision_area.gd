@@ -63,6 +63,7 @@ func _on_vision_area_body_entered(body: Node) -> void:
 		player_inside = true
 		detection_progress = 0.0
 		$DetectionTimer.start(detection_delay)
+		$AlertSound.play()
 
 
 func _on_vision_area_body_exited(body: Node) -> void:

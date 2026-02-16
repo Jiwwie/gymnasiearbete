@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://belwq1pvltdr"]
+
+[ext_resource type="Script" uid="uid://7gmm6i631er5" path="res://scripts/environment/outside_music.gd" id="1_5xysx"]
+[ext_resource type="AudioStream" uid="uid://cvobshkd6uke8" path="res://assets/audio/music/drowning in a wheelchair.mp3" id="2_5xysx"]
+
+[node name="OutsideMusic" type="Node"]
+script = ExtResource("1_5xysx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5xysx")
+volume_db = -5.0

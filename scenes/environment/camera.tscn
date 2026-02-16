@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://be7ec3w6qhsi4"]
+[gd_scene load_steps=5 format=3 uid="uid://be7ec3w6qhsi4"]
 
 [ext_resource type="Script" uid="uid://q7vwsiknlcvh" path="res://scripts/environment/vision_area.gd" id="1_xrcrj"]
 [ext_resource type="Texture2D" uid="uid://dp7uvwiu3nnkp" path="res://assets/images/camera.png" id="2_xrcrj"]
 [ext_resource type="Texture2D" uid="uid://dcy1cojxpyuii" path="res://assets/images/point_light.png" id="3_y8aqr"]
+[ext_resource type="AudioStream" uid="uid://cssw760ubturn" path="res://assets/audio/sfx/camera_alert.wav" id="4_xjntg"]
 
 [node name="Camera" type="Node2D"]
 script = ExtResource("1_xrcrj")
@@ -33,6 +34,10 @@ metadata/_edit_lock_ = true
 one_shot = true
 
 [node name="PauseTimer" type="Timer" parent="."]
+
+[node name="AlertSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xjntg")
+volume_db = -5.0
 
 [connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="body_exited" from="VisionArea" to="." method="_on_vision_area_body_exited"]
