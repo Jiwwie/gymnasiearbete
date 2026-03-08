@@ -48,9 +48,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -384.0
-offset_top = 44.5
+offset_top = 56.5
 offset_right = 384.0
-offset_bottom = 134.5
+offset_bottom = 146.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 65
@@ -61,21 +61,22 @@ horizontal_alignment = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
-offset_bottom = 153.0
+offset_bottom = 184.0
 
 [node name="VFlowContainer" type="VFlowContainer" parent="credits"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 2.552
+anchor_top = 2.2850869
 anchor_right = 0.5
-anchor_bottom = 2.552
+anchor_bottom = 2.9441564
 offset_left = -278.5
 offset_top = -178.456
 offset_right = 278.5
 offset_bottom = 178.544
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/v_separation = 30
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="credits/VFlowContainer"]
@@ -118,6 +119,7 @@ text = "MUSIC BY STEVEN"
 horizontal_alignment = 1
 
 [node name="buttons" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4

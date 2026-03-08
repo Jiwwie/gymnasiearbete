@@ -87,6 +87,7 @@ frame_progress = 0.10301964
 position = Vector2(-54.05371, -162.16211)
 scale = Vector2(1.4489279, 1.1712242)
 color = Color(0.17546478, 0.49383783, 0.8606432, 0.61960787)
+energy = 1.18
 texture = ExtResource("9_0wydy")
 
 [node name="Area2D" type="Area2D" parent="Robot1"]
@@ -127,7 +128,7 @@ visible = false
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_vl156")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.14554062, 0.18489432, 0.25275135, 1)
+color = Color(0.22269717, 0.27587706, 0.36623898, 1)
 
 [connection signal="body_entered" from="Robot1/Area2D" to="Robot1/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Robot1/Area2D" to="Robot1/Area2D" method="_on_body_exited"]

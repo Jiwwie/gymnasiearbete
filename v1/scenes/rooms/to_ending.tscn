@@ -132,7 +132,14 @@ position = Vector2(609, 815)
 target_scene = "maik1"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.14554062, 0.18489432, 0.25275135, 1)
+color = Color(0.21017835, 0.26120368, 0.3479131, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(607, 543)
+scale = Vector2(1, 1.2520001)
+color = Color(0.65892875, 0, 0.0061233384, 1)
+energy = 5.47
+texture = ExtResource("8_y4ajg")
 
 [connection signal="body_entered" from="Robot2/Area2D" to="Robot2/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Robot2/Area2D" to="Robot2/Area2D" method="_on_body_exited"]

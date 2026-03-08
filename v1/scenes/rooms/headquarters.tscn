@@ -17,7 +17,7 @@
 [sub_resource type="Gradient" id="Gradient_8calx"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.7948718)
-colors = PackedColorArray(0.8811988, 0.7295614, 0.3797846, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.93157023, 0.49394304, 0.2316457, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2nv87"]
 gradient = SubResource("Gradient_8calx")
@@ -119,7 +119,7 @@ y_sort_enabled = true
 position = Vector2(-28, 49)
 
 [node name="PointLight2D" type="PointLight2D" parent="Environment/Player"]
-scale = Vector2(2.5640001, 1.5500002)
+scale = Vector2(1.82, 0.9060001)
 color = Color(0.69801545, 0.5332674, 0.27480248, 1)
 texture = SubResource("GradientTexture2D_2nv87")
 
@@ -204,7 +204,7 @@ metadata/_edit_lock_ = true
 polygon = PackedVector2Array(2244, -442, 2303, -444, 2304, -405, 2812, -405, 2817, -378, 2959, -371, 2963, -389, 3020, -389, 3020, -374, 3389, -374, 3391, -389, 3519, -389, 3521, -838, 3505, -935, 3472, -1010, 3398, -1009, 3396, -1025, 3367, -1029, 3364, -1256, 3157, -1257, 3158, -1147, 2856, -1151, 2839, -898, 2442, -896, 2443, -1082, 2241, -1081)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.20706493, 0.01829356, 0.09521725, 1)
+color = Color(0.25180858, 0.21273798, 0.30898306, 1)
 
 [node name="ChangeScene" parent="." instance=ExtResource("11_dbjoj")]
 position = Vector2(-67.00001, -140)

@@ -147,7 +147,6 @@ shape = SubResource("CapsuleShape2D_25qyn")
 jsonsrc = "res://scripts/environment/interactables/observation/tv_cable_interact.json"
 
 [node name="FadeTransition" parent="." instance=ExtResource("9_60327")]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.6700696, 0.4822511, 0.2785764, 1)
@@ -155,6 +154,7 @@ color = Color(0.6700696, 0.4822511, 0.2785764, 1)
 [node name="DoorLight" type="PointLight2D" parent="."]
 position = Vector2(1951.0001, 919.9851)
 scale = Vector2(0.52089775, 0.4559402)
+energy = 1.56
 texture = ExtResource("10_25qyn")
 
 [node name="BoardLight" type="PointLight2D" parent="."]

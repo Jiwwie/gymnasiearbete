@@ -319,7 +319,7 @@ sweep_speed = 0.685
 pause_time = 0.095
 
 [node name="Camera29" parent="Cameras" instance=ExtResource("6_pvxgn")]
-position = Vector2(2644, -771)
+position = Vector2(2644, -827)
 
 [node name="Camera30" parent="Cameras" instance=ExtResource("6_pvxgn")]
 position = Vector2(2643, -1057)
@@ -327,7 +327,7 @@ sweep_speed = 0.755
 pause_time = 0.2
 
 [node name="Camera31" parent="Cameras" instance=ExtResource("6_pvxgn")]
-position = Vector2(2920, -634)
+position = Vector2(2920, -628)
 rotation = 3.1415927
 sweep_speed = 2.41
 pause_time = 1.265
@@ -337,7 +337,7 @@ position = Vector2(3617, -1171)
 target_scene = "to_ending"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.14554062, 0.18489432, 0.25275135, 1)
+color = Color(0.28368533, 0.34655023, 0.45329857, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(3315.5535, -1038.1626)

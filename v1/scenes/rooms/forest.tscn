@@ -168,7 +168,7 @@ polygon = PackedVector2Array(1634, 766, 1895, 848, 1997, 1091, 2103, 1181, 2197,
 [node name="FadeTransition" parent="." instance=ExtResource("9_vu1jx")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.23255315, 0.1925613, 0.16826656, 1)
+color = Color(0.2677796, 0.32121298, 0.30344942, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false

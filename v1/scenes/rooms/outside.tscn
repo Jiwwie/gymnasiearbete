@@ -186,7 +186,6 @@ visible = false
 [node name="InteractUi" parent="InteractText" instance=ExtResource("5_88mi5")]
 
 [node name="FadeTransition" parent="." instance=ExtResource("10_q88vh")]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.28444386, 0.36267278, 0.20696133, 1)

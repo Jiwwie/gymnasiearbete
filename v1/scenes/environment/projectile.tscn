@@ -27,6 +27,7 @@ texture = ExtResource("2_xl5y1")
 position = Vector2(0, -1.0000007)
 scale = Vector2(0.408, 0.19199999)
 color = Color(0.40038958, 0.7449437, 0.9008447, 0.49803922)
+energy = 1.37
 shadow_enabled = true
 texture = ExtResource("3_xl5y1")
 
