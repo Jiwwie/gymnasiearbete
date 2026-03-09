@@ -188,7 +188,7 @@ visible = false
 [node name="FadeTransition" parent="." instance=ExtResource("10_q88vh")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.28444386, 0.36267278, 0.20696133, 1)
+color = Color(0.29041752, 0.36576146, 0.21112612, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-293.25, -342.5)
