@@ -12,6 +12,7 @@ var close_check : bool
 #test globals
 var camera = "normal"
 var employee = "unused"
+var employeeHQ = "unused"
 
 #ending, good or bad
 var ending = "bad"
